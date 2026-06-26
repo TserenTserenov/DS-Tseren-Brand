@@ -42,8 +42,8 @@ topics:
     type: T1
     hook: "Полгода ИИ-партнёра: три вещи, которых не ожидал"
     why_now: "Июнь = дефицит O1 (0 постов за месяц). Личный нарратив с живыми примерами. Нужны мировые тренды — как менялось восприятие ИИ-ассистентов за полгода (WebSearch перед написанием)."
-    status: accepted
-    draft_path: null
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/07-июнь/13-06-2026-06-26-six-months-ai-partner/"
     channels:
       club: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
