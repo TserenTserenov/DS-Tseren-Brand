@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-size="22" font-weight="700" fill="#1a1a2e">Цикл профессионального развития</text>
+  <text x="400" y="70" text-anchor="middle" font-size="13" fill="#666">Знание → Мировоззрение → Мастерство → Знание (нового уровня)</text>
+
+  <!-- Circular arrows (path) -->
+  <path d="M 400 130 A 170 170 0 0 1 570 300" fill="none" stroke="#ccc" stroke-width="2.5" stroke-dasharray="8,4" marker-end="url(#arrow)"/>
+  <path d="M 570 300 A 170 170 0 0 1 400 470" fill="none" stroke="#ccc" stroke-width="2.5" stroke-dasharray="8,4" marker-end="url(#arrow)"/>
+  <path d="M 400 470 A 170 170 0 0 1 230 300" fill="none" stroke="#ccc" stroke-width="2.5" stroke-dasharray="8,4" marker-end="url(#arrow)"/>
+  <path d="M 230 300 A 170 170 0 0 1 400 130" fill="none" stroke="#ccc" stroke-width="2.5" stroke-dasharray="8,4" marker-end="url(#arrow)"/>
+
+  <!-- Node 1: Знание (top) -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="100" width="180" height="70" rx="14" fill="#4361ee" opacity="0.9"/>
+    <text x="400" y="130" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">ЗНАНИЕ</text>
+    <text x="400" y="150" text-anchor="middle" font-size="11" fill="#ddd">факты, модели, методы</text>
+  </g>
+
+  <!-- Node 2: Мировоззрение (right) -->
+  <g filter="url(#shadow)">
+    <rect x="520" y="265" width="180" height="70" rx="14" fill="#7209b7" opacity="0.9"/>
+    <text x="610" y="295" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">МИРОВОЗЗРЕНИЕ</text>
+    <text x="610" y="315" text-anchor="middle" font-size="11" fill="#ddd">убеждения, картина мира</text>
+  </g>
+
+  <!-- Node 3: Мастерство (bottom) -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="430" width="180" height="70" rx="14" fill="#f72585" opacity="0.9"/>
+    <text x="400" y="460" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">МАСТЕРСТВО</text>
+    <text x="400" y="480" text-anchor="middle" font-size="11" fill="#fdd">шкура на кону, практика</text>
+  </g>
+
+  <!-- Node 4: Знание нового уровня (left) -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="265" width="180" height="70" rx="14" fill="#06d6a0" opacity="0.9"/>
+    <text x="190" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">ЗНАНИЕ</text>
+    <text x="190" y="308" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">нового уровня</text>
+    <text x="190" y="323" text-anchor="middle" font-size="11" fill="#dfd">различения, Pack</text>
+  </g>
+
+  <!-- Edge labels -->
+  <text x="520" y="195" text-anchor="middle" font-size="11" fill="#555" font-style="italic">принял решение</text>
+  <text x="520" y="210" text-anchor="middle" font-size="11" fill="#555" font-style="italic">«во что верить»</text>
+
+  <text x="550" y="410" text-anchor="middle" font-size="11" fill="#555" font-style="italic">поставил на кон</text>
+  <text x="550" y="425" text-anchor="middle" font-size="11" fill="#555" font-style="italic">получил обратную связь</text>
+
+  <text x="260" y="425" text-anchor="middle" font-size="11" fill="#555" font-style="italic">формализовал</text>
+  <text x="260" y="440" text-anchor="middle" font-size="11" fill="#555" font-style="italic">в ядро знаний</text>
+
+  <text x="260" y="195" text-anchor="middle" font-size="11" fill="#555" font-style="italic">новый цикл</text>
+  <text x="260" y="210" text-anchor="middle" font-size="11" fill="#555" font-style="italic">на новом уровне</text>
+
+  <!-- Center: AI agent -->
+  <circle cx="400" cy="300" r="55" fill="#fff" stroke="#ff9f1c" stroke-width="3" filter="url(#shadow)"/>
+  <text x="400" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#ff9f1c">ИИ-агент</text>
+  <text x="400" y="308" text-anchor="middle" font-size="10" fill="#888">усиливает</text>
+  <text x="400" y="322" text-anchor="middle" font-size="10" fill="#888">каждый этап</text>
+
+  <!-- AI limitations note -->
+  <g transform="translate(400, 540)">
+    <text x="0" y="0" text-anchor="middle" font-size="12" fill="#999">⚡ Агент ускоряет цикл — но не проходит его за тебя</text>
+    <text x="0" y="18" text-anchor="middle" font-size="11" fill="#bbb">Нет шкуры на кону → нет мастерства</text>
+  </g>
+</svg>
