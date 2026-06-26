@@ -26,6 +26,7 @@ topics: []
 #   why_now: "Работал над WP-436, двухконтурное исполнение — живой пример различения"
 #   status: proposed
 #   accepted: null
-#   draft: null       # content/posts/D-NNN.md
-#   published: null   # URL or platform name
+#   draft: null        # legacy field (deprecated; use draft_path)
+#   published: null    # URL or platform name
+#   draft_path: null   # path to video/ideas/ or content/posts/ file; set when file is created, not at acceptance
 #   notes: ""
