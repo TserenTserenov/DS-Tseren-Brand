@@ -1,7 +1,7 @@
 # DS-Tseren-Brand/content/topic-log.yaml
 # Source of truth for content topic tracking (WP-442 Ф10)
 #
-# Statuses: proposed | accepted | rejected | written | published | archived
+# Lifecycle: proposed → accepted | rejected → written → published (per channel) | archived
 # Follow-up schedule (Day Open checks automatically):
 #   >3 days proposed  → flag ⚠️ in DayPlan
 #   >7 days proposed  → second flag 🔴 in DayPlan
@@ -11,22 +11,77 @@
 # Hypostasis: I1=Человек I2=Практик I3=Методолог I4=Просветитель I5=Строитель I6=Визионер
 # Types:    T1=Пост T2=Методический T3=Видео-скрипт T4=Книга T5=Презентация T6=Лендинг
 #
+# Channels: club (Aisystant discourse), linkedin, telegram, dzen, habr, facebook
+#
 # To add: agent appends entry below, updates status in-place when pilot responds
 # Manual request: ask agent for topics → agent reads context + this file, proposes 3-5 options
+# URL auto-fill: at Week Close agent searches web for published posts with null url fields
 
-topics: []
+topics:
+  - id: C-001
+    proposed: 2026-06-26
+    accepted: 2026-06-26
+    area: O5
+    hypostasis: I5
+    type: T1
+    hook: "От реакции к кристаллизации: как ИИ-помощник накапливает опыт"
+    why_now: "Инсайты Андрея (23 июня): кристаллизация при N=3-5 повторений, различение D2/D3 (WP-423). Смежный пост #160 — двухконтурность как архитектура. Новый угол: накопление и обучение системы."
+    status: accepted
+    draft_path: null
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Не повтор #160 — там архитектура, здесь downstream-процесс накопления."
 
-# Example entry (remove # to activate):
-# - id: C-001
-#   proposed: 2026-06-27
-#   area: O4
-#   hypostasis: I3
-#   type: T1
-#   hook: "Проблема ≠ задача — и почему без этого ИИ не поможет"
-#   why_now: "Работал над WP-436, двухконтурное исполнение — живой пример различения"
-#   status: proposed
-#   accepted: null
-#   draft: null        # legacy field (deprecated; use draft_path)
-#   published: null    # URL or platform name
-#   draft_path: null   # path to video/ideas/ or content/posts/ file; set when file is created, not at acceptance
+  - id: C-002
+    proposed: 2026-06-26
+    accepted: 2026-06-26
+    area: O1
+    hypostasis: I1
+    type: T1
+    hook: "Полтора года ИИ-партнёра: три вещи, которых не ожидал"
+    why_now: "Июнь = дефицит O1 (0 постов за месяц). Личный нарратив с живыми примерами. Нужны мировые тренды — как менялось восприятие ИИ-ассистентов за полтора года (WebSearch перед написанием)."
+    status: accepted
+    draft_path: null
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+      dzen: {url: null, published_at: null}
+    notes: "Требует WebSearch: world trends в восприятии AI assistants 2025-2026. Приоритет написания: первый из трёх."
+
+  - id: C-003
+    proposed: 2026-06-26
+    accepted: 2026-06-26
+    area: O4
+    hypostasis: I3
+    type: T1
+    hook: "Текущее, важное, срочное: три разных режима работы конвейера"
+    why_now: "Различение ТВС принято на Strategy Session 14 июня. Живой инструмент этой недели — применяю ежедневно. Angle: срочное не равно дедлайн, конвейерная модель управления вниманием."
+    status: accepted
+    draft_path: null
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: ""
+
+# Example entry (schema reference):
+# - id: C-NNN
+#   proposed: YYYY-MM-DD       # date agent proposed
+#   accepted: YYYY-MM-DD       # date pilot accepted (null if rejected/pending)
+#   area: O1                   # O1-O6
+#   hypostasis: I3             # I1-I6
+#   type: T1                   # T1-T6
+#   hook: "..."                # working title / hook phrase
+#   why_now: "..."             # context that makes this timely
+#   status: proposed           # proposed | accepted | rejected | written | published | archived
+#   draft_path: null           # path to post folder in DS-Knowledge-Index-Tseren once written
+#   channels:
+#     club: {url: null, published_at: null}
+#     linkedin: {url: null, published_at: null}
+#     telegram: {url: null, published_at: null}
+#     dzen: {url: null, published_at: null}
+#     habr: {url: null, published_at: null}
 #   notes: ""
