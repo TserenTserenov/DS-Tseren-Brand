@@ -1,0 +1,31 @@
+# DS-Tseren-Brand/content/topic-log.yaml
+# Source of truth for content topic tracking (WP-442 Ф10)
+#
+# Statuses: proposed | accepted | rejected | written | published | archived
+# Follow-up schedule (Day Open checks automatically):
+#   >3 days proposed  → flag ⚠️ in DayPlan
+#   >7 days proposed  → second flag 🔴 in DayPlan
+#   >14 days proposed → auto-set status: archived
+#
+# Areas:    O1=Личное O2=Спорт O3=Путешествия O4=Развитие O5=Дело O6=Смысл
+# Hypostasis: I1=Человек I2=Практик I3=Методолог I4=Просветитель I5=Строитель I6=Визионер
+# Types:    T1=Пост T2=Методический T3=Видео-скрипт T4=Книга T5=Презентация T6=Лендинг
+#
+# To add: agent appends entry below, updates status in-place when pilot responds
+# Manual request: ask agent for topics → agent reads context + this file, proposes 3-5 options
+
+topics: []
+
+# Example entry (remove # to activate):
+# - id: C-001
+#   proposed: 2026-06-27
+#   area: O4
+#   hypostasis: I3
+#   type: T1
+#   hook: "Проблема ≠ задача — и почему без этого ИИ не поможет"
+#   why_now: "Работал над WP-436, двухконтурное исполнение — живой пример различения"
+#   status: proposed
+#   accepted: null
+#   draft: null       # content/posts/D-NNN.md
+#   published: null   # URL or platform name
+#   notes: ""
