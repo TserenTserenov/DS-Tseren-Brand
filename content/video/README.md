@@ -45,6 +45,8 @@
 | Мультипликатор: 8 часов, продуктов на 16 | О5 | И5 | РАЗБ | да | [multiplikator](ideas/2026-06-23-multiplikator.md) |
 | Почему умные выгорают | О4 | И4 | РАЗВ | нет | [pochemu-umnye-vygoraut](ideas/2026-06-20-pochemu-umnye-vygoraut.md) |
 | Что останется после смены работы | О4 | И4 | РАЗВ | нет | [chto-ostanetsya-s-vami](ideas/2026-06-20-chto-ostanetsya-s-vami.md) |
+| Такси или личный водитель | О4 | И4 | РАЗВ | да | [taksi-ili-voditel](ideas/2026-06-27-taksi-ili-voditel.md) |
+| Олимпиада vs руководитель | О4 | И4 | РАЗВ | да | [olimpiada-vs-rukovoditel](ideas/2026-06-27-olimpiada-vs-rukovoditel.md) |
 
 </details>
 
@@ -67,6 +69,6 @@
 
 ---
 
-**Итого:** 28 тем = 6 записано · 17 со сценарием · 5 черновиков.
+**Итого:** 30 тем = 6 записано · 19 со сценарием · 5 черновиков.
 
 *Определения осей - брендкит `DS-Tseren-Brand/08-content-themes.md`. Реестр заведён 2026-06-25, переложен на контент-систему 2026-06-26, WP-442 Ф5.*
