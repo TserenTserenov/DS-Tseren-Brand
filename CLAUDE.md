@@ -39,7 +39,8 @@
 ### Видео-пайплайн
 - Идеи: `content/video/ideas/` (статус `draft`)
 - В работе: `content/video/in-progress/`
-- Готовые сценарии → `DS-Knowledge-Index-Tseren/video/done/` (после финализации)
+- Записанные видео: `content/video/done/` (тексты уже снятых роликов)
+- Готовые к публикации сценарии → `DS-Knowledge-Index-Tseren/video/done/` (после финализации)
 - Шаблон суфлёра: `content/video/script-template.md`
 
 ### topic-log.yaml
