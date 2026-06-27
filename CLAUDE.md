@@ -13,7 +13,7 @@
 | `content/templates/` | Шаблоны для написания контента |
 | `content/topic-log.yaml` | Реестр тем C-NNN: статусы idea → accepted → written → published |
 | `analytics/` | Статистика публикаций, отчёты, A/B-тесты |
-| `01-09-*.md` | Профиль бренда: позиционирование, голос, истории, границы |
+| `profile/01-09-*.md` | Профиль бренда: позиционирование, голос, истории, границы |
 
 ## Pre-action Gate (БЛОКИРУЮЩЕЕ)
 
@@ -50,7 +50,7 @@
 
 ## Связи
 
-- **Стиль голоса:** `01-who-i-am.md`, `02-positioning.md`, `04-voice-and-style.md`
-- **Темы:** `08-content-themes.md`, `content/topic-log.yaml`
+- **Стиль голоса:** `profile/01-who-i-am.md`, `profile/02-positioning.md`, `profile/04-voice-and-style.md`
+- **Темы:** `profile/08-content-themes.md`, `content/topic-log.yaml`
 - **Публикации:** `DS-Knowledge-Index-Tseren/docs/`
 - **Стратегия:** `~/IWE/DS-my-strategy/inbox/WP-442/WP-442.md` (WP-167 контент-пайплайн, WP-433 видео)

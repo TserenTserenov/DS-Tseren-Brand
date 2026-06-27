@@ -63,11 +63,11 @@ wp: WP-433
 
 ## Эталоны (написаны в этом стиле)
 
-> Эталоны лежат в `../video/ideas/` (не `../video/themes/`, такой папки нет; путь исправлен 2026-06-25, WP-442 Ф3).
+> Эталоны лежат в `../video/done/` (перенесены из `../video/ideas/` после записи, 2026-06-27).
 
-- `../video/ideas/2026-06-19-ii-ekzoskelet-avtopilot.md` (версия автора, одобрена)
-- `../video/ideas/2026-06-19-ryvok-lovushka.md`
-- `../video/ideas/2026-06-25-zazemlenie-progulka.md` (физическое заземление: прогулка)
-- `../video/ideas/2026-06-25-klass-ili-vesch.md` (класс vs вещь: ноутбук)
-- `../video/ideas/2026-06-25-dva-v-odnom-rol.md` (роль = функциональное место: мама купает)
-- `../video/ideas/2026-06-23-stop-moment.md` (ритуал входа в роль: 30 секунд, 3 вопроса)
+- `../video/done/2026-06-19-ii-ekzoskelet-avtopilot.md` (версия автора, одобрена)
+- `../video/done/2026-06-19-ryvok-lovushka.md`
+- `../video/done/2026-06-25-zazemlenie-progulka.md` (физическое заземление: прогулка)
+- `../video/done/2026-06-25-klass-ili-vesch.md` (класс vs вещь: ноутбук)
+- `../video/done/2026-06-25-dva-v-odnom-rol.md` (роль = функциональное место: мама купает)
+- `../video/done/2026-06-23-stop-moment.md` (ритуал входа в роль: 30 секунд, 3 вопроса)
