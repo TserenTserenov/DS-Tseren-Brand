@@ -67,6 +67,38 @@ topics:
       telegram: {url: null, published_at: null}
     notes: ""
 
+  - id: C-004
+    proposed: 2026-06-28
+    accepted: null
+    area: O4
+    hypostasis: I2
+    type: T1
+    hook: "Работа и развитие в одном действии: как я перестал делить жизнь на «сейчас» и «потом»"
+    why_now: "Только что дописал видео-сценарий с этим заголовком (DS-Tseren-Brand commit d2437d2). D-004 TameFlow-in-IWE истекает сегодня — концепция связана: поток как среда, где работа и развитие неотделимы. Живой опыт последних 36ч."
+    status: proposed
+    draft_path: null
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Основная тема 2026-06-28. Не повтор C-003 (там режимы внимания; здесь — неразрывность труда и роста)."
+
+  - id: C-005
+    proposed: 2026-06-28
+    accepted: null
+    area: O5
+    hypostasis: I3
+    type: T1
+    hook: "Где заканчивается «я» и начинается «продукт»: граница, которую я провёл для личного бренда"
+    why_now: "Сегодня создал канон позиционирования (DS-Tseren-Brand/positioning.md): разграничил личное vs продуктовое (метафоры, истории, голос — лично; 5 природ IWE, 10$/10ч — продукт). Конкретный и не очевидный инсайт — как провести эту линию."
+    status: proposed
+    draft_path: null
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Резервная тема 2026-06-28. Аудитория тёплого и холодного круга — универсальна для авторов с продуктом."
+
 # Example entry (schema reference):
 # - id: C-NNN
 #   proposed: YYYY-MM-DD       # date agent proposed
