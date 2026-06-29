@@ -99,6 +99,53 @@ topics:
       telegram: {url: null, published_at: null}
     notes: "Резервная тема 2026-06-28. Аудитория тёплого и холодного круга — универсальна для авторов с продуктом."
 
+  - id: C-006
+    proposed: 2026-06-29
+    accepted: null
+    area: O4
+    hypostasis: I3
+    type: T1
+    hook: "Ты не помнишь, как смотришь в зеркало заднего вида"
+    why_now: "Из занятия 2 практикума (28 июня). Простой детектор осознанности: если действие приходится вспоминать и не забыть — оно ещё новое (S2); на автомате (S1) вспоминать нечего. Заземляет различение Канемана в быту. Внесён в руководство как PD.D.061."
+    status: proposed
+    draft_path: null
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Не повтор C-001 (там кристаллизация у ИИ-помощника) и C-003 (там ТВС). Здесь — личный детектор S1/S2 через усилие-вспоминания."
+
+  - id: C-007
+    proposed: 2026-06-29
+    accepted: null
+    area: O4
+    hypostasis: I2
+    type: T1
+    hook: "10 минут в очереди: новости или ты сам?"
+    why_now: "Живой пример участника практикума (28 июня): 10 минут ожидания доставки → раздел руководства вместо ленты. Из таких микромоментов и собирается развитие. Короткий формат, хорошо ложится на TikTok."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+    notes: "Кандидат и на видео-скрипт (T3) под TikTok — микромомент развилки S1/S2."
+
+  - id: C-008
+    proposed: 2026-06-29
+    accepted: null
+    area: O4
+    hypostasis: I3
+    type: T1
+    hook: "«Знаю, но не делаю» и «умею, но не делаю» — это две разные болезни"
+    why_now: "Различение с занятия 2 практикума (28 июня), внесено в руководство как PD.D.183. Первое — нет навыка (не умею на деле), второе — нет стиля жизни. Разные корни, разное лечение. Универсально болит. Смежно с видео-идеей kurs-ii-ne-menyaet (знание без метода), но здесь — два случая и диагностика."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/drafts/D-057-know-vs-can-but-dont-do.md"
+    channels:
+      club: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Черновик написан 29 июня. Велосипед как несущая бытовая аналогия. Финал-тест: «попроси сделать прямо сейчас»."
+
 # Example entry (schema reference):
 # - id: C-NNN
 #   proposed: YYYY-MM-DD       # date agent proposed
