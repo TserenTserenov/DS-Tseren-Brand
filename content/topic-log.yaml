@@ -26,8 +26,8 @@ topics:
     type: T1
     hook: "От реакции к кристаллизации: как ИИ-помощник накапливает опыт"
     why_now: "Инсайты Андрея (23 июня): кристаллизация при N=3-5 повторений, различение D2/D3 (WP-423). Смежный пост #160 — двухконтурность как архитектура. Новый угол: накопление и обучение системы."
-    status: accepted
-    draft_path: null
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/06-07-2026-07-05-ot-reaktsii-k-kristallizatsii/"
     channels:
       club: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
@@ -59,8 +59,8 @@ topics:
     type: T1
     hook: "Текущее, важное, срочное: три разных режима работы конвейера"
     why_now: "Различение ТВС принято на Strategy Session 14 июня. Живой инструмент этой недели — применяю ежедневно. Angle: срочное не равно дедлайн, конвейерная модель управления вниманием."
-    status: accepted
-    draft_path: null
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/07-07-2026-07-05-tekushchee-vazhnoe-srochnoye-tri-rezhima/"
     channels:
       club: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
@@ -85,14 +85,14 @@ topics:
 
   - id: C-005
     proposed: 2026-06-28
-    accepted: null
+    accepted: 2026-07-05
     area: O5
     hypostasis: I3
     type: T1
     hook: "Где заканчивается «я» и начинается «продукт»: граница, которую я провёл для личного бренда"
     why_now: "Сегодня создал канон позиционирования (DS-Tseren-Brand/positioning.md): разграничил личное vs продуктовое (метафоры, истории, голос — лично; 5 природ IWE, 10$/10ч — продукт). Конкретный и не очевидный инсайт — как провести эту линию."
-    status: proposed
-    draft_path: null
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/08-07-2026-07-05-gde-zakonchivayetsya-ya/"
     channels:
       club: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
@@ -117,14 +117,14 @@ topics:
 
   - id: C-007
     proposed: 2026-06-29
-    accepted: null
+    accepted: 2026-07-05
     area: O4
     hypostasis: I2
-    type: T1
+    type: T3
     hook: "10 минут в очереди: новости или ты сам?"
     why_now: "Живой пример участника практикума (28 июня): 10 минут ожидания доставки → раздел руководства вместо ленты. Из таких микромоментов и собирается развитие. Короткий формат, хорошо ложится на TikTok."
-    status: proposed
-    draft_path: null
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-05-10-minut-v-ocheredi.md"
     channels:
       telegram: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}

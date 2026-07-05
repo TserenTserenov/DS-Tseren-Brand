@@ -21,7 +21,7 @@
 | ИИ: экзоскелет или автопилот | О4 | И4 | РАЗВ | да | 🎬 _дата_ | — | [ii-ekzoskelet-avtopilot](done/2026-06-19-ii-ekzoskelet-avtopilot.md) |
 | Рывок - это ловушка | О4 | И2 | РАЗВ | нет | 🎬 _дата_ | — | [ryvok-lovushka](done/2026-06-19-ryvok-lovushka.md) |
 
-## Идеи со сценарием (готовы к записи) — 17
+## Идеи со сценарием (готовы к записи) — 18
 
 <details>
 <summary><b>Раскрыть таблицу</b></summary>
@@ -47,6 +47,7 @@
 | Что останется после смены работы | О4 | И4 | РАЗВ | нет | [chto-ostanetsya-s-vami](ideas/2026-06-20-chto-ostanetsya-s-vami.md) |
 | Такси или личный водитель | О4 | И4 | РАЗВ | да | [taksi-ili-voditel](ideas/2026-06-27-taksi-ili-voditel.md) |
 | Олимпиада vs руководитель | О4 | И4 | РАЗВ | да | [olimpiada-vs-rukovoditel](ideas/2026-06-27-olimpiada-vs-rukovoditel.md) |
+| 10 минут в очереди: новости или ты сам? | О4 | И2 | СОВ | нет | [10-minut-v-ocheredi](ideas/2026-07-05-10-minut-v-ocheredi.md) |
 
 </details>
 
