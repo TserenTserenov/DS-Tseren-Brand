@@ -3,7 +3,7 @@
 > Учёт всех коротких видео: идея → записано → опубликовано. Сценарии - в [`ideas/`](ideas/) (готовые к записи) и [`done/`](done/) (уже записано). Стиль - [`../style/video.md`](../style/video.md) (наследует канон [`../style/post.md`](../style/post.md)). Шаблон съёмки - [`script-template.md`](script-template.md).
 >
 > **Разметка по контент-системе** (определения - в брендките `DS-Tseren-Brand/profile/08-content-themes.md`):
-> **Область** О1 Личное · О2 Спорт · О3 Путешествия · О4 Развитие и мышление · О5 Дело · О6 Смысл. **Ипостась** И1 Человек · И2 Практик · И3 Методолог · И4 Просветитель · И5 Строитель · И6 Визионер. **Формат** ОБЪ объяснение · ИСТ история · РАЗВ разворот · РАЗБ разбор · СОВ совет · ОЗА озарение (бытовое наблюдение «замечали ли вы») · ЮМР юмор. **ИИ** да/нет.
+> **Область** О1 Личное · О2 Спорт · О3 Путешествия · О4 Развитие и мышление · О5 Дело · О6 Смысл. **Ипостась** И1 Человек · И2 Практик · И3 Методолог · И4 Просветитель · И5 Строитель · И6 Визионер. **Формат** ОБЪ объяснение · ИСТ история · РАЗВ разворот · РАЗБ разбор · СОВ совет · ОЗА озарение (бытовое наблюдение «замечали ли вы») · ЮМР юмор. **ИИ** да/нет. **№** - номер ролика (сквозная нумерация с 15, см. таблицу ниже).
 >
 > **Статусы:** 💡 идея (есть сценарий) · ✏️ черновик (нужен сценарий) · 🎬 записано · 📤 опубликовано.
 > **Ведение:** записал - статус 🎬 + дата; опубликовал - 📤 + ссылка. Новый текст - сначала карточка в `ideas/`, потом строка сюда.
@@ -21,33 +21,41 @@
 | ИИ: экзоскелет или автопилот | О4 | И4 | РАЗВ | да | 🎬 _дата_ | — | [ii-ekzoskelet-avtopilot](done/2026-06-19-ii-ekzoskelet-avtopilot.md) |
 | Рывок - это ловушка | О4 | И2 | РАЗВ | нет | 🎬 _дата_ | — | [ryvok-lovushka](done/2026-06-19-ryvok-lovushka.md) |
 
-## Идеи со сценарием (готовы к записи) — 18
+## Идеи со сценарием (готовы к записи) — 24
 
 <details>
 <summary><b>Раскрыть таблицу</b></summary>
 
-| Тема | О | И | Формат | ИИ | Карточка |
-|------|---|---|--------|----|----------|
-| Бегущий человек: роль/метод/исполнитель | О4 | И3 | ОБЪ | нет | [begushiy-chelovek](ideas/2026-06-23-begushiy-chelovek.md) |
-| Мировоззрение, а не мнение | О4 | И3 | ОБЪ | нет | [mirovozzrenie-eto-ne-mnenie](ideas/2026-06-20-mirovozzrenie-eto-ne-mnenie.md) |
-| Опыт и владение методом | О4 | И4 | РАЗВ | нет | [opyt-vs-metod](ideas/2026-06-20-opyt-vs-metod.md) |
-| Три типа работы (ТВС) | О4 | И4 | ОБЪ | нет | [tws-tri-tipa-raboty](ideas/2026-06-20-tws-tri-tipa-raboty.md) |
-| «Горит» - это не дедлайн | О4 | И4 | РАЗВ | нет | [dedlayn-ne-pozhar](ideas/2026-06-20-dedlayn-ne-pozhar.md) |
-| Управлять собой ≠ развиваться | О4 | И3 | ОБЪ | нет | [uderzhaniye-normy-vs-razvitie](ideas/2026-06-20-uderzhaniye-normy-vs-razvitie.md) |
-| Заметка - ещё не знание | О4 | И4 | РАЗВ | нет | [zametka-vs-ponimanie](ideas/2026-06-20-zametka-vs-ponimanie.md) |
-| Метод как загрузка в «Матрице» | О4 | И3 | ОБЪ | нет | [metod-kak-matrica](ideas/2026-06-23-metod-kak-matrica.md) |
-| Велосипед против «пешком» | О4 | И4 | ОБЪ | нет | [velosiped-vs-peshkom](ideas/2026-06-23-velosiped-vs-peshkom.md) |
-| Четыре квадранта мастерства | О4 | И3 | ОБЪ | нет | [chetyre-kvadranta-masterstva](ideas/2026-06-23-chetyre-kvadranta-masterstva.md) |
-| Гараж собственных велосипедов | О4 | И4 | РАЗВ | нет | [garazh-velosipedov](ideas/2026-06-23-garazh-velosipedov.md) |
-| ИИ-агент делает не то | О4 | И4 | РАЗВ | да | [ii-agent-eto-ne-volshebnik](ideas/2026-06-20-ii-agent-eto-ne-volshebnik.md) |
-| Курс по ИИ не меняет работу | О4 | И4 | РАЗВ | да | [kurs-ii-ne-menyaet](ideas/2026-06-20-kurs-ii-ne-menyaet.md) |
-| «Шестёрка» против нового авто | О4 | И4 | ОБЪ | да | [shestyorka-vs-noviy-avto](ideas/2026-06-23-shestyorka-vs-noviy-avto.md) |
-| Мультипликатор: 8 часов, продуктов на 16 | О5 | И5 | РАЗБ | да | [multiplikator](ideas/2026-06-23-multiplikator.md) |
-| Почему умные выгорают | О4 | И4 | РАЗВ | нет | [pochemu-umnye-vygoraut](ideas/2026-06-20-pochemu-umnye-vygoraut.md) |
-| Что останется после смены работы | О4 | И4 | РАЗВ | нет | [chto-ostanetsya-s-vami](ideas/2026-06-20-chto-ostanetsya-s-vami.md) |
-| Такси или личный водитель | О4 | И4 | РАЗВ | да | [taksi-ili-voditel](ideas/2026-06-27-taksi-ili-voditel.md) |
-| Олимпиада vs руководитель | О4 | И4 | РАЗВ | да | [olimpiada-vs-rukovoditel](ideas/2026-06-27-olimpiada-vs-rukovoditel.md) |
-| 10 минут в очереди: новости или ты сам? | О4 | И2 | СОВ | нет | [10-minut-v-ocheredi](ideas/2026-07-05-10-minut-v-ocheredi.md) |
+| № | Тема | О | И | Формат | ИИ | Карточка |
+|---|------|---|---|--------|----|----|----------|
+| — | Бегущий человек: роль/метод/исполнитель | О4 | И3 | ОБЪ | нет | [begushiy-chelovek](ideas/2026-06-23-begushiy-chelovek.md) |
+| — | Мировоззрение, а не мнение | О4 | И3 | ОБЪ | нет | [mirovozzrenie-eto-ne-mnenie](ideas/2026-06-20-mirovozzrenie-eto-ne-mnenie.md) |
+| 19 | Опыт и владение методом | О4 | И4 | РАЗВ | нет | [opyt-vs-metod](ideas/2026-06-20-opyt-vs-metod.md) |
+| 15 | Три типа работы (ТВС) | О4 | И4 | ОБЪ | нет | [tws-tri-tipa-raboty](ideas/2026-06-20-tws-tri-tipa-raboty.md) |
+| — | «Горит» - это не дедлайн | О4 | И4 | РАЗВ | нет | [dedlayn-ne-pozhar](ideas/2026-06-20-dedlayn-ne-pozhar.md) |
+| — | Управлять собой ≠ развиваться | О4 | И3 | ОБЪ | нет | [uderzhaniye-normy-vs-razvitie](ideas/2026-06-20-uderzhaniye-normy-vs-razvitie.md) |
+| — | Заметка - ещё не знание | О4 | И4 | РАЗВ | нет | [zametka-vs-ponimanie](ideas/2026-06-20-zametka-vs-ponimanie.md) |
+| — | Метод как загрузка в «Матрице» | О4 | И3 | ОБЪ | нет | [metod-kak-matrica](ideas/2026-06-23-metod-kak-matrica.md) |
+| — | Велосипед против «пешком» | О4 | И4 | ОБЪ | нет | [velosiped-vs-peshkom](ideas/2026-06-23-velosiped-vs-peshkom.md) |
+| — | Четыре квадранта мастерства | О4 | И3 | ОБЪ | нет | [chetyre-kvadranta-masterstva](ideas/2026-06-23-chetyre-kvadranta-masterstva.md) |
+| — | Гараж собственных велосипедов | О4 | И4 | РАЗВ | нет | [garazh-velosipedov](ideas/2026-06-23-garazh-velosipedov.md) |
+| — | ИИ-агент делает не то | О4 | И4 | РАЗВ | да | [ii-agent-eto-ne-volshebnik](ideas/2026-06-20-ii-agent-eto-ne-volshebnik.md) |
+| — | Курс по ИИ не меняет работу | О4 | И4 | РАЗВ | да | [kurs-ii-ne-menyaet](ideas/2026-06-20-kurs-ii-ne-menyaet.md) |
+| — | «Шестёрка» против нового авто | О4 | И4 | ОБЪ | да | [shestyorka-vs-noviy-avto](ideas/2026-06-23-shestyorka-vs-noviy-avto.md) |
+| — | Мультипликатор: 8 часов, продуктов на 16 | О5 | И5 | РАЗБ | да | [multiplikator](ideas/2026-06-23-multiplikator.md) |
+| — | Почему умные выгорают | О4 | И4 | РАЗВ | нет | [pochemu-umnye-vygoraut](ideas/2026-06-20-pochemu-umnye-vygoraut.md) |
+| — | Что останется после смены работы | О4 | И4 | РАЗВ | нет | [chto-ostanetsya-s-vami](ideas/2026-06-20-chto-ostanetsya-s-vami.md) |
+| 22 | Такси или личный водитель | О4 | И4 | РАЗВ | да | [taksi-ili-voditel](ideas/2026-06-27-taksi-ili-voditel.md) |
+| — | Олимпиада vs руководитель | О4 | И4 | РАЗВ | да | [olimpiada-vs-rukovoditel](ideas/2026-06-27-olimpiada-vs-rukovoditel.md) |
+| 17 | 10 минут в очереди: новости или ты сам? | О4 | И2 | СОВ | нет | [10-minut-v-ocheredi](ideas/2026-07-05-10-minut-v-ocheredi.md) |
+| 16 | Утро в Куала-Лумпуре: час до работы | О1 | И1 | ИСТ | нет | [utro-v-kl](ideas/2026-07-06-utro-v-kl.md) |
+| 18 | У меня три ИИ-помощника | О5 | И5 | ЮМР | да | [tri-ii-pomoshnika](ideas/2026-07-06-tri-ii-pomoshnika.md) |
+| 20 | Малайзия третий год подряд | О3 | И1 | ИСТ | нет | [malaysia-tretiy-god](ideas/2026-07-06-malaysia-tretiy-god.md) |
+| 21 | Список дел к вечеру длиннее | О4 | И2 | ОЗА | нет | [spisok-del-dlinnee](ideas/2026-07-06-spisok-del-dlinnee.md) |
+| 23 | Режим сна в тропиках | О2 | И2 | СОВ | нет | [son-v-tropikah](ideas/2026-07-06-son-v-tropikah.md) |
+| 24 | Зачем я строю IWE | О6 | И6 | РАЗВ | нет | [zachem-stroyu-iwe](ideas/2026-07-06-zachem-stroyu-iwe.md) |
+
+> **№** — порядковый номер ролика (сквозная нумерация производства, начата с 15 решением пилота 06.07; у более ранних тем номера нет, начислена только видео-неделе W28).
 
 </details>
 
@@ -70,6 +78,6 @@
 
 ---
 
-**Итого:** 30 тем = 6 записано · 19 со сценарием · 5 черновиков.
+**Итого:** 36 тем = 6 записано · 25 со сценарием · 5 черновиков.
 
 *Определения осей - брендкит `DS-Tseren-Brand/profile/08-content-themes.md`. Реестр заведён 2026-06-25, переложен на контент-систему 2026-06-26, WP-442 Ф5. Форматы ОЗА/ЮМР добавлены 2026-07-06 решением пилота (Ф13, метод yap).*

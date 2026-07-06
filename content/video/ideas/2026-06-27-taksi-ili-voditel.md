@@ -9,6 +9,7 @@ style: educational
 batch: w26-2026-06-27
 source_post: "https://systemsworld.club/t/taksi-ili-lichnyj-voditel-pochemu-luchshie-ii-ne-spravlyayutsya-s-nastoyashhej-rabotoj/39424"
 wp: WP-167
+episode: 22
 ---
 
 # Такси или личный водитель: какой ИИ вам нужен
