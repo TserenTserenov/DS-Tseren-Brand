@@ -276,6 +276,22 @@ topics:
       linkedin: {url: null, published_at: null}
     notes: "Пересекается с C-008/D-057 ровно на одном узле («могу, но не делаю», велосипед) - развели углы: здесь узел 8 короткий, со ссылкой на D-057, без повтора аналогии и разбора."
 
+  - id: C-016
+    proposed: 2026-07-06
+    accepted: 2026-07-06
+    area: O4
+    hypostasis: I3
+    type: T1
+    hook: "Приборная панель деятеля"
+    why_now: "РП-151 Ф20: пилот запустил реестр нормативов характеристик по состояниям квалификации; пост объясняет замысел через аналогию с доводкой автомобиля (характеристики, датчики, нормативы, лаборатория)."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-064-doer-dashboard.md"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+    notes: "Прямое поручение пилота 06.07. 5 вариантов названия в frontmatter (title_options) - выбор за пилотом. Финал-тест «три прибора на панели жизни». Статистика 737→1543 ч из канона стиля."
+
   - id: "D-001"
     proposed: 2026-02-28
     accepted: 2026-02-28
