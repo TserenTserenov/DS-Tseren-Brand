@@ -9,7 +9,7 @@
 |------------|------------|
 | `style/` | Каноны стиля: `post.md` — посты/эссе; `video.md` — короткие видео; `README.md` |
 | `content/drafts/` | Черновики постов D-NNN + `draft-list.md` (реестр) + `archive/` + `assets/` |
-| `content/video/` | Видео-пайплайн: `ideas/` (28+ идей), `in-progress/`, `done/`, `script-template.md` |
+| `content/video/` | Видео-пайплайн: сценарии-черновики прямо в `video/` (без подпапки), `in-progress/`, `done/`, `как-снимать.md` |
 | `content/templates/` | Шаблоны для написания контента |
 | `content/topic-log.yaml` | Реестр тем C-NNN: статусы idea → accepted → written → published |
 | `analytics/` | Статистика публикаций, отчёты, A/B-тесты |
@@ -37,11 +37,11 @@
 - Реестр: `content/drafts/draft-list.md`
 
 ### Видео-пайплайн
-- Идеи: `content/video/ideas/` (статус `draft`)
+- Идеи: файлы прямо в `content/video/` (статус `draft`), без подпапки `ideas/`
 - В работе: `content/video/in-progress/`
 - Записанные видео: `content/video/done/` (тексты уже снятых роликов)
 - Готовые к публикации сценарии → `DS-Knowledge-Index-Tseren/video/done/` (после финализации)
-- Шаблон суфлёра: `content/video/script-template.md`
+- Инструкция по съёмке: `content/video/как-снимать.md`
 
 ### topic-log.yaml
 - Реестр тем контент-плана. Статусы: `idea` → `accepted` → `written` → `published`

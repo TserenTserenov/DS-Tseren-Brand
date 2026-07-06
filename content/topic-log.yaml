@@ -1,17 +1,38 @@
 # DS-Tseren-Brand/content/topic-log.yaml
-# Source of truth for content topic tracking (WP-442 Ф10)
+# Единый источник истины по всем темам контента: посты (T1) и видео (T3), одна тема - одна запись.
+# С 2026-07-06 (Ф13 хвост) сюда же перенесены 62 старых записи draft-list.md - тот файл и
+# content/drafts/README.md удалены, дублировать реестр было не нужно (одна тема, одно место).
 #
-# Lifecycle: proposed → accepted | rejected → written → published (per channel) | archived
-# Follow-up schedule (Day Open checks automatically):
+# Lifecycle: proposed → accepted | rejected → written → ready → published (per channel) | archived
+#   proposed  = идея зафиксирована, файла может ещё не быть
+#   accepted  = пилот одобрил, работа начата
+#   written   = черновик-файл существует, нужна доработка
+#   ready     = вычитан, публикатор может забрать
+#   published = вышел хотя бы на одном канале
+#   archived  = отложено / заменено другой темой / отклонено
+#
+# Follow-up schedule (Day Open checks automatically, только для status: proposed):
 #   >3 days proposed  → flag ⚠️ in DayPlan
 #   >7 days proposed  → second flag 🔴 in DayPlan
 #   >14 days proposed → auto-set status: archived
+#
+# id: "C-NNN" для тем, предложенных после 2026-06-26; "D-NNN" для старых постов
+#     (id совпадает с префиксом имени файла, если файл есть)
+# also: необязательный список {type, path, status} - когда ОДНА идея существует
+#       ещё и в другом формате (например пост и видео на одну тему). Редкий случай.
 #
 # Areas:    O1=Личное O2=Спорт O3=Путешествия O4=Развитие O5=Дело O6=Смысл
 # Hypostasis: I1=Человек I2=Практик I3=Методолог I4=Просветитель I5=Строитель I6=Визионер
 # Types:    T1=Пост T2=Методический T3=Видео-скрипт T4=Книга T5=Презентация T6=Лендинг
 #
 # Channels: club (Aisystant discourse), linkedin, telegram, dzen, habr, facebook
+#
+# priority: 1-3, только для постов в очереди повторного использования по пятницам
+#           (3 = брать в первую очередь, 2 = нужна редактура 30-60 мин, 1 = переработка). Опционально.
+#
+# Ритм недели (было content/content-plan.md, свёрнуто сюда 2026-07-06):
+#   Понедельник - свежий пост О4/О5/О6 · Среда - свежий пост О1/О2/О3/О4 (ротация) · Пятница - пост из очереди по priority 3→2.
+#   Видео - см. content/weeks/W{N}-.../plan.md текущей недели. Канал-приоритет: TikTok > Telegram > LinkedIn.
 #
 # To add: agent appends entry below, updates status in-place when pilot responds
 # Manual request: ask agent for topics → agent reads context + this file, proposes 3-5 options
@@ -124,7 +145,7 @@ topics:
     hook: "10 минут в очереди: новости или ты сам?"
     why_now: "Живой пример участника практикума (28 июня): 10 минут ожидания доставки → раздел руководства вместо ленты. Из таких микромоментов и собирается развитие. Короткий формат, хорошо ложится на TikTok."
     status: written
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-05-10-minut-v-ocheredi.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-05-10-minut-v-ocheredi.md"
     channels:
       telegram: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
@@ -139,7 +160,7 @@ topics:
     hook: "«Знаю, но не делаю» и «умею, но не делаю» — это две разные болезни"
     why_now: "Различение с занятия 2 практикума (28 июня), внесено в руководство как PD.D.183. Первое — нет навыка (не умею на деле), второе — нет стиля жизни. Разные корни, разное лечение. Универсально болит. Смежно с видео-идеей kurs-ii-ne-menyaet (знание без метода), но здесь — два случая и диагностика."
     status: written
-    draft_path: "DS-Tseren-Brand/content/drafts/D-057-know-vs-can-but-dont-do.md"
+    draft_path: "DS-Tseren-Brand/content/posts/D-057-know-vs-can-but-dont-do.md"
     channels:
       club: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
@@ -156,7 +177,7 @@ topics:
     why_now: "Первая видео-неделя нового ритма (10 роликов/нед, Ф13). Область O1 почти пуста (1 тема из 30). Прогулочный формат по опорным точкам - дешёвый и живой."
     status: written
     accepted: 2026-07-06
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-06-utro-v-kl.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-06-utro-v-kl.md"
     channels:
       telegram: {url: null, published_at: null}
     notes: "Ролик №16. Полный текст (не опорные точки - решение пилота 06.07). 3 плейсхолдера {СОБСТВЕННЫЙ ПРИМЕР}, содержание не выдумано."
@@ -171,7 +192,7 @@ topics:
     why_now: "Видео-неделя 6-12.07; область O3 пуста в видео. Тема давно в контент-плане для поста - прогулочный ролик снимается быстрее."
     status: written
     accepted: 2026-07-06
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-06-malaysia-tretiy-god.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-06-malaysia-tretiy-god.md"
     channels:
       telegram: {url: null, published_at: null}
     notes: "Ролик №20. Полный текст. 2 плейсхолдера {СОБСТВЕННЫЙ ПРИМЕР}, факты - только от пилота."
@@ -186,7 +207,7 @@ topics:
     why_now: "O2 Спорт и здоровье - ноль видео. Тема уже стояла в контент-плане (пост); видео-версия по опорным точкам."
     status: written
     accepted: 2026-07-06
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-06-son-v-tropikah.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-06-son-v-tropikah.md"
     channels:
       telegram: {url: null, published_at: null}
     notes: "Ролик №23. Самый скелетный из шести - 3 плейсхолдера, содержание целиком из опыта пилота."
@@ -201,7 +222,7 @@ topics:
     why_now: "Первый ролик нового формата ОЗА (озарение, добавлен 06.07). Различение «незавершённое - не прогресс» (Goldratt) в бытовой упаковке."
     status: written
     accepted: 2026-07-06
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-06-spisok-del-dlinnee.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-06-spisok-del-dlinnee.md"
     channels:
       telegram: {url: null, published_at: null}
     notes: "Ролик №21. Полный текст, готов целиком - фактов пилота не требует."
@@ -216,25 +237,930 @@ topics:
     why_now: "Первый ролик нового формата ЮМР (юмор, добавлен 06.07). Живая рабочая реальность пилота (параллельные ИИ-агенты); самоирония + разворот в «ИИ-экзоскелет»."
     status: written
     accepted: 2026-07-06
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-06-tri-ii-pomoshnika.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-06-tri-ii-pomoshnika.md"
     channels:
       telegram: {url: null, published_at: null}
     notes: "Ролик №18. Полный текст, готов целиком. Грунт факта - три агента (Claude/Kimi/Hermes) из CLAUDE.md, не выдумано; конкретный «случай недели» намеренно не додумывал."
 
   - id: C-014
     proposed: 2026-07-06
-    accepted: null
+    accepted: 2026-07-06
     area: O6
     hypostasis: I6
     type: T3
     hook: "Зачем я строю IWE: миссия без пафоса"
     why_now: "Ипостась Визионер и область O6 почти не звучат в видео. Тема из контент-плана; опорные формулировки готовы в positioning.md."
     status: written
-    accepted: 2026-07-06
-    draft_path: "DS-Tseren-Brand/content/video/ideas/2026-07-06-zachem-stroyu-iwe.md"
+    draft_path: "DS-Tseren-Brand/content/video/2026-07-06-zachem-stroyu-iwe.md"
     channels:
       telegram: {url: null, published_at: null}
-    notes: "Ролик №24. Полный текст, готов целиком - опирается на цитаты positioning.md. Машина или прогулка. Граница личное/продуктовое: без «метод IWE», без «10$/10ч» как определения личности."
+    also:
+      - type: T1
+        path: null
+        status: proposed
+    notes: "Ролик №24. Полный текст, готов целиком - опирается на цитаты positioning.md. Машина или прогулка. Граница личное/продуктовое: без «метод IWE», без «10$/10ч» как определения личности. Та же тема как пост (T1) - из бэклога content-plan.md, ещё не написан."
+
+  - id: C-015
+    proposed: 2026-07-06
+    accepted: 2026-07-06
+    area: O4
+    hypostasis: I4
+    type: T1
+    hook: "Не сила воли: карта из четырнадцати мест, где ломается навык"
+    why_now: "Peer-разбор поста про поведенческие блокеры навыка (6 июля): критика по FPF + добор SOTA (Bandura, Loewenstein hot-cold gap, Oettingen WOOP, Milkman temptation bundling, Einstein&McDaniel prospective memory, Ariely&Wertenbroch precommitment, Frederick&Loewenstein hedonic adaptation, Wohl self-forgiveness, Hagger ego-depletion replication failure)."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-063-navyk-konveyer.md"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+    notes: "Пересекается с C-008/D-057 ровно на одном узле («могу, но не делаю», велосипед) - развели углы: здесь узел 8 короткий, со ссылкой на D-057, без повтора аналогии и разбора."
+
+  - id: "D-001"
+    proposed: 2026-02-28
+    accepted: 2026-02-28
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Предметное знание и ИИ-агенты"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-001-subject-knowledge-and-agents.md"
+    channels: {}
+    notes: "РП #76, fleeting-notes"
+
+  - id: "D-002"
+    proposed: 2026-03-01
+    accepted: 2026-03-01
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Творческий конвейер"
+    why_now: ""
+    status: ready
+    draft_path: "DS-Tseren-Brand/content/posts/D-002-creative-pipeline.md"
+    channels: {}
+    notes: "РП #80, сессия 1 мар; WP-80"
+
+  - id: "D-003"
+    proposed: 2026-03-03
+    accepted: 2026-03-03
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 3
+    hook: "Когда AI помогает умнеть, а когда атрофирует"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-003-when-ai-helps-vs-atrophies.md"
+    channels: {}
+    notes: "MIM.D.012-013, ailev; D-007"
+
+  - id: "D-004"
+    proposed: 2026-03-11
+    accepted: 2026-03-11
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "TameFlow в персональной системе"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-004-tameflow-in-iwe.md"
+    channels: {}
+    notes: "docs-courses/tameflow, CLAUDE.md"
+
+  - id: "D-005"
+    proposed: 2026-03-12
+    accepted: 2026-03-12
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Модульный IWE Template"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-005-modular-iwe-template.md"
+    channels: {}
+    notes: "РП #96, обратная связь в клубе; WP-96"
+
+  - id: "D-006"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    hypostasis: null
+    type: T1
+    hook: "Продуктивность ×2 — культура работы"
+    why_now: ""
+    status: published
+    draft_path: null
+    channels:
+      club: {url: null, published_at: 2026-05-11}
+    notes: "Опубликован как пост #081 + Habr (2026-05-11); сессия Claude, анализ культуры работы IWE"
+
+  - id: "D-007"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Экзоскелет или протез: как ИИ меняет мышление"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-007-exoskeleton-or-prosthesis.md"
+    channels: {}
+    notes: "ПРС встреча 3, 23 мар; D-003"
+
+  - id: "D-008"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "«Надо подумать» — пустые слова для 99% людей"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-008-think-about-it-empty-words.md"
+    channels: {}
+    notes: "ПРС встреча 3, 23 мар"
+
+  - id: "D-009"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Железный человек в сельском хозяйстве"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-009-iron-man-in-agriculture.md"
+    channels: {}
+    notes: "ПРС встреча 3, кейс Станислава"
+
+  - id: "D-010"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Осознанный ритуал: почему пожарник эффективнее офисного работника"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-010-firefighter-ritual.md"
+    channels: {}
+    notes: "ПРС встреча 3, 23 мар"
+
+  - id: "D-011"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O6
+    hypostasis: null
+    type: T1
+    hook: "Мыслительный резонанс: как ловить идеи"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-011-thought-resonance.md"
+    channels: {}
+    notes: "ПРС встреча 3, 23 мар"
+
+  - id: "D-012"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Три уровня знаний: почему ChatGPT не заменит профессионала"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-012-three-levels-of-knowledge.md"
+    channels: {}
+    notes: "ПРС встреча 3, 23 мар"
+
+  - id: "D-013"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Книжный клуб как первый проект оргразвития"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-013-book-club-org-development.md"
+    channels: {}
+    notes: "ПРС встреча 3, 23 мар"
+
+  - id: "D-014"
+    proposed: 2026-03-21
+    accepted: 2026-03-21
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Мультизадачность в эпоху ИИ"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-014-multitasking-in-ai-era.md"
+    channels: {}
+    notes: "fleeting-notes 20 мар"
+
+  - id: "D-015"
+    proposed: 2026-03-21
+    accepted: 2026-03-21
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Профессор vs продавец - контекст > интеллект"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-015-professor-vs-seller.md"
+    channels: {}
+    notes: "fleeting-notes 20 мар"
+
+  - id: "D-016"
+    proposed: 2026-03-21
+    accepted: 2026-03-21
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "На каком языке человек думает?"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-016-language-of-thought.md"
+    channels: {}
+    notes: "fleeting-notes 8 мар"
+
+  - id: "D-017"
+    proposed: 2026-03-24
+    accepted: 2026-03-24
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "5 уровней ИИ-продуктивности: от GPT до экзокортекса"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-017-five-levels-of-ai-productivity.md"
+    channels: {}
+    notes: "митап Джедайской Академии 24 мар"
+
+  - id: "D-018"
+    proposed: 2026-03-28
+    accepted: 2026-03-28
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "У каждого будет свой ИИ-помощник. Только его придётся воспитывать"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-018-ai-assistant-as-adopted-child.md"
+    channels: {}
+    notes: "fleeting-notes 28 мар"
+
+  - id: "D-019"
+    proposed: 2026-03-28
+    accepted: 2026-03-28
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Системное мышление — навык №1 для рабочей силы 2026"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-019-systems-thinking-top-skill-2026.md"
+    channels: {}
+    notes: "Scout capture #5 (27 мар), WEF, OpenFieldX"
+
+  - id: "D-020"
+    proposed: 2026-03-28
+    accepted: 2026-03-28
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Знание → Мировоззрение → Мастерство: цикл, который ИИ не замкнёт за вас"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-020-knowledge-worldview-mastery-cycle.md"
+    channels: {}
+    notes: "сессия Claude, идея Царена"
+
+  - id: "D-021"
+    proposed: 2026-03-28
+    accepted: 2026-03-28
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Расширение потенциала — третий шаг, не первый"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-021-expanding-potential-third-step.md"
+    channels: {}
+    notes: "дискуссия в клубе 28 мар (СМ + внимание)"
+
+  - id: "D-022"
+    proposed: 2026-03-29
+    accepted: 2026-03-29
+    area: O6
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Характеристики созидателя: что измерять, если хочешь расти"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-022-characteristics-of-creator.md"
+    channels: {}
+    notes: "PD.CHR.001, PD.FORM.062"
+
+  - id: "D-023"
+    proposed: 2026-03-30
+    accepted: 2026-03-30
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Три подхода к систематизации ИИ-работы: gstack, Agency Agents и IWE"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-023-iwe-vs-gstack-agency-agents.md"
+    channels: {}
+    notes: "конкурентный анализ WP-180"
+
+  - id: "D-024"
+    proposed: 2026-04-20
+    accepted: 2026-04-20
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Могу, но не делаю — значит, не встроено в стиль жизни"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-024-lifestyle-as-substrate.md"
+    channels: {}
+    notes: "Note-Review 14 апр 23:29; WP-167, S9/S14"
+
+  - id: "D-025"
+    proposed: 2026-04-22
+    accepted: 2026-04-22
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Три расщепления одного понятия: ось владения против перегруженных терминов"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-025-ownership-axis-three-splits.md"
+    channels: {}
+    notes: "Day Close 22 апр — WP-257 / WP-228 Ф25 / WP-250 Ф-F"
+
+  - id: "D-026"
+    proposed: 2026-04-28
+    accepted: 2026-04-28
+    area: O6
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Простой сценарий жизни больше не работает"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-026-simple-life-scenario-no-longer-enough.md"
+    channels: {}
+    notes: "fleeting-note 27 апр 23:54 + уточнение пользователя 28 апр; TTL 2026-05-05 — проверить свежесть; WP-188, WP-250, PD.FORM.087"
+
+  - id: "D-027"
+    proposed: 2026-04-28
+    accepted: 2026-04-28
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Декабрь не верил, апрель пишу пост: личный прогресс в ИТ-архитектуре"
+    why_now: ""
+    status: ready
+    draft_path: "DS-Tseren-Brand/content/posts/D-027-it-stack-personal-progress.md"
+    channels: {}
+    notes: "запрос пользователя 28 апр; рамка — D-007; D-021"
+
+  - id: "D-028"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    hypostasis: null
+    type: T1
+    hook: "ИИ показал, кто на самом деле умеет думать"
+    why_now: ""
+    status: published
+    draft_path: null
+    channels:
+      club: {url: null, published_at: 2026-05-11}
+    notes: "Опубликован как пост #134 (2026-05-11); TenChat #118 (ИИ-рентген)"
+
+  - id: "D-029"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Три кандидата на одну вакансию: профи, профи с ИИ, профи со своим ИИ"
+    why_now: ""
+    status: ready
+    draft_path: "DS-Tseren-Brand/content/posts/D-029-job-interview-with-ai.md"
+    channels: {}
+    notes: "TenChat (адаптация) + уточнение 12 мая; Дзен #8"
+
+  - id: "D-030"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    hypostasis: null
+    type: T1
+    hook: "Почему ваш ИИ такой слабый"
+    why_now: ""
+    status: published
+    draft_path: null
+    channels:
+      club: {url: null, published_at: 2026-05-11}
+    notes: "Опубликован как пост #135 (2026-05-11); TenChat (Тамагочи)"
+
+  - id: "D-031"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    hypostasis: null
+    type: T1
+    hook: "Три слоя работы с ИИ"
+    why_now: ""
+    status: published
+    draft_path: null
+    channels:
+      club: {url: null, published_at: 2026-05-11}
+    notes: "Опубликован как пост #136 (2026-05-11); идея 6 мая"
+
+  - id: "D-032"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Доверите ли вы все свои данные ИИ-помощнику? Я доверил — вот что вышло"
+    why_now: ""
+    status: ready
+    draft_path: "DS-Tseren-Brand/content/posts/D-032-trust-your-ai-with-data.md"
+    channels: {}
+    notes: "идея 6 мая; Дзен #8"
+
+  - id: "D-033"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 1
+    hook: "Работа с ИИ требует навыков руководителя — а не программиста"
+    why_now: ""
+    status: ready
+    draft_path: "DS-Tseren-Brand/content/posts/D-033-ai-needs-manager-skills.md"
+    channels: {}
+    notes: "идея 6 мая; Дзен #8"
+
+  - id: "D-034"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Claude, Cursor и третий тип ИИ-помощников, о котором никто не говорит"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-034-claude-cursor-third-type.md"
+    channels: {}
+    notes: "TenChat (IWE vs G-Stack); D-023, Дзен #8"
+
+  - id: "D-035"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "5 природ IWE"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-035-five-natures-iwe.md"
+    channels: {}
+    notes: "Переписан из D-035-four-natures-personal-ai.md (пять природ вместо четырёх), 20 мая; Дзен #8"
+
+  - id: "D-036"
+    proposed: 2026-05-06
+    accepted: 2026-05-06
+    area: O6
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Ощущения - третья оптика"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-036-sensations-third-optic.md"
+    channels: {}
+    notes: "Номер D-036 ранее использовался для опубликованного поста «Как отличить ясность от иллюзии» (club, 12 мая) — коллизия нумерации, файл того поста не сохранился, требует внимания пилота."
+
+  - id: "D-037"
+    proposed: 2026-05-18
+    accepted: 2026-05-18
+    hypostasis: null
+    type: T1
+    hook: "IWE как сборка подсистем: парктроник, lane-assist и где провести черту между готовым и своим"
+    why_now: ""
+    status: ready
+    draft_path: null
+    channels: {}
+    notes: "fleeting 16 мая (автопарктроник); WP-167, DP.D.046 (расхождение: статус «заготовка» в старом реестре, но ссылки на файл в drafts/ не было — требует внимания пилота)"
+
+  - id: "D-038"
+    proposed: 2026-05-18
+    accepted: 2026-05-18
+    hypostasis: null
+    type: T1
+    hook: "Что я даю своему ИИ: четыре вклада человека в связку"
+    why_now: ""
+    status: ready
+    draft_path: null
+    channels: {}
+    notes: "Note-Review 15 мая (зеркало к D-035/#142); WP-167, PD.FORM.097 (расхождение: статус «заготовка» в старом реестре, но ссылки на файл в drafts/ не было — требует внимания пилота)"
+
+  - id: "D-039"
+    proposed: 2026-05-18
+    accepted: 2026-05-18
+    hypostasis: null
+    type: T1
+    hook: "IWE — это машина с усилителями, а не автопилот"
+    why_now: ""
+    status: ready
+    draft_path: null
+    channels: {}
+    notes: "Note-Review 17 мая (DP.D.046); WP-167, DP.D.046 (расхождение: статус «заготовка» в старом реестре, но ссылки на файл в drafts/ не было — требует внимания пилота)"
+
+  - id: "D-040"
+    proposed: 2026-05-27
+    accepted: 2026-05-27
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "ТОС: +73% закрытых РП за неделю без увеличения часов"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-040-tos-plus-73.md"
+    channels: {}
+    notes: "peer-session 27 мая (W19 vs W20); WP-313, D-022"
+
+  - id: "D-041"
+    proposed: 2026-05-27
+    accepted: 2026-05-27
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Сертификация AI Engineer — снова чужой стек. Свой метод дороже корочки"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-041-ai-engineering-cohorts.md"
+    channels: {}
+    notes: "peer-session 27 мая (InfoQ AI Engineering Cohorts); D-029, D-033, Дзен"
+
+  - id: "D-042"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "«Я немного не успел» - и почему эта фраза вам мешает"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-042-deadline-vs-learner.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-043"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Я сразу сказал себе: делаю плохо. И это меня освободило"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-043-imperfection-start.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-044"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Вы считаете часы. А надо считать другое"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-044-stop-moment-time.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-045"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Зачем изобретать велосипед, если он уже есть"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-045-reinventing-wheel.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-046"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Я работал 8 часов, а сделал на 16. Как это возможно"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-046-multiplier.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-047"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "«Высшее образование не нужно» - это неправильный тезис. Вот правильный"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-047-fundamental-education-subscription.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-048"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Вы делаете или применяете метод - разница огромная"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-048-method-vs-action.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-049"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Как «Матрица» объясняет суть обучения"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-049-method-like-matrix.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-050"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Почему написать контекст сложнее, чем написать код"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-050-context-over-code.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-051"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O5
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Почему думать и делать одновременно - плохая идея"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-051-discrete-strategizing.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-052"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Раньше я менял карбюратор. Теперь боюсь открыть капот. И это нормально"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-052-old-car-vs-new.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-053"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O5
+    hypostasis: null
+    type: T1
+    hook: "Копать глубоко в профессии или расширяться? Вот что я отвечаю"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-053-grow-wide-orgdev.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-054"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    priority: 2
+    hook: "Актёр вступил на сцену - и он уже в роли. У вас может быть то же самое"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-054-role-entry-ritual.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-055"
+    proposed: 2026-06-22
+    accepted: 2026-06-22
+    area: O4
+    hypostasis: null
+    type: T1
+    hook: "Раньше я писал огромный промпт. Теперь - одну фразу"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-055-one-phrase-start.md"
+    channels: {}
+    notes: "занятие 1 «Методы саморазвития», 22 июня"
+
+  - id: "D-056"
+    proposed: 2026-06-28
+    accepted: 2026-06-28
+    hypostasis: null
+    type: T1
+    hook: "Предметный учебник для AI-агента: семинар Левенчука и выводы для IWE"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-056-levenchuk-seminar-iwe-power.md"
+    channels: {}
+    notes: "семинар Левенчука 28 июня + peer-сессия"
+
+  - id: "D-057"
+    proposed: 2026-06-29
+    accepted: 2026-06-29
+    hypostasis: null
+    type: T1
+    hook: "Знаю, но не делаю. Умею, но не делаю"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-057-know-vs-can-but-dont-do.md"
+    channels: {}
+    notes: "занятие 2 «Системное саморазвитие», 28 июня; пересекается с C-008 (тот же файл)"
+
+  - id: "D-058"
+    proposed: 2026-06-30
+    accepted: 2026-06-30
+    hypostasis: null
+    type: T1
+    hook: "Учтённое vs инвестированное время"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-058-uchtyonnoe-vs-investirovannoe.md"
+    channels: {}
+    notes: "занятие 2 «Методы саморазвития», 29 июня"
+
+  - id: "D-059"
+    proposed: 2026-06-30
+    accepted: 2026-06-30
+    hypostasis: null
+    type: T1
+    hook: "Проблема, задача и фрактал решений"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-059-problema-zadacha-fraktal.md"
+    channels: {}
+    notes: "занятие 2 «Методы саморазвития», 29 июня"
+
+  - id: "D-060"
+    proposed: 2026-06-30
+    accepted: 2026-06-30
+    hypostasis: null
+    type: T1
+    hook: "Таймбоксинг стратегирования"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-060-taimboxing-strategirovaniya.md"
+    channels: {}
+    notes: "занятие 2 «Методы саморазвития», 29 июня"
+
+  - id: "D-061"
+    proposed: 2026-06-30
+    accepted: 2026-06-30
+    hypostasis: null
+    type: T1
+    hook: "Пак как личный ментор"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-061-pak-kak-lichnyj-mentor.md"
+    channels: {}
+    notes: "занятие 2 «Методы саморазвития», 29 июня"
+
+  - id: "D-062"
+    proposed: 2026-06-30
+    accepted: 2026-06-30
+    hypostasis: null
+    type: T1
+    hook: "Мыслить категориями большей системы"
+    why_now: ""
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-062-myslit-kategoriyami-bolshej-sistemy.md"
+    channels: {}
+    notes: "занятие 2 «Методы саморазвития», 29 июня"
+
+  - id: "C-016"
+    proposed: 2026-07-06
+    accepted: null
+    area: O5
+    hypostasis: I5
+    type: T1
+    hook: "Как строить, когда живёшь на три часовых пояса сразу"
+    why_now: ""
+    status: proposed
+    draft_path: null
+    channels: {}
+    notes: "Из бэклога content-plan.md (свёрнут сюда 2026-07-06)."
+
+  - id: "C-017"
+    proposed: 2026-07-06
+    accepted: null
+    area: O5
+    hypostasis: I5
+    type: T1
+    hook: "ИИ как третий участник нашей команды: что изменилось"
+    why_now: ""
+    status: proposed
+    draft_path: null
+    channels: {}
+    notes: "Из бэклога content-plan.md. Смежно с C-018 (та же формула PD.IC.003), но другой ракурс: командная динамика, не тезис визионера."
+
+  - id: "C-018"
+    proposed: 2026-07-06
+    accepted: null
+    area: O6
+    hypostasis: I6
+    type: T1
+    hook: "Созидательная мощь = человеческий интеллект × ИИ"
+    why_now: ""
+    status: proposed
+    draft_path: null
+    channels: {}
+    notes: "Из бэклога content-plan.md. Опорная формулировка → PD.IC.003, positioning.md."
+
+  - id: "C-019"
+    proposed: 2026-07-06
+    accepted: null
+    area: O3
+    hypostasis: I1
+    type: T1
+    hook: "Три места в КЛ, где я думаю лучше всего"
+    why_now: ""
+    status: proposed
+    draft_path: null
+    channels: {}
+    notes: "Из бэклога content-plan.md."
+
+  - id: "C-020"
+    proposed: 2026-07-06
+    accepted: null
+    area: O3
+    hypostasis: I1
+    type: T1
+    hook: "Что я понял о России, живя два месяца в тропиках"
+    why_now: ""
+    status: proposed
+    draft_path: null
+    channels: {}
+    notes: "Из бэклога content-plan.md."
+
+  - id: "C-021"
+    proposed: 2026-07-06
+    accepted: null
+    area: O2
+    hypostasis: I2
+    type: T1
+    hook: "Как я отслеживаю тренировки с ИИ: что стало видно"
+    why_now: ""
+    status: proposed
+    draft_path: null
+    channels: {}
+    notes: "Из бэклога content-plan.md."
 
 # Example entry (schema reference):
 # - id: C-NNN
