@@ -266,10 +266,12 @@ topics:
     area: O4
     hypostasis: I4
     type: T1
-    hook: "Не сила воли: карта из четырнадцати мест, где ломается навык"
+    hook: "Конвейер навыка: карта из четырёх узлов, где он ломается"
     why_now: "Peer-разбор поста про поведенческие блокеры навыка (6 июля): критика по FPF + добор SOTA (Bandura, Loewenstein hot-cold gap, Oettingen WOOP, Milkman temptation bundling, Einstein&McDaniel prospective memory, Ariely&Wertenbroch precommitment, Frederick&Loewenstein hedonic adaptation, Wohl self-forgiveness, Hagger ego-depletion replication failure)."
-    status: written
-    draft_path: "DS-Tseren-Brand/content/posts/D-063-navyk-konveyer.md"
+    status: ready
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/10-07-2026-07-06-skill-conveyor/"
+    also:
+      - {type: draft-source, path: "DS-Tseren-Brand/content/posts/D-063-navyk-konveyer.md", status: superseded-by-KI}
     channels:
       club: {url: null, published_at: null}
       telegram: {url: null, published_at: null}
