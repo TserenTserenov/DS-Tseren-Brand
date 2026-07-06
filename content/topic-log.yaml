@@ -282,15 +282,14 @@ topics:
     area: O4
     hypostasis: I3
     type: T1
-    hook: "Приборная панель деятеля"
+    hook: "Телеметрия мастерства"
     why_now: "РП-151 Ф20: пилот запустил реестр нормативов характеристик по состояниям квалификации; пост объясняет замысел через аналогию с доводкой автомобиля (характеристики, датчики, нормативы, лаборатория)."
-    status: written
-    draft_path: "DS-Tseren-Brand/content/posts/D-064-doer-dashboard.md"
+    status: ready
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/09-07-2026-07-06-mastery-telemetry/09-07-1-club-2026-07-06.md"
     channels:
       club: {url: null, published_at: null}
       telegram: {url: null, published_at: null}
-      linkedin: {url: null, published_at: null}
-    notes: "Прямое поручение пилота 06.07. 5 вариантов названия в frontmatter (title_options) - выбор за пилотом. Финал-тест «три прибора на панели жизни». Статистика 737→1543 ч из канона стиля."
+    notes: "Название «Телеметрия мастерства» выбрал пилот 06.07. Правки пилота внесены: семейства методов лаборатории (выявление/измерение/воздействие/калибровка/поверка), сообщество как мера публичности реформатора, деградация-техосмотр. Черновик-исходник: DS-Tseren-Brand/content/posts/D-064-doer-dashboard.md. Обложки нет (скрипт generate_post_image.py в репо отсутствует)."
 
   - id: "D-001"
     proposed: 2026-02-28
