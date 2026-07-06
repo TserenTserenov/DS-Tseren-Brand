@@ -146,6 +146,90 @@ topics:
       telegram: {url: null, published_at: null}
     notes: "Черновик написан 29 июня. Велосипед как несущая бытовая аналогия. Финал-тест: «попроси сделать прямо сейчас»."
 
+  - id: C-009
+    proposed: 2026-07-06
+    accepted: null
+    area: O1
+    hypostasis: I1
+    type: T3
+    hook: "Утро в Куала-Лумпуре: из чего состоит час до работы"
+    why_now: "Первая видео-неделя нового ритма (10 роликов/нед, Ф13). Область O1 почти пуста (1 тема из 30). Прогулочный формат по опорным точкам - дешёвый и живой."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+    notes: "Режим: прогулка №1, опорные точки в content-plan.md § Видео-неделя."
+
+  - id: C-010
+    proposed: 2026-07-06
+    accepted: null
+    area: O3
+    hypostasis: I1
+    type: T3
+    hook: "Малайзия третий год подряд: почему мы возвращаемся"
+    why_now: "Видео-неделя 6-12.07; область O3 пуста в видео. Тема давно в контент-плане для поста - прогулочный ролик снимается быстрее."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+    notes: "Режим: прогулка №2. Факты - только от пилота, ничего не выдумывать."
+
+  - id: C-011
+    proposed: 2026-07-06
+    accepted: null
+    area: O2
+    hypostasis: I2
+    type: T3
+    hook: "Режим сна в тропиках: что поломалось и что нашёл"
+    why_now: "O2 Спорт и здоровье - ноль видео. Тема уже стояла в контент-плане (пост); видео-версия по опорным точкам."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+    notes: "Содержание целиком из опыта пилота; агент фактов не добавляет."
+
+  - id: C-012
+    proposed: 2026-07-06
+    accepted: null
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Замечали: утром в списке пять дел, к вечеру - восемь?"
+    why_now: "Первый ролик нового формата ОЗА (озарение, добавлен 06.07). Различение «незавершённое - не прогресс» (Goldratt) в бытовой упаковке."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+    notes: "30-45 сек, стол или прогулка."
+
+  - id: C-013
+    proposed: 2026-07-06
+    accepted: null
+    area: O5
+    hypostasis: I5
+    type: T3
+    hook: "У меня три ИИ-помощника. Больше всех работаю я"
+    why_now: "Первый ролик нового формата ЮМР (юмор, добавлен 06.07). Живая рабочая реальность пилота (параллельные ИИ-агенты); самоирония + разворот в «ИИ-экзоскелет»."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+    notes: "Снятие пафоса в духе канона; случай недели - реальный, из работы."
+
+  - id: C-014
+    proposed: 2026-07-06
+    accepted: null
+    area: O6
+    hypostasis: I6
+    type: T3
+    hook: "Зачем я строю IWE: миссия без пафоса"
+    why_now: "Ипостась Визионер и область O6 почти не звучат в видео. Тема из контент-плана; опорные формулировки готовы в positioning.md."
+    status: proposed
+    draft_path: null
+    channels:
+      telegram: {url: null, published_at: null}
+    notes: "Машина или прогулка. Граница личное/продуктовое: без «метод IWE», без «10$/10ч» как определения личности."
+
 # Example entry (schema reference):
 # - id: C-NNN
 #   proposed: YYYY-MM-DD       # date agent proposed
