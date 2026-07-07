@@ -4,7 +4,7 @@ status: active
 owner: DS-Tseren-Brand
 wp: WP-442 Ф12
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-07
 source: peer-session 2026-07-01-26-lead-magnets-brand (Claude + Kimi)
 ---
 
@@ -28,6 +28,7 @@ source: peer-session 2026-07-01-26-lead-magnets-brand (Claude + Kimi)
 | ЛМ-1 | Гайд «Проблема → Задача: как перестать делать с ИИ не то» | [LM-01](LM-01-problema-zadacha.md) | черновик |
 | ЛМ-3 | Гайд «Собранность в эпоху ИИ: как не растечься» | [LM-03](LM-03-sobrannost-i-ii.md) | черновик |
 | ЛМ-6 | Мини-курс «5 дней системного саморазвития с ИИ» | [LM-06](LM-06-mini-kurs-5-dney.md) | черновик |
+| ЛМ-9 | Что мешает навыку прижиться: карта из 4 узлов и 14 настроек | [LM-09](LM-09-chto-meshaet-navyku-prizhitsya.md) | черновик |
 
 ### Класс B — реляционные (свои / калибр N+1)
 
