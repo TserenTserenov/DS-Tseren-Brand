@@ -1179,6 +1179,58 @@ topics:
     channels: {}
     notes: "Из бэклога content-plan.md."
 
+  - id: "C-022"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Мысль рождается в момент, когда вы её пишете, а не до"
+    why_now: "живой кейс участника практикума ЛР (занятие 3, 06.07): голосовые заметки на ходу через ИИ, ведущий явно выделил инсайт как ключевой"
+    status: written
+    draft_path: "content/video/2026-07-07-zametka-eto-process.md"
+    channels: {}
+    notes: "Источник: DS-my-strategy/inbox/WP-245/WP-245-zanyatie3-transcript.md блок 5. Соседствует с C-видео «Заметка — это не знание» (2026-06-20), но другой механизм: там артефакт vs знание, здесь — письмо как акт создания мысли, не выгрузка готовой."
+
+  - id: "C-023"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I3
+    type: T3
+    hook: "Мозг не может не есть информацию — может только выбирать, чем кормить"
+    why_now: "гипотеза участника (predictive processing) с занятия 3 практикума ЛР, хорошо ложится на тему управления вниманием"
+    status: written
+    draft_path: "content/video/2026-07-07-mozg-mashina-predskazaniy.md"
+    channels: {}
+    notes: "Источник: WP-245-zanyatie3-transcript.md блок 7-8."
+
+  - id: "C-024"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I3
+    type: T3
+    hook: "Гранит науки варите как борщ"
+    why_now: "метафора участника занятия 3 практикума ЛР для порядка работы с разной по сложности литературой"
+    status: written
+    draft_path: "content/video/2026-07-07-granit-nauki-borsch.md"
+    channels: {}
+    notes: "Источник: WP-245-zanyatie3-transcript.md блок 10."
+
+  - id: "C-025"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I3
+    type: T3
+    hook: "Чтобы водить машину, не обязательно разбираться в двигателе"
+    why_now: "аналогия ведущего на занятии 3 практикума ЛР — снимает у участников тревогу «должен разобраться в FPF изнутри»"
+    status: written
+    draft_path: "content/video/2026-07-07-dvigatel-fpf.md"
+    channels: {}
+    notes: "Источник: WP-245-zanyatie3-transcript.md блок 15."
+
 # Example entry (schema reference):
 # - id: C-NNN
 #   proposed: YYYY-MM-DD       # date agent proposed
