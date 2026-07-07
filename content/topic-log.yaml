@@ -1129,16 +1129,18 @@ topics:
 
   - id: "C-018"
     proposed: 2026-07-06
-    accepted: null
+    accepted: 2026-07-07
     area: O6
     hypostasis: I6
     type: T1
     hook: "Созидательная мощь = человеческий интеллект × ИИ"
     why_now: ""
-    status: proposed
-    draft_path: null
-    channels: {}
-    notes: "Из бэклога content-plan.md. Опорная формулировка → PD.IC.003, positioning.md."
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/13-07-2026-07-07-creative-power-formula/"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Опорная формулировка → PD.IC.003, positioning.md. Пост ПН недели W29 (РП167)."
 
   - id: "C-019"
     proposed: 2026-07-06
@@ -1155,29 +1157,33 @@ topics:
 
   - id: "C-020"
     proposed: 2026-07-06
-    accepted: null
+    accepted: 2026-07-07
     area: O3
     hypostasis: I1
     type: T1
     hook: "Что я понял о России, живя два месяца в тропиках"
     why_now: ""
-    status: proposed
-    draft_path: null
-    channels: {}
-    notes: "Из бэклога content-plan.md."
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/15-07-2026-07-07-russia-from-tropics/"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Пост СР недели W29 (РП167). Содержит {СОБСТВЕННЫЙ ПРИМЕР} - агент не выдумывал личные наблюдения о России (правило exocortex/user_tseren_personal_life.md), нужны 2-3 факта от пилота перед status: ready."
 
   - id: "C-021"
     proposed: 2026-07-06
-    accepted: null
+    accepted: 2026-07-07
     area: O2
     hypostasis: I2
     type: T1
     hook: "Как я отслеживаю тренировки с ИИ: что стало видно"
     why_now: ""
-    status: proposed
-    draft_path: null
-    channels: {}
-    notes: "Из бэклога content-plan.md."
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/14-07-2026-07-07-ai-health-data-pipeline/"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "3-й свободный пост W29 (РП167). Опирается на подтверждённые факты профиля (сон 93%, отжимания между помидорками) + коммит f433751 (health-sync pipeline) - фактов не выдумывал."
 
   - id: "C-022"
     proposed: 2026-07-07
@@ -1230,6 +1236,71 @@ topics:
     draft_path: "content/video/2026-07-07-dvigatel-fpf.md"
     channels: {}
     notes: "Источник: WP-245-zanyatie3-transcript.md блок 15."
+
+  - id: "C-026"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Внимание - точка старта"
+    why_now: "старт второй волны марафона систематичности 8 июля 2026, первые две недели - управление вниманием (РП167, видео-неделя W29)"
+    status: written
+    draft_path: "content/video/2026-07-07-vnimanie-tochka-starta.md"
+    channels: {}
+    notes: "Ролик №29. Переформулирован по правке пилота 07.07 - польза не в «что мы делали», а в самом навыке фокуса как точке старта изменений."
+
+  - id: "C-027"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I3
+    type: T3
+    hook: "Пак - это не сфера, а фокус"
+    why_now: "занятие 3 практикума ЛР (06.07.26), блок 4 - критерий «нужен ли пак»"
+    status: written
+    draft_path: "content/video/2026-07-07-pak-eto-fokus.md"
+    channels: {}
+    notes: "Ролик №30. Переформулирован по правке пилота 07.07 - пак как ежедневная работа по сбору опыта в структуру, навык + культура, а не разовая настройка."
+
+  - id: "C-028"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Чтение бывает разным"
+    why_now: "занятие 3 практикума ЛР (06.07.26), блоки 10-11 - типы литературы и скорочтение vs медленное чтение"
+    status: written
+    draft_path: "content/video/2026-07-07-chtenie-byvaet-raznym.md"
+    channels: {}
+    notes: "Ролик №31. По правке пилота 07.07 - явно показывает разницу методов чтения, метод под задачу."
+
+  - id: "C-029"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O5
+    hypostasis: I3
+    type: T3
+    hook: "Почему рано делать агента-роль"
+    why_now: "занятие 3 практикума ЛР (06.07.26), блок 2 - кейс участника с ролью агента-стратега"
+    status: written
+    draft_path: "content/video/2026-07-07-rano-delat-agenta-rol.md"
+    channels: {}
+    notes: "Ролик №32. Источник: WP-245-zanyatie3-transcript.md блок 2."
+
+  - id: "C-030"
+    proposed: 2026-07-07
+    accepted: 2026-07-07
+    area: O1
+    hypostasis: I1
+    type: T3
+    hook: "Голосовые заметки вместо потерянной мысли"
+    why_now: "занятие 3 практикума ЛР (06.07.26), блок 4 - кейс участника с голосовыми заметками"
+    status: written
+    draft_path: "content/video/2026-07-07-golosovye-zametki.md"
+    channels: {}
+    notes: "Ролик №33. Источник: WP-245-zanyatie3-transcript.md блок 4 (обезличенный кейс)."
 
 # Example entry (schema reference):
 # - id: C-NNN
