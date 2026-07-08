@@ -293,6 +293,23 @@ topics:
       telegram: {url: null, published_at: null}
     notes: "Название «Телеметрия мастерства» выбрал пилот 06.07. Правки пилота внесены: семейства методов лаборатории (выявление/измерение/воздействие/калибровка/поверка), сообщество как мера публичности реформатора, деградация-техосмотр. Черновик-исходник: DS-Tseren-Brand/content/posts/D-064-doer-dashboard.md. Обложки нет (скрипт generate_post_image.py в репо отсутствует)."
 
+  - id: "C-031"
+    proposed: 2026-07-08
+    accepted: 2026-07-08
+    area: O4
+    hypostasis: I4
+    type: T1
+    hook: "Диагноз прежде рецепта"
+    why_now: "Прямое поручение пилота 08.07: связать карту 14 настроек навыка (C-015) с моделью хаос/тупик/поворот/развитие (D.155), которую нашли в рабочей сессии WP-151/WP-330 (гипотеза, не Pack-факт)."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-065-diagnoz-do-nastroyki.md"
+    also:
+      - {type: reference, path: "DS-my-strategy/inbox/WP-151/characteristics-by-state-draft.md", note: "§1.1a — источник связки, гипотеза rung-1"}
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Название не выбрано пилотом — 5 вариантов в title_options черновика. Личный пример в тексте оставлен плейсхолдером {СОБСТВЕННЫЙ ПРИМЕР} — агент не выдумывал факты пилота. Продолжает C-015, не дублирует: там каталог настроек, здесь диагностика состояния перед выбором настройки."
+
   - id: "D-001"
     proposed: 2026-02-28
     accepted: 2026-02-28
