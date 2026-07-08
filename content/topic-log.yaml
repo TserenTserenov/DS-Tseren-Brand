@@ -299,16 +299,17 @@ topics:
     area: O4
     hypostasis: I4
     type: T1
-    hook: "Диагноз прежде рецепта"
+    hook: "Хаос, тупик, поворот: с чего лечить навык"
     why_now: "Прямое поручение пилота 08.07: связать карту 14 настроек навыка (C-015) с моделью хаос/тупик/поворот/развитие (D.155), которую нашли в рабочей сессии WP-151/WP-330 (гипотеза, не Pack-факт)."
     status: written
-    draft_path: "DS-Tseren-Brand/content/posts/D-065-diagnoz-do-nastroyki.md"
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/18-07-2026-07-08-haos-tupik-povorot-lechenie-navyka/18-07-1-club-2026-07-08.md"
     also:
+      - {type: draft-source, path: "DS-Tseren-Brand/content/posts/D-065-diagnoz-do-nastroyki.md", status: superseded-by-KI}
       - {type: reference, path: "DS-my-strategy/inbox/WP-151/characteristics-by-state-draft.md", note: "§1.1a — источник связки, гипотеза rung-1"}
     channels:
       club: {url: null, published_at: null}
       telegram: {url: null, published_at: null}
-    notes: "Название не выбрано пилотом — 5 вариантов в title_options черновика. Личный пример в тексте оставлен плейсхолдером {СОБСТВЕННЫЙ ПРИМЕР} — агент не выдумывал факты пилота. Продолжает C-015, не дублирует: там каталог настроек, здесь диагностика состояния перед выбором настройки."
+    notes: "Название выбрано пилотом 08.07: «Хаос, тупик, поворот: с чего лечить навык». Опубликовано в гит (KI-версия, status: draft — не ready, публикатор не подхватит). Личный пример в тексте оставлен плейсхолдером {СОБСТВЕННЫЙ ПРИМЕР} — агент не выдумывал факты пилота, без заполнения в ready переводить нельзя. Продолжает C-015, не дублирует: там каталог настроек, здесь диагностика состояния перед выбором настройки."
 
   - id: "D-001"
     proposed: 2026-02-28
