@@ -1402,6 +1402,22 @@ topics:
     channels: {}
     notes: "Ролик №33. Источник: WP-245-zanyatie3-transcript.md блок 4 (обезличенный кейс)."
 
+  - id: "C-038"
+    proposed: 2026-07-10
+    accepted: 2026-07-10
+    area: O4
+    hypostasis: I2
+    type: T2
+    hook: "Медитация качает внимание, но не учит им пользоваться"
+    why_now: "прямое задание пилота 10.07.26 - авторский текст про медитацию vs собранность, адаптация под 4 канала (club, telegram, tenchat, video)"
+    status: written
+    draft_path: "../DS-Knowledge-Index-Tseren/docs/2026/06-июль/21-07-2026-07-10-meditation-vs-collectedness/21-07-1-club-2026-07-10.md"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+      tenchat: {url: null, published_at: null}
+    notes: "Видео-адаптация: content/video/2026-07-10-meditatsiya-eto-zhim-lyozha.md. Все 4 файла status: draft, ждут согласования пилота."
+
 # Example entry (schema reference):
 # - id: C-NNN
 #   proposed: YYYY-MM-DD       # date agent proposed
