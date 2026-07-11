@@ -54,3 +54,4 @@
 - **Темы:** `profile/08-content-themes.md`, `content/topic-log.yaml`
 - **Публикации:** `DS-Knowledge-Index-Tseren/docs/`
 - **Стратегия:** `~/IWE/DS-my-strategy/inbox/WP-442/WP-442.md` (WP-167 контент-пайплайн, WP-433 видео)
+- **Для кого пишем/снимаем (профессиональный портрет, не голос):** карта целевых аудиторий экосистемы (РП471) — `DS-ecosystem-development/A.Systems-Builder/A1.Teams-and-Communities/A1.1.Meaning/1.1.2. Marketing/Целевые аудитории 1.1.md`. `style/post.md` и `style/video.md` задают ГОЛОС (не меняется); карта задаёт, каким ТОНОМ и для какого профессионального адресата конкретный текст/видео.
