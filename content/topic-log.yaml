@@ -37,6 +37,12 @@
 # To add: agent appends entry below, updates status in-place when pilot responds
 # Manual request: ask agent for topics → agent reads context + this file, proposes 3-5 options
 # URL auto-fill: at Week Close agent searches web for published posts with null url fields
+#
+# brief: (опционально, WP-480) — заполняется агентом в момент proposed → accepted, если
+#        карта ЦА / SA.CAT.001 дают уверенное совпадение. Отсутствие blока не блокирует написание.
+#   audience: ["A1"]           # код(ы) сегмента из карты ЦА (DS-ecosystem-development/.../audiences/)
+#   productive_meme: "P-NNN"   # мем для посадки, из SA.CAT.001 (PACK-systems-art)
+#   unproductive_meme: "M-NNN" # мем для разбора/антитезиса, из SA.CAT.001 (опционально)
 
 topics:
   - id: C-001
