@@ -1424,6 +1424,37 @@ topics:
       tenchat: {url: null, published_at: null}
     notes: "Видео-адаптация: content/video/2026-07-10-meditatsiya-eto-zhim-lyozha.md. Все 4 файла status: draft, ждут согласования пилота."
 
+  - id: "C-040"
+    proposed: 2026-07-14
+    accepted: 2026-07-14
+    area: O4
+    hypostasis: I3
+    type: T1
+    hook: "Раздавленный жук: чему меня научила прогулка с кофе"
+    why_now: "резидентура 13.07.26: разбор мимолётной заметки участника про жука — внимание (1 квадрант), ВДВ, смена среды, заметка как обратная связь"
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-066-zhuk-i-smena-sredy.md"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Черновик D-066. Источник: транскрипт-обработанный резидентуры 13.07.26, §5-6. Возможная видео-адаптация (притча). Ждёт согласования пилота."
+
+  - id: "C-041"
+    proposed: 2026-07-14
+    accepted: 2026-07-14
+    area: O5
+    hypostasis: I4
+    type: T1
+    hook: "Сто долларов в день: реальная цена рабочего дня с ИИ"
+    why_now: "резидентура 13.07.26: замер пилота по API ($100/день), кейс участника с недельным лимитом, ночные РП Kimi, авто-открытие дня"
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-067-sto-dollarov-v-den.md"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+      linkedin: {url: null, published_at: null}
+    notes: "Черновик D-067. Источник: транскрипт-обработанный резидентуры 13.07.26, §1, §10, §13. Ждёт согласования пилота."
+
 # Example entry (schema reference):
 # - id: C-NNN
 #   proposed: YYYY-MM-DD       # date agent proposed
