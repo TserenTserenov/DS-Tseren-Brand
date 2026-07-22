@@ -348,16 +348,18 @@ topics:
 
   - id: "C-034"
     proposed: 2026-07-09
-    accepted: null
+    accepted: 2026-07-22
     area: O5
     hypostasis: I3
     type: T1
     hook: "$165 тысяч в токенах против года работы трёх инженеров — что кейс Bun→Rust говорит о роли человека при масштабировании ИИ"
     why_now: "Fable разобрал bun.com/blog/bun-in-rust (09.07.26): 64 агента, 11 дней, автор не исчез из контура — живой кейс экзоскелета (не автопилота, D-007); контраст цифр сам по себе хук"
-    status: proposed
-    draft_path: null
-    channels: {}
-    notes: "Источник: заключение Fable пилоту 09.07.2026, разбор bun.com/blog/bun-in-rust. Методологический угол (adversarial review, «чини процесс, а не код») разбирается отдельно в WP-448 (раздел «Кандидаты из разбора Bun→Rust») — этот пункт только контентный angle тезиса экзоскелета. Не начато."
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/46-07-2026-07-22-bun-rust-exoskeleton-case/"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Источник: заключение Fable пилоту 09.07.2026, разбор bun.com/blog/bun-in-rust. Методологический угол (adversarial review, «чини процесс, а не код») разбирается отдельно в WP-448 (раздел «Кандидаты из разбора Bun→Rust») — этот пункт только контентный angle тезиса экзоскелета. Дедуп 22.07 пройден против всего docs/ (grep Bun/Rust) — пересечений нет, свежая тема. Написан 22.07 в рамках РП167 (запрос пилота на 3 новых поста), club+telegram, status draft, ждёт вычитки пилота."
 
   - id: "C-035"
     proposed: 2026-07-09
@@ -1209,29 +1211,33 @@ topics:
 
   - id: "C-039"
     proposed: 2026-07-06
-    accepted: null
+    accepted: 2026-07-22
     area: O5
     hypostasis: I5
     type: T1
     hook: "Как строить, когда живёшь на три часовых пояса сразу"
     why_now: ""
-    status: proposed
-    draft_path: null
-    channels: {}
-    notes: "Из бэклога content-plan.md (свёрнут сюда 2026-07-06). Было C-016 - id совпадал с «Телеметрия мастерства» (дубль-коллизия найдена и исправлена 11.07.26 при дедуп-проверке занятия 2 марафона)."
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/48-07-2026-07-22-building-across-three-timezones/"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Из бэклога content-plan.md (свёрнут сюда 2026-07-06). Было C-016 - id совпадал с «Телеметрия мастерства» (дубль-коллизия найдена и исправлена 11.07.26 при дедуп-проверке занятия 2 марафона). Три пояса подтверждены пилотом 22.07: Кипр (база), Малайзия (поездки ~2 мес/год, +8ч), команда/клиенты в России (тот же пояс, что Кипр). Дедуп 22.07 пройден против всего docs/ — пересечений нет. Написан 22.07 в рамках РП167 (запрос пилота на 3 новых поста), club+telegram, status draft, ждёт вычитки пилота."
 
   - id: "C-017"
     proposed: 2026-07-06
-    accepted: null
+    accepted: 2026-07-22
     area: O5
     hypostasis: I5
     type: T1
     hook: "ИИ как третий участник нашей команды: что изменилось"
     why_now: ""
-    status: proposed
-    draft_path: null
-    channels: {}
-    notes: "Из бэклога content-plan.md. Смежно с C-018 (та же формула PD.IC.003), но другой ракурс: командная динамика, не тезис визионера."
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/47-07-2026-07-22-ai-as-third-teammate/"
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+    notes: "Из бэклога content-plan.md. Смежно с C-018 (та же формула PD.IC.003), но другой ракурс: командная динамика, не тезис визионера. Дедуп 22.07 нашёл частичное пересечение с постом #150 (09-05-2026-05-22-ai-team-peer-agents, «команда из двух ИИ-агентов Клод+Кими») — не дубль: там архитектура диалога одного человека с двумя своими инструментами (протокол, права записи), здесь — что происходит с командой ИЗ НЕСКОЛЬКИХ ЛЮДЕЙ, когда у каждого свой ИИ-партнёр; явное разграничение вписано в текст. Написан 22.07 в рамках РП167 (запрос пилота на 3 новых поста), club+telegram, status draft, ждёт вычитки пилота."
 
   - id: "C-018"
     proposed: 2026-07-06
