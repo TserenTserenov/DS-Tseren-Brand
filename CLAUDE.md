@@ -8,7 +8,7 @@
 | Директория | Содержание |
 |------------|------------|
 | `style/` | Каноны стиля: `post.md` — посты/эссе; `video.md` — короткие видео; `README.md` |
-| `content/drafts/` | Черновики постов D-NNN + `draft-list.md` (реестр) + `archive/` + `assets/` |
+| `content/posts/` | Черновики постов D-NNN + `archive/` + `assets/` (реестр — `content/topic-log.yaml`) |
 | `content/video/` | Видео-пайплайн: сценарии-черновики прямо в `video/` (без подпапки), `in-progress/`, `done/`, `как-снимать.md` |
 | `content/templates/` | Шаблоны для написания контента |
 | `content/topic-log.yaml` | Реестр тем C-NNN: статусы idea → accepted → written → published |
@@ -32,10 +32,10 @@
 - Файл попал в Knowledge Index → он уже `ready`, черновиков в KI нет
 
 ### Черновики постов D-NNN
-- Дом черновиков: `content/drafts/` (SoT)
+- Дом черновиков: `content/posts/` (SoT)
 - DS-my-strategy/drafts/ → deprecated (README указывает сюда)
 - Номерация непрерывная: следующий = `D-<max+1>`
-- Реестр: `content/drafts/draft-list.md`
+- Реестр: `content/topic-log.yaml`
 
 ### Видео-пайплайн
 - Идеи: файлы прямо в `content/video/` (статус `draft`), без подпапки `ideas/`
