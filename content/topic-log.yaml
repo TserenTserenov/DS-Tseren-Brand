@@ -1875,7 +1875,7 @@ topics:
     also: [{type: T3, path: "DS-Tseren-Brand/content/video/2026-07-25-subjekt-ili-objekt.md", status: written}]
     hook: "Ты субъект или объект? Тест на четыре вопроса"
     why_now: "Готовый авторский текст в чате 25.07.26 (эссе субъект/объект, роль как назначение извне, 4 диагностических вопроса); перед написанием пилот попросил сверить онтологию с FPF."
-    status: written
+    status: ready
     draft_path: "DS-Knowledge-Index-Tseren/docs/2026/06-июль/50-07-2026-07-25-subject-or-object-meta-position-on-roles/50-07-1-club-2026-07-25.md"
     channels:
       club: {url: null, published_at: null}
