@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="560" fill="#fafafa" rx="12"/>
+
+  <text x="400" y="45" text-anchor="middle" font-size="23" font-weight="700" fill="#0f172a">Три потока, один бак</text>
+  <text x="400" y="68" text-anchor="middle" font-size="13" fill="#64748b">энергия — не третий поток, а топливо для двух остальных</text>
+  <line x1="60" y1="86" x2="740" y2="86" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- two pipe destinations -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="120" width="260" height="90" rx="14" fill="#2563eb"/>
+    <text x="220" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ВНЕШНИЕ ПРОДУКТЫ</text>
+    <text x="220" y="177" text-anchor="middle" font-size="11" fill="#bfdbfe">заметки, публикации, отчёты</text>
+    <text x="220" y="194" text-anchor="middle" font-size="11" fill="#bfdbfe">то, что готов принять мир</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="450" y="120" width="260" height="90" rx="14" fill="#7c3aed"/>
+    <text x="580" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ВНУТРЕННЯЯ ИНФОРМАЦИЯ</text>
+    <text x="580" y="172" text-anchor="middle" font-size="11" fill="#e9d5ff">знания → мировоззрение</text>
+    <text x="580" y="189" text-anchor="middle" font-size="11" fill="#e9d5ff">события → воспоминания</text>
+  </g>
+
+  <!-- pipes from tank -->
+  <path d="M 400 340 C 300 300, 260 260, 220 210" fill="none" stroke="#cbd5e1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 400 340 C 500 300, 540 260, 580 210" fill="none" stroke="#cbd5e1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 400 340 C 300 300, 260 260, 225 215" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M 400 340 C 500 300, 540 260, 575 215" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- fuel tank -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="340" width="200" height="130" rx="16" fill="#ea580c"/>
+    <rect x="370" y="325" width="60" height="20" rx="6" fill="#ea580c"/>
+    <text x="400" y="378" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ТОПЛИВО</text>
+    <text x="400" y="397" text-anchor="middle" font-size="11" fill="#fed7aa">энергия: сон, движение,</text>
+    <text x="400" y="413" text-anchor="middle" font-size="11" fill="#fed7aa">паузы без экрана</text>
+    <text x="400" y="437" text-anchor="middle" font-size="10" fill="#ffedd5" font-style="italic">бак пуст —</text>
+    <text x="400" y="451" text-anchor="middle" font-size="10" fill="#ffedd5" font-style="italic">трубы чинить бессмысленно</text>
+  </g>
+
+  <!-- gauge -->
+  <g transform="translate(650,395)">
+    <circle r="34" fill="#ffffff" stroke="#ea580c" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="-4" text-anchor="middle" font-size="10" fill="#ea580c" font-weight="700">датчик</text>
+    <text x="0" y="12" text-anchor="middle" font-size="10" fill="#ea580c" font-weight="700">бака</text>
+  </g>
+  <path d="M 500 400 L 612 397" fill="none" stroke="#fdba74" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <rect x="60" y="490" width="680" height="50" rx="10" fill="#0f172a"/>
+  <text x="400" y="521" text-anchor="middle" font-size="13" fill="#ffffff">Прежде чем чинить трубу дел или трубу знаний — проверьте, не пуст ли бак</text>
+</svg>

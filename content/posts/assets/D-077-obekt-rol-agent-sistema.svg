@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="560" fill="#fafafa" rx="12"/>
+
+  <text x="450" y="45" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a">Объект, роль, агент, система</text>
+  <text x="450" y="68" text-anchor="middle" font-size="13" fill="#64748b">четыре разных среза одного и того же</text>
+  <line x1="60" y1="86" x2="840" y2="86" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- 4 concept cards -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="110" width="190" height="150" rx="12" fill="#ffffff"/>
+    <rect x="60" y="110" width="190" height="42" rx="12" fill="#2563eb"/>
+    <rect x="60" y="140" width="190" height="12" fill="#2563eb"/>
+    <text x="155" y="137" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ОБЪЕКТ</text>
+    <text x="155" y="180" text-anchor="middle" font-size="12" fill="#1e293b">то, что существует —</text>
+    <text x="155" y="197" text-anchor="middle" font-size="12" fill="#1e293b">человек, камень, лист</text>
+    <text x="155" y="230" text-anchor="middle" font-size="11" fill="#2563eb" font-style="italic">не меняется от контекста</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="270" y="110" width="190" height="150" rx="12" fill="#ffffff"/>
+    <rect x="270" y="110" width="190" height="42" rx="12" fill="#7c3aed"/>
+    <rect x="270" y="140" width="190" height="12" fill="#7c3aed"/>
+    <text x="365" y="137" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">РОЛЬ</text>
+    <text x="365" y="172" text-anchor="middle" font-size="12" fill="#1e293b">название объекта</text>
+    <text x="365" y="189" text-anchor="middle" font-size="12" fill="#1e293b">в конкретном контексте,</text>
+    <text x="365" y="206" text-anchor="middle" font-size="12" fill="#1e293b">по поведению</text>
+    <text x="365" y="230" text-anchor="middle" font-size="11" fill="#7c3aed" font-style="italic">камень = молоток здесь</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="480" y="110" width="190" height="150" rx="12" fill="#ffffff"/>
+    <rect x="480" y="110" width="190" height="42" rx="12" fill="#059669"/>
+    <rect x="480" y="140" width="190" height="12" fill="#059669"/>
+    <text x="575" y="137" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">АГЕНТ</text>
+    <text x="575" y="180" text-anchor="middle" font-size="12" fill="#1e293b">объект, способный</text>
+    <text x="575" y="197" text-anchor="middle" font-size="12" fill="#1e293b">действовать</text>
+    <text x="575" y="230" text-anchor="middle" font-size="11" fill="#059669" font-style="italic">не любой объект — агент</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="690" y="110" width="150" height="150" rx="12" fill="#ffffff"/>
+    <rect x="690" y="110" width="150" height="42" rx="12" fill="#ea580c"/>
+    <rect x="690" y="140" width="150" height="12" fill="#ea580c"/>
+    <text x="765" y="137" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">СИСТЕМА</text>
+    <text x="765" y="180" text-anchor="middle" font-size="12" fill="#1e293b">взгляд через</text>
+    <text x="765" y="197" text-anchor="middle" font-size="12" fill="#1e293b">устройство и связи</text>
+    <text x="765" y="230" text-anchor="middle" font-size="11" fill="#ea580c" font-style="italic">не сам объект</text>
+  </g>
+
+  <!-- example: rock -> hammer -->
+  <text x="450" y="300" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Пример смены роли без смены объекта</text>
+
+  <g filter="url(#shadow)">
+    <circle cx="330" cy="370" r="42" fill="#64748b"/>
+    <text x="330" y="376" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">камень</text>
+  </g>
+
+  <path d="M 380 370 L 500 370" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="440" y="358" text-anchor="middle" font-size="11" fill="#64748b" font-style="italic">забили гвоздь</text>
+
+  <g filter="url(#shadow)">
+    <rect x="510" y="335" width="180" height="70" rx="14" fill="#7c3aed"/>
+    <text x="600" y="365" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">роль: молоток</text>
+    <text x="600" y="385" text-anchor="middle" font-size="11" fill="#e9d5ff">объект тот же — камень</text>
+  </g>
+
+  <!-- second example: human -->
+  <g filter="url(#shadow)">
+    <circle cx="330" cy="470" r="42" fill="#64748b"/>
+    <text x="330" y="476" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">человек</text>
+  </g>
+  <path d="M 380 470 L 500 470" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="510" y="440" width="270" height="60" rx="14" fill="#2563eb"/>
+    <text x="645" y="465" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">пилот, отец, пассажир —</text>
+    <text x="645" y="483" text-anchor="middle" font-size="11" fill="#bfdbfe">разные роли, один и тот же человек</text>
+  </g>
+
+  <text x="450" y="540" text-anchor="middle" font-size="12" fill="#94a3b8">«Москва — город» точно; «Москва — незабываемые ночи» — подмена объекта впечатлением</text>
+</svg>
