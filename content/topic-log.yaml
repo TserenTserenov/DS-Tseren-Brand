@@ -2544,3 +2544,68 @@ topics:
     channels:
       telegram: {url: null, published_at: null}
     notes: "Полный текст для суфлёра; 45–60 секунд."
+
+  - id: "C-113"
+    proposed: 2026-08-08
+    area: O5
+    hypostasis: I4
+    type: T3
+    hook: "Найдите себя на лестнице"
+    why_now: "Вступительное слово семинара IWE 08.08.2026: четыре уровня работы с ИИ как самодиагностика точки старта."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-08-naydite-sebya-na-lestnitse.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Полный текст для суфлёра; 55–70 секунд; stage предложение, ждёт одобрения пилота. Дедуп: C-105 (что остаётся после чата) и C-107 (граница 3/4 как организация) — другой урок: точка старта, уровни вбирают друг друга."
+
+  - id: "C-114"
+    proposed: 2026-08-08
+    area: O6
+    hypostasis: I6
+    type: T3
+    hook: "Можно хотеть больше"
+    why_now: "Вступительное слово семинара IWE 08.08.2026: у смелых замыслов впервые появилась рабочая сила для воплощения."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-08-mozhno-khotet-bolshe.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Полный текст для суфлёра; 50–65 секунд; stage предложение, ждёт одобрения пилота. Дедуп: C-014 «Зачем я строю IWE» (миссия автора) — здесь урок про планку желаний зрителя."
+
+  - id: "C-115"
+    proposed: 2026-08-08
+    area: O5
+    hypostasis: I2
+    type: T3
+    hook: "Один сценарий вместо десяти"
+    why_now: "Закрытие эфира семинара IWE 08.08.2026: три шага недели — одно место контекста, один сценарий до привычки, ритм."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-08-odin-stsenariy-vmesto-desyati.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Полный текст для суфлёра; 50–65 секунд; stage предложение, ждёт одобрения пилота. Дедуп: C-096/C-110 (границы доверия) и C-084 (производственный цикл) — здесь первый шаг новичка. Воронка на практикум 23.08."
+
+  - id: "C-116"
+    proposed: 2026-08-08
+    area: O4
+    hypostasis: I4
+    type: T3
+    hook: "Кто умнеет: вы или модель?"
+    why_now: "Вступительное слово семинара IWE 08.08.2026: на уровне 3 умнеет модель вендора, на уровне 4 — среда и сам человек."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-08-kto-umneet-vy-ili-model.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Полный текст для суфлёра; 50–65 секунд; stage предложение, ждёт одобрения пилота. Дедуп: C-107 (организация), C-112 (владение памятью), снятый ролик «экзоскелет или автопилот» (замена мышления) — здесь урок: кому достаётся накопленный опыт."
+
+  - id: "C-117"
+    proposed: 2026-08-08
+    area: O5
+    hypostasis: I5
+    type: T3
+    hook: "Дом не приезжает под ключ"
+    why_now: "Вступительное слово семинара IWE 08.08.2026: честные ожидания — основа собрана, быт настраивается, порог входа это привычки."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-08-dom-ne-priezzhaet-pod-klyuch.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Полный текст для суфлёра; 50–65 секунд; stage предложение, ждёт одобрения пилота. Дедуп: C-108 (кейс Дмитрия с результатами) и C-084 (цикл разработки) — здесь урок про ожидания при настройке среды."
