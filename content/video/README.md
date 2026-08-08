@@ -70,6 +70,21 @@
 
 </details>
 
+## Семинар IWE 08.08.2026 — утверждённые тексты
+
+> Отдельная утверждённая серия по материалам семинара «IWE для жизни и развития». Все карточки содержат полный текст для суфлёра; статус публикации пока не выставлен.
+
+| Тема | О | И | Формат | ИИ | Карточка |
+|------|---|---|--------|----|----------|
+| Справочная или дом? | О5 | И5 | РАЗВ | да | [spravochnaya-ili-dom](2026-08-08-spravochnaya-ili-dom.md) |
+| Деньги под матрасом | О5 | И5 | РАЗВ | да | [dengi-pod-matrasom](2026-08-08-dengi-pod-matrasom.md) |
+| Агент — ещё не среда | О5 | И3 | ОБЪ | да | [agent-eshche-ne-sreda](2026-08-08-agent-eshche-ne-sreda.md) |
+| Пять недель без магии | О1 | И2 | ИСТ | да | [pyat-nedel-bez-magii](2026-08-08-pyat-nedel-bez-magii.md) |
+| Карьера приходит сбоку | О5 | И2 | ИСТ | да | [karera-prikhodit-sboku](2026-08-08-karera-prikhodit-sboku.md) |
+| Не отдавайте ключи от сейфа | О5 | И3 | СОВ | да | [ne-otdavaite-klyuchi-ot-seifa](2026-08-08-ne-otdavaite-klyuchi-ot-seifa.md) |
+| Obsidian или GitHub? | О5 | И5 | РАЗВ | да | [obsidian-ili-github](2026-08-08-obsidian-ili-github.md) |
+| Кому принадлежит личность вашего ИИ? | О6 | И6 | РАЗВ | да | [komu-prinadlezhit-lichnost-ii](2026-08-08-komu-prinadlezhit-lichnost-ii.md) |
+
 ## Черновики — нужен сценарий — 5
 
 | Тема (рабочее) | О | И | Формат | Карточка |
