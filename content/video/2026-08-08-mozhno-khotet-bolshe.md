@@ -1,6 +1,6 @@
 ---
 title: "Можно хотеть больше"
-stage: предложение
+stage: утверждено
 status: draft
 created: 2026-08-08
 updated: 2026-08-08

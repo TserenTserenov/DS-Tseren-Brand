@@ -1,6 +1,6 @@
 ---
 title: "Один сценарий вместо десяти"
-stage: предложение
+stage: утверждено
 status: draft
 created: 2026-08-08
 updated: 2026-08-08
