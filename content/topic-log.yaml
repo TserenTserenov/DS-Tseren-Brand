@@ -2657,3 +2657,85 @@ topics:
     channels:
       club: {url: null, published_at: null}
     notes: "Пост №196, серия РП506, двухтактная рамка Переход→Постденежность. Содержание: Кейнс и прогноз 15-часовой недели (провалился по психологии — работа держит статус и идентичность, не только доход), переходный такт (клуб реставраторов мотоциклов, open source по ночам как слабый сигнал нормы), постденежное вознаграждение (доступ к редким ресурсам, репутация, право на ответственность — сегодняшний прообраз в профиле опытного разработчика open source), Иэн Бэнкс «Культура» (конкуренция за осмысленную работу без денег-посредника), ремесло/наука/искусство как образ жизни, новые роли (кураторы, хранители ремесла, распределители дефицита). Запись заведена задним числом 09.08 (РП-502, проход актуализации портфеля) — approve пилота и перевод status: ready в файле состоялись раньше записи в topic-log. Дедуп 09.08 по всему реестру (труд/зарплат/постденеж/безусловный доход/работа без денег) — совпадений по хуку не найдено; ближайший тематический сосед — сам C-119 (вторая половина той же фазы Ф4, время вместо труда), не дубль."
+
+  - id: "C-121"
+    proposed: 2026-08-09
+    accepted: 2026-08-09
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Выбор отрезает ветви"
+    why_now: "Занятие 8 практикума «Системное саморазвитие»: участники разбирали карьерный выбор не только по текущей выгоде, но и по закрываемым будущим возможностям."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-09-vybor-otrezaet-vetvi.md"
+    also:
+      - {type: T1, path: "DS-Tseren-Brand/content/posts/D-084-vybor-ne-tolko-priobretenie.md", status: written}
+    channels:
+      video: {url: null, published_at: null}
+      club: {url: null, published_at: null}
+    notes: "Усиливает существующий PD.PRINC.026, новую сущность пака не создаёт. Дедуп: видео «Что останется после смены работы» о переносимом мастерстве; здесь тест закрываемых ветвей. Реальные истории обезличены."
+
+  - id: "C-122"
+    proposed: 2026-08-09
+    accepted: 2026-08-09
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Фатальная ошибка: больше нечем пробовать снова"
+    why_now: "Занятие 8 практикума «Системное саморазвитие»: определение фатальной ошибки через разрушение базы и потерю возможности провести следующую итерацию."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-09-fatalnaya-oshibka.md"
+    also:
+      - {type: T1, path: "DS-Tseren-Brand/content/posts/D-085-fatalnaya-oshibka-pravo-na-sleduyushchuyu-popytku.md", status: written}
+    channels:
+      video: {url: null, published_at: null}
+      club: {url: null, published_at: null}
+    notes: "Дедуп: снятое видео «Рывок это ловушка» о перегрузке и устойчивом темпе; здесь сохранение основания для следующей пробы. Материал усиливает PD.PRINC.025."
+
+  - id: "C-123"
+    proposed: 2026-08-09
+    accepted: 2026-08-09
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Поиск работы как воронка"
+    why_now: "Занятие 8 практикума «Системное саморазвитие»: несколько отказов были переописаны как наблюдения на разных стадиях управляемой воронки."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-09-poisk-raboty-kak-voronka.md"
+    also:
+      - {type: T1, path: "DS-Tseren-Brand/content/posts/D-086-poisk-raboty-kak-voronka.md", status: written}
+    channels:
+      video: {url: null, published_at: null}
+      club: {url: null, published_at: null}
+    notes: "Не дублирует D-029: там сравнение кандидатов по использованию ИИ, здесь управление стадиями поиска и системная карта компании. Норматив конверсии не заявляется."
+
+  - id: "C-124"
+    proposed: 2026-08-09
+    accepted: 2026-08-09
+    area: O4
+    hypostasis: I3
+    type: T3
+    hook: "Инженерная проверка этики"
+    why_now: "Занятие 8 практикума «Системное саморазвитие»: этика разложена на четыре исполнимых хода от карты заинтересованных ролей до распределения последствий."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-09-inzhenernaya-proverka-etiki.md"
+    also:
+      - {type: T1, path: "DS-Tseren-Brand/content/posts/D-087-etichnoe-reshenie-ne-obyazano-nravitsya-vsem.md", status: written}
+    channels:
+      video: {url: null, published_at: null}
+      club: {url: null, published_at: null}
+    notes: "Четыре хода подаются как инженерная проверка, а не исчерпывающая теория этики. Исторические и политические примеры из занятия не используются. Усиливает PD.PRINC.023."
+
+  - id: "C-125"
+    proposed: 2026-08-09
+    accepted: 2026-08-09
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Ежедневно медленно: самый быстрый путь"
+    why_now: "Занятие 8 практикума «Системное саморазвитие»: рост описан как лестница из длинных плато, регулярных малых проб и редких скачков."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-08-09-ezhednevno-medlenno-samyy-bystryy-put.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Дедуп: видео «Дерево не растёт по расписанию» о нелинейности и запаздывающем результате; здесь урок о сохранении множества малых проб. Связка PD.PRINC.022 и PD.PRINC.025."
