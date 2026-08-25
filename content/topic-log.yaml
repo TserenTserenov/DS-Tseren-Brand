@@ -96,19 +96,19 @@ topics:
 
   - id: C-004
     proposed: 2026-06-28
-    accepted: null
+    accepted: 2026-08-25
     area: O4
     hypostasis: I2
     type: T1
     hook: "Работа и развитие в одном действии: как я перестал делить жизнь на «сейчас» и «потом»"
     why_now: "Только что дописал видео-сценарий с этим заголовком (DS-Tseren-Brand commit d2437d2). D-004 TameFlow-in-IWE истекает сегодня — концепция связана: поток как среда, где работа и развитие неотделимы. Живой опыт последних 36ч."
-    status: archived
-    draft_path: null
+    status: written
+    draft_path: "DS-Knowledge-Index-Tseren/docs/2026/05-август/39-08-2026-08-25-rabota-i-razvitie-v-odnom-deystvii/"
     channels:
       club: {url: null, published_at: null}
       linkedin: {url: null, published_at: null}
       telegram: {url: null, published_at: null}
-    notes: "Основная тема 2026-06-28. Не повтор C-003 (там режимы внимания; здесь — неразрывность труда и роста)."
+    notes: "Переоткрыта 2026-08-25 после уточнения позиционирования IWE. Не повтор C-003: там режимы внимания; здесь — неявное развитие внутри реальной работы. Публичная формула расширена с двух до трёх результатов: проект, человек, персональный IWE; инженерная модель PD.FORM.131 сохраняет четыре результата."
 
   - id: C-005
     proposed: 2026-06-28
