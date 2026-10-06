@@ -9,23 +9,25 @@ editorial_status = "draft"
 review_note = "English adaptation awaiting author review."
 +++
 
-I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different scales, from personal development practices to organisations and an ecosystem for intellectual development.
+I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different scales, a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development.
 
 Engineering concerns how these systems are designed and how they work. Management concerns how people organise their work together. Entrepreneurship concerns opportunities and the creation of value. Philosophy helps me examine the foundations of this work and its consequences for people and society.
 
-## What I am working on
+## Systems I build
 
-### Personal Development {#personal-development}
+### Person + AI environment: IWE {#person-ai}
 
-I created the Personal Development programme and lead workshops on systematic self-development. This work focuses on a person’s capabilities and practices: learning difficult things, changing how they work, and turning intentions into results.
+The first level is a person together with their AI environment as one system. I build this relationship so that people can think, learn, and act with their environment while retaining purpose, judgement, and authorship of their work. The Intelligent Working Environment (IWE) belongs at this level.
 
-### Workshop for Engineers and Managers {#workshop}
+The Personal Development programme and workshops on systematic self-development help people build the capabilities they bring to this system.
 
-I am a co-founder and leader of the Workshop for Engineers and Managers. My responsibilities include strategy, operations, teaching, and work with our community. At the organisational level, the task is to build the conditions in which people develop their craft and apply it in their own projects.
+### Organisation: Aisystant {#workshop}
 
-### Aisystant and IWE {#ecosystem}
+At the organisational level, I develop Aisystant for an international audience and the Workshop for Engineers and Managers for Russian-speaking audiences. I am a co-founder of Aisystant and a co-founder and leader of the Workshop. My work includes strategy, operations, product creation, teaching, and organising collaborative work.
 
-I co-founded the Aisystant platform. I am building an ecosystem for intellectual development that connects the Workshop, its community, and the Intelligent Working Environment (IWE). I am interested in how people and AI can work together to expand what a person can create while preserving their independence.
+### Community and ecosystem for intellectual development {#ecosystem}
+
+Our community brings together more than 13,000 people across more than 30 countries. I develop the community and ecosystem for intellectual development: connections between people, shared practice, and an environment in which participants develop their craft and build systems of their own.
 
 ## A philosophical horizon
 

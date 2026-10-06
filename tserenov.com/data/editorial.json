@@ -30,8 +30,8 @@
     "eyebrow": "Созидание · Инженерия · Менеджмент",
     "hero_first": "Создавать системы.",
     "hero_emphasis": "Менять мир.",
-    "intro": "Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на разных уровнях: от практик личного развития до организаций и экосистемы развития интеллекта. Здесь рассказываю, как устроена эта работа и какое будущее мы можем создавать.",
-    "read": "Что я создаю",
+    "intro": "Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на трёх уровнях: человек вместе с ИИ-средой, организация, сообщество и экосистема развития интеллекта. Здесь рассказываю, как устроена эта работа и какое будущее мы можем создавать.",
+    "read": "Мои системы",
     "about": "Обо мне",
     "hero_note": "Я убеждён: в истории ещё не было лучшего времени для созидания.",
     "portrait_caption": "Замысел. Система. Результат.",
@@ -51,13 +51,13 @@
         "path": "lifework/",
         "type": "Дело жизни",
         "title": "Каждый человек — созидатель",
-        "description": "Люди, организации и экосистема развития интеллекта: моё дело на долгий срок."
+        "description": "Человек вместе с ИИ-средой, организация, сообщество и экосистема: моё дело на долгий срок."
       },
       {
         "path": "about/",
         "type": "Личное",
         "title": "Чем я занимаюсь",
-        "description": "Программы, организация, платформа: мои роли и текущая работа."
+        "description": "Три системы, которые я создаю, и моя роль в каждой."
       },
       {
         "path": "video/",
@@ -106,27 +106,27 @@
     "contents": "В этом тексте",
     "review_notice": "",
     "home_short": "главная",
-    "work_label": "Что я создаю",
-    "work_title": "От человека до экосистемы.",
-    "work_intro": "В моей работе связаны несколько системных уровней. На каждом — свои задачи, участники и способы довести замысел до работающего результата.",
+    "work_label": "Мои системы",
+    "work_title": "Три уровня созидания.",
+    "work_intro": "Человек вместе с ИИ-средой, организация и сообщество — три связанные системы, которые я создаю и развиваю.",
     "work_link": "Подробнее о работе",
     "work_items": [
       {
-        "level": "Человек",
-        "title": "Личное развитие",
-        "description": "Создаю программу и веду практикумы, где человек осваивает способы развития и меняет собственную работу.",
-        "path": "about/#personal-development"
+        "level": "Человек + ИИ-среда",
+        "title": "Человек и IWE",
+        "description": "Создаю связку человека и ИИ-среды как единую систему. В ней IWE помогает человеку мыслить, учиться и действовать, сохраняя авторство своей работы.",
+        "path": "about/#person-ai"
       },
       {
-        "level": "Организация и сообщество",
-        "title": "Мастерская инженеров-менеджеров",
-        "description": "Сооснователь и руководитель. Отвечаю за стратегический и оперативный менеджмент, работаю с сообществом практиков.",
+        "level": "Организация",
+        "title": "Aisystant и Мастерская инженеров-менеджеров",
+        "description": "Развиваю организацию: Aisystant — для международной аудитории, Мастерская инженеров-менеджеров — для русскоязычной. Моя работа — стратегия, оперативный менеджмент и создание продуктов.",
         "path": "about/#workshop"
       },
       {
-        "level": "Экосистема",
-        "title": "Aisystant и IWE",
-        "description": "Сооснователь Aisystant. Строю экосистему развития интеллекта, в которой IWE становится рабочей средой человека и ИИ.",
+        "level": "Сообщество и экосистема",
+        "title": "Экосистема развития интеллекта",
+        "description": "Более 13 000 человек в более чем 30 странах. Развиваю сообщество и экосистему, которые связывают людей, совместную практику и среду для созидания.",
         "path": "about/#ecosystem"
       }
     ]
@@ -158,8 +158,8 @@
     "eyebrow": "Building · Engineering · Management",
     "hero_first": "Build systems.",
     "hero_emphasis": "Shape the future.",
-    "intro": "I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different scales, from personal development practices to organisations and an ecosystem for intellectual development. Here I share how that work takes shape and the future it can help create.",
-    "read": "What I build",
+    "intro": "I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at three levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development. Here I share how that work takes shape and the future it can help create.",
+    "read": "Systems I build",
     "about": "About me",
     "hero_note": "I believe there has never been a better time in history to build and create.",
     "portrait_caption": "Purpose. Systems. Results.",
@@ -171,7 +171,7 @@
       "path": "lifework/",
       "type": "Lifework",
       "title": "Building the capacity to create",
-      "description": "Connecting people, organisations, and tools in an ecosystem for intellectual development.",
+      "description": "A person with their AI environment, an organisation, and a community: three connected levels of my work.",
       "link_label": "Explore my lifework"
     },
     "selected": [
@@ -185,7 +185,7 @@
         "path": "about/",
         "type": "About",
         "title": "What I build",
-        "description": "My responsibilities across programmes, an organisation, and a platform."
+        "description": "The three systems I build and my role in each."
       }
     ],
     "lifework_title": "Today’s work. Civilisation’s future.",
@@ -210,27 +210,27 @@
     "contents": "On this page",
     "review_notice": "",
     "home_short": "home",
-    "work_label": "What I build",
-    "work_title": "From a person to an ecosystem.",
-    "work_intro": "My work connects several system levels. Each brings different responsibilities, people, and ways of turning an intention into something that works.",
+    "work_label": "Systems I build",
+    "work_title": "Three levels of building.",
+    "work_intro": "A person together with their AI environment, an organisation, and a community: three connected systems that I build and develop.",
     "work_link": "More about this work",
     "work_items": [
       {
-        "level": "The individual",
-        "title": "Personal Development",
-        "description": "I created the programme and lead workshops that help people develop their capabilities and change how they work.",
-        "path": "about/#personal-development"
+        "level": "Person + AI environment",
+        "title": "A person and IWE",
+        "description": "I build the person and their AI environment as one system. Within it, IWE helps people think, learn, and act while retaining authorship of their work.",
+        "path": "about/#person-ai"
       },
       {
-        "level": "Organisation and community",
-        "title": "Workshop for Engineers and Managers",
-        "description": "As a co-founder and leader, I work on strategy, operations, and a community of practitioners.",
+        "level": "Organisation",
+        "title": "Aisystant",
+        "description": "I develop the organisation as Aisystant for an international audience and the Workshop for Engineers and Managers for Russian-speaking audiences. My work spans strategy, operations, and product creation.",
         "path": "about/#workshop"
       },
       {
-        "level": "The ecosystem",
-        "title": "Aisystant and IWE",
-        "description": "I co-founded Aisystant and am building an ecosystem for intellectual development, with IWE as a working environment for people and AI.",
+        "level": "Community and ecosystem",
+        "title": "An ecosystem for intellectual development",
+        "description": "More than 13,000 people across more than 30 countries. I develop a community and ecosystem that connect people, shared practice, and an environment for building.",
         "path": "about/#ecosystem"
       }
     ]

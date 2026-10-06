@@ -1,6 +1,6 @@
 +++
 title = "Building the capacity to create"
-description = "People, organisations, and an ecosystem that expands what we can build."
+description = "A person with their AI environment, an organisation, and a community: three levels of my lifework."
 template = "page.html"
 [extra]
 category = "Lifework"
@@ -13,9 +13,13 @@ My lifework is to help people become creators: people who can take an intention 
 
 ## Building across system levels
 
-My work connects personal development, an organisation, and an ecosystem. The Personal Development programme, the Workshop for Engineers and Managers, Aisystant, and the Intelligent Working Environment (IWE) are parts of that work.
+The systems I build connect at three levels:
 
-Each level brings its own engineering, management, and entrepreneurial questions. The connections matter: what a person needs to work effectively, how an organisation supports that work, and what infrastructure helps it continue and develop.
+1. **Person + AI environment.** A person and their environment, including IWE, working and developing as one system while preserving human authorship.
+2. **Organisation.** Aisystant for international audiences and the Workshop for Engineers and Managers for Russian-speaking audiences: strategy, management, products, and collaborative work.
+3. **Community and ecosystem for intellectual development.** More than 13,000 people across more than 30 countries: people, shared practice, and an environment in which new systems can emerge.
+
+Each level brings its own engineering, management, and entrepreneurial questions. I am interested in how these systems support one another’s development.
 
 [Read about my projects and responsibilities](@/about.en.md).
 
@@ -35,6 +39,6 @@ These philosophical questions give my work a longer horizon. They prompt me to c
 
 Building requires systems thinking, engineering and management skills, and the ability to learn and work with others. I develop these capabilities in my own work and build environments that help others do so.
 
-AI is becoming part of those environments. I am interested in collaboration that expands a person’s ability to act while preserving their judgement, purpose, and responsibility.
+I treat a person together with their AI environment as a whole system. Its development should expand the person’s ability to act while preserving their judgement, purpose, and responsibility.
 
 The [adapted manifesto extract](@/library/manifesto.en.md) explores the role of intelligence in working on complex problems.

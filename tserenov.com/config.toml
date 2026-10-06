@@ -1,6 +1,6 @@
 base_url = "http://127.0.0.1:4420"
 title = "Церен Церенов"
-description = "Церен Церенов — инженер, менеджер, предприниматель и философ. Созидание систем: от личного развития до организаций и экосистем."
+description = "Церен Церенов — инженер, менеджер, предприниматель и философ. Созидание систем: человек вместе с ИИ-средой, организация, сообщество и экосистема развития интеллекта."
 default_language = "ru"
 compile_sass = false
 build_search_index = false
@@ -8,7 +8,7 @@ generate_sitemap = true
 
 [languages.en]
 title = "Tseren Tserenov"
-description = "Tseren Tserenov — engineer, manager, entrepreneur, and philosopher. Building systems, from personal practices to organisations and ecosystems."
+description = "Tseren Tserenov — engineer, manager, entrepreneur, and philosopher. Building systems: a person with their AI environment, an organisation, and a community and ecosystem for intellectual development."
 build_search_index = false
 
 [languages.xal]
