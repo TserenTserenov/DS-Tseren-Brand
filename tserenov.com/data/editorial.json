@@ -27,23 +27,23 @@
         "path": "video/"
       }
     ],
-    "eyebrow": "Системное мышление · Развитие · Созидание",
-    "hero_first": "Мыслить системно.",
+    "eyebrow": "Созидание · Инженерия · Менеджмент",
+    "hero_first": "Создавать системы.",
     "hero_emphasis": "Менять мир.",
-    "intro": "Я Церен Церенов. Пишу о системном мышлении и саморазвитии. Работаю над средой, в которой человек становится созидателем и сохраняет авторство своей жизни в эпоху ИИ.",
-    "read": "Начать с текстов",
+    "intro": "Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на разных уровнях: от практик личного развития до организаций и экосистемы развития интеллекта. Здесь рассказываю, как устроена эта работа и какое будущее мы можем создавать.",
+    "read": "Что я создаю",
     "about": "Обо мне",
-    "hero_note": "Идеи, которые становятся делом.",
-    "portrait_caption": "Мышление. Мастерство. Действие.",
-    "portrait_detail": "Автор · Практик",
-    "start": "С чего начать",
+    "hero_note": "Я убеждён: в истории ещё не было лучшего времени для созидания.",
+    "portrait_caption": "Замысел. Система. Результат.",
+    "portrait_detail": "Инженер · Менеджер · Предприниматель",
+    "start": "Опыт и идеи",
     "all_writing": "Все тексты",
     "read_article": "Читать",
     "feature": {
       "path": "library/manifesto/",
       "type": "Манифест",
       "title": "Манифест созидателя",
-      "description": "Почему развитие интеллекта становится условием осмысленного действия в сложном мире.",
+      "description": "О человеке, который берёт на себя работу по созданию будущего, и интеллекте, необходимом для этого.",
       "link_label": "Читать манифест"
     },
     "selected": [
@@ -51,13 +51,13 @@
         "path": "lifework/",
         "type": "Дело жизни",
         "title": "Каждый человек — созидатель",
-        "description": "Миссия, системное мировоззрение и среда развития."
+        "description": "Люди, организации и экосистема развития интеллекта: моё дело на долгий срок."
       },
       {
         "path": "about/",
         "type": "Личное",
         "title": "Чем я занимаюсь",
-        "description": "Системное мышление, книги и работа с сообществом."
+        "description": "Программы, организация, платформа: мои роли и текущая работа."
       },
       {
         "path": "video/",
@@ -66,13 +66,13 @@
         "description": "Запись вебинара и материалы для самостоятельной работы."
       }
     ],
-    "lifework_title": "Дело на длинный горизонт.",
-    "lifework_description": "Мы делаем каждого человека созидателем. Чтобы каждому досталась своя часть Вселенной. Здесь я собираю идеи и тексты, которые объясняют это дело.",
+    "lifework_title": "От сегодняшних дел — к будущему цивилизации.",
+    "lifework_description": "Мы делаем каждого человека созидателем. Чтобы каждому досталась своя часть Вселенной. Моё дело связано с развитием людей и создаваемых ими систем. Мой философский горизонт — развитие общества и цивилизации, фронтир науки и познание космоса.",
     "lifework_link": "Моё дело жизни",
     "video": {
       "label": "Видео и выступления",
-      "title": "От понимания\nк изменениям.",
-      "description": "Разговоры о системном мышлении, развитии и повседневной практике.",
+      "title": "Развитие\nв действии.",
+      "description": "Практикумы и разговоры о том, как менять собственную работу и осваивать мастерство созидателя.",
       "link_label": "Смотреть выступление",
       "card_text": "Как начать системные изменения себя"
     },
@@ -94,10 +94,10 @@
         "url": "https://systemsworld.club/u/tseren-tserenov/"
       }
     ],
-    "footer": "Системное мышление в жизни и работе.",
+    "footer": "Созидание систем. Инженерия. Менеджмент. Философия.",
     "library_eyebrow": "Библиотека",
-    "library_title": "Тексты и основные идеи",
-    "library_intro": "Начните с манифеста. Другие материалы будут добавляться по мере отбора и редактуры.",
+    "library_title": "О созидании систем",
+    "library_intro": "Практика инженерии и менеджмента, предпринимательство и философия развития. Начните с манифеста; разборы проектов будут добавляться по мере подготовки.",
     "search_label": "Найти материал в этой редакции",
     "search_placeholder": "Название или тема",
     "no_results": "Ничего не найдено. Попробуйте другое слово.",
@@ -105,7 +105,31 @@
     "original": "Первоисточник",
     "contents": "В этом тексте",
     "review_notice": "",
-    "home_short": "главная"
+    "home_short": "главная",
+    "work_label": "Что я создаю",
+    "work_title": "От человека до экосистемы.",
+    "work_intro": "В моей работе связаны несколько системных уровней. На каждом — свои задачи, участники и способы довести замысел до работающего результата.",
+    "work_link": "Подробнее о работе",
+    "work_items": [
+      {
+        "level": "Человек",
+        "title": "Личное развитие",
+        "description": "Создаю программу и веду практикумы, где человек осваивает способы развития и меняет собственную работу.",
+        "path": "about/#personal-development"
+      },
+      {
+        "level": "Организация и сообщество",
+        "title": "Мастерская инженеров-менеджеров",
+        "description": "Сооснователь и руководитель. Отвечаю за стратегический и оперативный менеджмент, работаю с сообществом практиков.",
+        "path": "about/#workshop"
+      },
+      {
+        "level": "Экосистема",
+        "title": "Aisystant и IWE",
+        "description": "Сооснователь Aisystant. Строю экосистему развития интеллекта, в которой IWE становится рабочей средой человека и ИИ.",
+        "path": "about/#ecosystem"
+      }
+    ]
   },
   "en": {
     "name": "Tseren Tserenov",
@@ -131,23 +155,23 @@
         "path": "lifework/"
       }
     ],
-    "eyebrow": "Systems thinking · Development · Agency",
-    "hero_first": "Think in systems.",
-    "hero_emphasis": "Build what matters.",
-    "intro": "I’m Tseren Tserenov. I write about systems thinking and personal development, and work on environments that help people think, act, and grow with AI.",
-    "read": "Explore the writing",
+    "eyebrow": "Building · Engineering · Management",
+    "hero_first": "Build systems.",
+    "hero_emphasis": "Shape the future.",
+    "intro": "I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different scales, from personal development practices to organisations and an ecosystem for intellectual development. Here I share how that work takes shape and the future it can help create.",
+    "read": "What I build",
     "about": "About me",
-    "hero_note": "A life’s work, one idea put into practice at a time.",
-    "portrait_caption": "Thinking. Practice. Agency.",
-    "portrait_detail": "Writer · Practitioner",
-    "start": "Selected writing",
+    "hero_note": "I believe there has never been a better time in history to build and create.",
+    "portrait_caption": "Purpose. Systems. Results.",
+    "portrait_detail": "Engineer · Manager · Entrepreneur",
+    "start": "Practice and ideas",
     "all_writing": "All writing",
     "read_article": "Read the essay",
     "feature": {
       "path": "lifework/",
       "type": "Lifework",
-      "title": "The work behind the ideas",
-      "description": "Developing the capacity to understand complex situations and take responsibility for changing them.",
+      "title": "Building the capacity to create",
+      "description": "Connecting people, organisations, and tools in an ecosystem for intellectual development.",
       "link_label": "Explore my lifework"
     },
     "selected": [
@@ -160,12 +184,12 @@
       {
         "path": "about/",
         "type": "About",
-        "title": "Systems thinking in practice",
-        "description": "My work, books, and the community behind them."
+        "title": "What I build",
+        "description": "My responsibilities across programmes, an organisation, and a platform."
       }
     ],
-    "lifework_title": "Development as a way of life.",
-    "lifework_description": "My work brings together systems thinking, personal development, and the environments that make sustained practice possible.",
+    "lifework_title": "Today’s work. Civilisation’s future.",
+    "lifework_description": "My work connects the development of people with the systems they create. My philosophical interests reach further: the future of society and civilisation, the frontiers of science, and our understanding and exploration of the cosmos.",
     "lifework_link": "Read about the work",
     "video": null,
     "socials": [
@@ -174,9 +198,9 @@
         "url": "mailto:tseren@system-school.ru"
       }
     ],
-    "footer": "Systems thinking for life and work.",
+    "footer": "Building systems. Engineering. Management. Philosophy.",
     "library_eyebrow": "Writing",
-    "library_title": "Ideas worth working on",
+    "library_title": "On building systems",
     "library_intro": "Selected English adaptations. This edition has its own reading list and publication schedule.",
     "search_label": "Find writing in this edition",
     "search_placeholder": "Title or topic",
@@ -185,7 +209,31 @@
     "original": "Russian original",
     "contents": "On this page",
     "review_notice": "",
-    "home_short": "home"
+    "home_short": "home",
+    "work_label": "What I build",
+    "work_title": "From a person to an ecosystem.",
+    "work_intro": "My work connects several system levels. Each brings different responsibilities, people, and ways of turning an intention into something that works.",
+    "work_link": "More about this work",
+    "work_items": [
+      {
+        "level": "The individual",
+        "title": "Personal Development",
+        "description": "I created the programme and lead workshops that help people develop their capabilities and change how they work.",
+        "path": "about/#personal-development"
+      },
+      {
+        "level": "Organisation and community",
+        "title": "Workshop for Engineers and Managers",
+        "description": "As a co-founder and leader, I work on strategy, operations, and a community of practitioners.",
+        "path": "about/#workshop"
+      },
+      {
+        "level": "The ecosystem",
+        "title": "Aisystant and IWE",
+        "description": "I co-founded Aisystant and am building an ecosystem for intellectual development, with IWE as a working environment for people and AI.",
+        "path": "about/#ecosystem"
+      }
+    ]
   },
   "xal": {
     "name": "Церен Церенов",
@@ -203,7 +251,7 @@
     "hero_emphasis": "Церенов",
     "intro": "Отдельная редакция для калмыкоязычных читателей: свои тексты, выступления и ссылки.",
     "review_notice": "Калмыцкие тексты ещё не утверждены. Служебное описание этой страницы пока дано по-русски.",
-    "hero_note": "Системное мышление · Развитие · Созидание",
+    "hero_note": "Созидание · Инженерия · Менеджмент · Философия",
     "portrait_caption": "Церен Церенов",
     "portrait_detail": "Хальмг",
     "socials": [],

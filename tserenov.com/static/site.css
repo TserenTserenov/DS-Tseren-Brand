@@ -870,3 +870,55 @@ button {
   letter-spacing: 0;
   color: var(--muted);
 }
+
+.work {
+  padding-bottom: 4.5rem;
+  scroll-margin-top: 2rem;
+}
+.work h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 0 0 1rem;
+}
+.work-intro {
+  max-width: 46rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+.work-card {
+  min-width: 0;
+  border-top: 2px solid var(--accent);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.work-card h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0.25rem 0 0.75rem;
+}
+.work-card > p:not(.eyebrow) {
+  color: var(--muted);
+}
+.work-card .text-link {
+  margin-top: auto;
+}
+@media (max-width: 760px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .work {
+    padding-bottom: 3rem;
+  }
+}
