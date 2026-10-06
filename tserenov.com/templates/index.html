@@ -19,7 +19,7 @@
   <h2 id="work-title">{{ edition.work_title }}</h2>
   <p class="work-intro">{{ edition.work_intro }}</p>
   <div class="work-grid">{% for item in edition.work_items %}
-    <article class="work-card"><p class="eyebrow">{{ item.level }}</p><h3>{{ item.title }}</h3><p>{{ item.description }}</p><a class="text-link" href="{{ get_url(path=item.path, lang=lang) }}">{{ edition.work_link }} <span aria-hidden="true">↗</span></a></article>
+    <a class="work-card{% if item.title_lines %} work-card-compact{% endif %}" href="{{ get_url(path=item.path, lang=lang) }}" aria-labelledby="system-{{ loop.index }}"><div class="work-card-top"><p class="eyebrow">{{ item.level }}</p><span class="work-arrow" aria-hidden="true">↗</span></div><h3 id="system-{{ loop.index }}">{% if item.title_lines %}{% for line in item.title_lines %}<span class="work-title-line">{{ line }}</span>{% if not loop.last %} {% endif %}{% endfor %}{% else %}{{ item.title }}{% endif %}</h3><p>{{ item.description }}</p></a>
   {% endfor %}</div>
 </section>
 <section class="featured shell" lang="{{ edition.ui_lang }}">

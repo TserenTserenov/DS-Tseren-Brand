@@ -34,7 +34,7 @@
     "eyebrow": "Созидание · Инженерия · Менеджмент",
     "hero_first": "Создавать системы.",
     "hero_emphasis": "Менять мир.",
-    "intro": "Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на трёх уровнях: человек вместе с ИИ-средой, организация, сообщество и экосистема развития интеллекта. Здесь рассказываю, как устроена эта работа и какое будущее мы можем создавать.",
+    "intro": "Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на разных системных уровнях: человек вместе с ИИ-средой, организация, сообщество и экосистема развития интеллекта. Здесь рассказываю, как устроена эта работа и какое будущее мы можем создавать.",
     "read": "Мои системы",
     "about": "Обо мне",
     "hero_note": "Я убеждён: в истории ещё не было лучшего времени для созидания.",
@@ -82,7 +82,7 @@
     },
     "socials": [
       {
-        "label": "Telegram",
+        "label": "Telegram-канал",
         "url": "https://t.me/systemsthinkinglife"
       },
       {
@@ -96,6 +96,14 @@
       {
         "label": "Клуб",
         "url": "https://systemsworld.club/u/tseren-tserenov/"
+      },
+      {
+        "label": "Написать в Telegram",
+        "url": "https://t.me/tserentserenov"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:tserenov72@gmail.com"
       }
     ],
     "footer": "Созидание систем. Инженерия. Менеджмент. Философия.",
@@ -113,7 +121,6 @@
     "work_label": "Мои системы",
     "work_title": "Три уровня созидания.",
     "work_intro": "Человек вместе с ИИ-средой, организация и сообщество — три связанные системы, которые я создаю и развиваю.",
-    "work_link": "Подробнее о работе",
     "work_items": [
       {
         "level": "Человек + ИИ-среда",
@@ -125,7 +132,8 @@
         "level": "Организация",
         "title": "Aisystant и Мастерская инженеров-менеджеров",
         "description": "Развиваю организацию: Aisystant — для международной аудитории, Мастерская инженеров-менеджеров — для русскоязычной. Моя работа — стратегия, оперативный менеджмент и создание продуктов.",
-        "path": "about/#workshop"
+        "path": "about/#workshop",
+        "title_lines": ["Aisystant и Мастерская", "инженеров-менеджеров"]
       },
       {
         "level": "Сообщество и экосистема",
@@ -249,7 +257,7 @@
     "eyebrow": "Building · Engineering · Management",
     "hero_first": "Build systems.",
     "hero_emphasis": "Shape the future.",
-    "intro": "I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at three levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development. Here I share how that work takes shape and the future it can help create.",
+    "intro": "I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different system levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development. Here I share how that work takes shape and the future it can help create.",
     "read": "Systems I build",
     "about": "About me",
     "hero_note": "I believe there has never been a better time in history to build and create.",
@@ -285,8 +293,12 @@
     "video": null,
     "socials": [
       {
-        "label": "Contact",
-        "url": "mailto:tseren@system-school.ru"
+        "label": "Email",
+        "url": "mailto:tserenov72@gmail.com"
+      },
+      {
+        "label": "Telegram",
+        "url": "https://t.me/tserentserenov"
       }
     ],
     "footer": "Building systems. Engineering. Management. Philosophy.",
@@ -304,7 +316,6 @@
     "work_label": "Systems I build",
     "work_title": "Three levels of building.",
     "work_intro": "A person together with their AI environment, an organisation, and a community: three connected systems that I build and develop.",
-    "work_link": "More about this work",
     "work_items": [
       {
         "level": "Person + AI environment",

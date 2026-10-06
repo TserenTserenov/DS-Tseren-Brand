@@ -9,7 +9,9 @@ editorial_status = "draft"
 review_note = "English adaptation awaiting author review."
 +++
 
-I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different scales, a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development.
+I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different system levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development.
+
+I have lived in Paphos, Cyprus, since 2022.
 
 Engineering concerns how these systems are designed and how they work. Management concerns how people organise their work together. Entrepreneurship concerns opportunities and the creation of value. Philosophy helps me examine the foundations of this work and its consequences for people and society.
 
@@ -43,4 +45,6 @@ My books and guides, written individually or with co-authors, cover systems thin
 
 ## Contact
 
-You can reach me at [tseren@system-school.ru](mailto:tseren@system-school.ru).
+Email: [tserenov72@gmail.com](mailto:tserenov72@gmail.com).
+
+Telegram: [@tserentserenov](https://t.me/tserentserenov).
