@@ -1,0 +1,22 @@
+base_url = "http://127.0.0.1:4420"
+title = "Церен Церенов"
+description = "Системное мышление, развитие и дело жизни. Тексты и выступления Церена Церенова."
+default_language = "ru"
+compile_sass = false
+build_search_index = false
+generate_sitemap = true
+
+[languages.en]
+title = "Tseren Tserenov"
+description = "Systems thinking, personal development, and a life's work."
+build_search_index = false
+
+[languages.xal]
+title = "Церен Церенов · Хальмг"
+build_search_index = false
+
+[markdown]
+smart_punctuation = false
+
+[extra]
+preview = true

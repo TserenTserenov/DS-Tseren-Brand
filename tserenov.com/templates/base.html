@@ -1,0 +1,42 @@
+{% set editorial = load_data(path="data/editorial.json") %}
+{% set edition = editorial[lang] %}
+{% set home = get_url(path="", lang=lang) %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page %}{{ page.title }} · {% elif section and section.extra.is_library | default(value=false) %}{{ section.title }} · {% endif %}{{ edition.name }}</title>
+  <meta name="description" content="{% if page %}{{ page.description | default(value=edition.intro) }}{% else %}{{ edition.intro }}{% endif %}">
+  {% if config.extra.preview %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  {% if page %}<link rel="canonical" href="{{ page.permalink }}">{% elif section %}<link rel="canonical" href="{{ section.permalink }}">{% endif %}
+  {% if page %}{% for translation in page.translations %}<link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">{% endfor %}{% endif %}
+  <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
+  <script src="{{ get_url(path='site.js') }}" defer></script>
+</head>
+<body class="edition-{{ lang }}">
+  <a class="skip" href="#main">{{ edition.skip }}</a>
+  {% if config.extra.preview %}<div class="preview" lang="{{ edition.ui_lang }}">{{ edition.preview }}</div>{% endif %}
+  <header class="site-header shell">
+    <a href="{{ home }}" class="wordmark" aria-label="{{ edition.name }} — {{ edition.home }}">{{ edition.name }}</a>
+    <nav class="main-nav" aria-label="{{ edition.navigation }}" lang="{{ edition.ui_lang }}">
+      {% for item in edition.navigation_items %}<a href="{{ get_url(path=item.path, lang=lang) }}">{{ item.label }}</a>{% endfor %}
+    </nav>
+    <nav class="languages" aria-label="Language / Язык">
+      {% for code in ["ru", "en", "xal"] %}
+        {% set_global target = get_url(path="", lang=code) %}
+        {% set_global equivalent = false %}
+        {% if page %}{% for translation in page.translations %}{% if translation.lang == code %}{% set_global target = translation.permalink %}{% set_global equivalent = true %}{% endif %}{% endfor %}{% elif section and section.extra.is_library | default(value=false) %}{% set_global target = get_url(path="library/", lang=code) %}{% else %}{% set_global equivalent = true %}{% endif %}
+        <a href="{{ target }}" lang="{{ code }}" {% if code == lang %}aria-current="true"{% endif %} title="{% if not equivalent %}{{ editorial[code].home }}: {% endif %}{{ editorial[code].language }}">{{ editorial[code].language_short }}{% if not equivalent %}<span class="language-fallback" lang="{{ edition.ui_lang }}">{{ edition.home_short }}</span>{% endif %}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  <main id="main">{% block content %}{% endblock content %}</main>
+  <footer class="site-footer shell" lang="{{ edition.ui_lang }}">
+    <div><a class="wordmark" href="{{ home }}">{{ edition.name }}</a><p>{{ edition.footer }}</p></div>
+    <div class="social-links">{% for link in edition.socials %}<a href="{{ link.url }}" rel="me">{{ link.label }}</a>{% endfor %}</div>
+    <span class="footer-domain">tserenov.com · {{ edition.language }}</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="library shell" lang="{{ edition.ui_lang }}">
+<p class="eyebrow">{{ edition.library_eyebrow }}</p><h1>{{ edition.library_title }}</h1><p class="library-intro">{{ edition.library_intro }}</p>
+{% if section.pages %}
+<div class="library-controls"><label for="library-search">{{ edition.search_label }}</label><input type="search" id="library-search" placeholder="{{ edition.search_placeholder }}" autocomplete="off"><p id="search-count" role="status" aria-live="polite"></p></div>
+<div class="library-items">{% for item in section.pages %}<article class="library-item" data-search="{{ item.title }} {{ item.description }} {{ item.extra.category }}"><span class="eyebrow">{{ item.extra.category }} · {{ item.extra.date_label }}</span><h2><a href="{{ item.permalink }}">{{ item.title }}</a></h2><p>{{ item.description }}</p><a class="text-link" href="{{ item.permalink }}">{{ edition.read_article }}</a></article>{% endfor %}</div>
+<p class="empty-search" hidden>{{ edition.no_results }}</p>
+{% else %}<p class="editor-note">{{ edition.review_notice }}</p>{% endif %}
+</section>
+{% endblock content %}

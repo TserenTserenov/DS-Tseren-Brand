@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero shell" lang="{{ edition.ui_lang }}">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="little-rule"></span>{{ edition.eyebrow }}</p>
+    <h1>{{ edition.hero_first }}<br><em>{{ edition.hero_emphasis }}</em></h1>
+    <p class="hero-description">{{ edition.intro }}</p>
+    {% if edition.ready %}<div class="hero-actions"><a class="button" href="{{ get_url(path='library/', lang=lang) }}">{{ edition.read }}</a><a class="text-link" href="{{ get_url(path='about/', lang=lang) }}">{{ edition.about }}</a></div>{% else %}<p class="editor-note">{{ edition.review_notice }}</p>{% endif %}
+    <p class="hero-note">{{ edition.hero_note }}</p>
+  </div>
+  <figure class="portrait">
+    <div class="portrait-frame"><img src="{{ get_url(path='portrait.jpg') }}" alt="{{ edition.name }}" width="760" height="900" fetchpriority="high"><span class="portrait-caption">{{ edition.portrait_caption }}</span></div>
+    <figcaption><span>{{ edition.name }}</span><span>{{ edition.portrait_detail }}</span></figcaption>
+  </figure>
+</section>
+{% if edition.ready %}
+<section class="featured shell" lang="{{ edition.ui_lang }}">
+  <div class="section-heading"><p class="eyebrow">01 / {{ edition.start }}</p><a class="text-link" href="{{ get_url(path='library/', lang=lang) }}">{{ edition.all_writing }}</a></div>
+  <div class="featured-grid">
+    <a class="feature-card" href="{{ get_url(path=edition.feature.path, lang=lang) }}"><span class="eyebrow">{{ edition.feature.type }}</span><h2>{{ edition.feature.title }}</h2><p>{{ edition.feature.description }}</p><span class="card-bottom">{{ edition.feature.link_label }} <span aria-hidden="true">↗</span></span></a>
+    <div class="reading-list">
+      {% for item in edition.selected %}<a class="reading-row" href="{{ get_url(path=item.path, lang=lang) }}"><span class="row-number">0{{ loop.index }}</span><div><span class="eyebrow">{{ item.type }}</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div><span class="row-symbol" aria-hidden="true">↗</span></a>{% endfor %}
+    </div>
+  </div>
+</section>
+<section class="lifework shell" lang="{{ edition.ui_lang }}"><p class="eyebrow">02 / Lifework</p><div><h2>{{ edition.lifework_title }}</h2><p>{{ edition.lifework_description }}</p><a class="text-link" href="{{ get_url(path='lifework/', lang=lang) }}">{{ edition.lifework_link }}</a></div><span class="orbital" aria-hidden="true"><i></i><i></i><i></i></span></section>
+{% if edition.video %}<section class="video-feature shell"><div><p class="eyebrow">03 / {{ edition.video.label }}</p><h2>{{ edition.video.title }}</h2><p>{{ edition.video.description }}</p><a class="text-link" href="{{ get_url(path='video/', lang=lang) }}">{{ edition.video.link_label }}</a></div><a class="video-art" href="{{ get_url(path='video/', lang=lang) }}" aria-label="{{ edition.video.title }}"><span class="play-icon" aria-hidden="true">▶</span><span>{{ edition.video.card_text }}</span><small>YouTube · RU</small></a></section>{% endif %}
+{% else %}<section class="shell language-preparation" lang="ru"><p class="eyebrow">Хальмг · Калмыцкая редакция</p><h2>Своя аудитория.<br>Свои материалы.</h2><p>Биография, основные идеи и избранные тексты появятся здесь после проверки калмыцким редактором. Эта редакция будет развиваться самостоятельно.</p><div class="preparation-links"><a class="button" href="{{ get_url(path='') }}">Читать по-русски</a><a class="text-link" href="{{ get_url(path='', lang='en') }}">Read in English</a></div></section>{% endif %}
+{% endblock content %}

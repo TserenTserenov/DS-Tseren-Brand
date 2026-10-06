@@ -1,0 +1,4 @@
+{% component video(id, title) %}
+<div class="video-player" data-video="{{ id }}" data-title="{{ title }}"><button type="button" class="video-load"><span class="play-icon" aria-hidden="true">▶</span><strong>{{ title }}</strong><span>Смотреть видео · YouTube</span></button></div>
+<p><a href="https://www.youtube.com/watch?v={{ id }}">Открыть запись на YouTube</a></p>
+{% endcomponent %}

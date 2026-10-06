@@ -1,0 +1,221 @@
+{
+  "ru": {
+    "name": "Церен Церенов",
+    "language": "Русский",
+    "language_short": "RU",
+    "ui_lang": "ru",
+    "ready": true,
+    "home": "Главная",
+    "skip": "К содержанию",
+    "navigation": "Навигация",
+    "preview": "Предпросмотр · Тексты и состав редакций готовятся к публикации",
+    "navigation_items": [
+      {
+        "label": "Обо мне",
+        "path": "about/"
+      },
+      {
+        "label": "Тексты",
+        "path": "library/"
+      },
+      {
+        "label": "Lifework",
+        "path": "lifework/"
+      },
+      {
+        "label": "Видео",
+        "path": "video/"
+      }
+    ],
+    "eyebrow": "Системное мышление · Развитие · Созидание",
+    "hero_first": "Мыслить системно.",
+    "hero_emphasis": "Менять мир.",
+    "intro": "Я Церен Церенов. Пишу о системном мышлении и саморазвитии. Работаю над средой, в которой человек становится созидателем и сохраняет авторство своей жизни в эпоху ИИ.",
+    "read": "Начать с текстов",
+    "about": "Обо мне",
+    "hero_note": "Идеи, которые становятся делом.",
+    "portrait_caption": "Мышление. Мастерство. Действие.",
+    "portrait_detail": "Автор · Практик",
+    "start": "С чего начать",
+    "all_writing": "Все тексты",
+    "read_article": "Читать",
+    "feature": {
+      "path": "library/manifesto/",
+      "type": "Манифест",
+      "title": "Манифест созидателя",
+      "description": "Почему развитие интеллекта становится условием осмысленного действия в сложном мире.",
+      "link_label": "Читать манифест"
+    },
+    "selected": [
+      {
+        "path": "lifework/",
+        "type": "Дело жизни",
+        "title": "Каждый человек — созидатель",
+        "description": "Миссия, системное мировоззрение и среда развития."
+      },
+      {
+        "path": "about/",
+        "type": "Личное",
+        "title": "Чем я занимаюсь",
+        "description": "Системное мышление, книги и работа с сообществом."
+      },
+      {
+        "path": "video/",
+        "type": "Выступления",
+        "title": "Как начать системные изменения себя",
+        "description": "Запись вебинара и материалы для самостоятельной работы."
+      }
+    ],
+    "lifework_title": "Дело на длинный горизонт.",
+    "lifework_description": "Мы делаем каждого человека созидателем. Чтобы каждому досталась своя часть Вселенной. Здесь я собираю идеи и тексты, которые объясняют это дело.",
+    "lifework_link": "Моё дело жизни",
+    "video": {
+      "label": "Видео и выступления",
+      "title": "От понимания\nк изменениям.",
+      "description": "Разговоры о системном мышлении, развитии и повседневной практике.",
+      "link_label": "Смотреть выступление",
+      "card_text": "Как начать системные изменения себя"
+    },
+    "socials": [
+      {
+        "label": "Telegram",
+        "url": "https://t.me/systemsthinkinglife"
+      },
+      {
+        "label": "YouTube",
+        "url": "https://www.youtube.com/@tserentserenov77"
+      },
+      {
+        "label": "TenChat",
+        "url": "https://tenchat.ru/tserenov"
+      },
+      {
+        "label": "Клуб",
+        "url": "https://systemsworld.club/u/tseren-tserenov/"
+      }
+    ],
+    "footer": "Системное мышление в жизни и работе.",
+    "library_eyebrow": "Библиотека",
+    "library_title": "Тексты и основные идеи",
+    "library_intro": "Начните с манифеста. Другие материалы будут добавляться по мере отбора и редактуры.",
+    "search_label": "Найти материал в этой редакции",
+    "search_placeholder": "Название или тема",
+    "no_results": "Ничего не найдено. Попробуйте другое слово.",
+    "author_label": "Автор",
+    "original": "Первоисточник",
+    "contents": "В этом тексте",
+    "review_notice": "",
+    "home_short": "главная"
+  },
+  "en": {
+    "name": "Tseren Tserenov",
+    "language": "English",
+    "language_short": "EN",
+    "ui_lang": "en",
+    "ready": true,
+    "home": "Home",
+    "skip": "Skip to content",
+    "navigation": "Navigation",
+    "preview": "Preview · English adaptations are awaiting editorial review",
+    "navigation_items": [
+      {
+        "label": "About",
+        "path": "about/"
+      },
+      {
+        "label": "Writing",
+        "path": "library/"
+      },
+      {
+        "label": "Lifework",
+        "path": "lifework/"
+      }
+    ],
+    "eyebrow": "Systems thinking · Development · Agency",
+    "hero_first": "Think in systems.",
+    "hero_emphasis": "Build what matters.",
+    "intro": "I’m Tseren Tserenov. I write about systems thinking and personal development, and work on environments that help people think, act, and grow with AI.",
+    "read": "Explore the writing",
+    "about": "About me",
+    "hero_note": "A life’s work, one idea put into practice at a time.",
+    "portrait_caption": "Thinking. Practice. Agency.",
+    "portrait_detail": "Writer · Practitioner",
+    "start": "Selected writing",
+    "all_writing": "All writing",
+    "read_article": "Read the essay",
+    "feature": {
+      "path": "lifework/",
+      "type": "Lifework",
+      "title": "The work behind the ideas",
+      "description": "Developing the capacity to understand complex situations and take responsibility for changing them.",
+      "link_label": "Explore my lifework"
+    },
+    "selected": [
+      {
+        "path": "library/manifesto/",
+        "type": "Manifesto · Adapted extract",
+        "title": "Becoming a creator",
+        "description": "Intelligence as a capacity to frame problems and turn uncertainty into action."
+      },
+      {
+        "path": "about/",
+        "type": "About",
+        "title": "Systems thinking in practice",
+        "description": "My work, books, and the community behind them."
+      }
+    ],
+    "lifework_title": "Development as a way of life.",
+    "lifework_description": "My work brings together systems thinking, personal development, and the environments that make sustained practice possible.",
+    "lifework_link": "Read about the work",
+    "video": null,
+    "socials": [
+      {
+        "label": "Contact",
+        "url": "mailto:tseren@system-school.ru"
+      }
+    ],
+    "footer": "Systems thinking for life and work.",
+    "library_eyebrow": "Writing",
+    "library_title": "Ideas worth working on",
+    "library_intro": "Selected English adaptations. This edition has its own reading list and publication schedule.",
+    "search_label": "Find writing in this edition",
+    "search_placeholder": "Title or topic",
+    "no_results": "No matches. Try a different word.",
+    "author_label": "Author",
+    "original": "Russian original",
+    "contents": "On this page",
+    "review_notice": "",
+    "home_short": "home"
+  },
+  "xal": {
+    "name": "Церен Церенов",
+    "language": "Хальмг",
+    "language_short": "ХАЛ",
+    "ui_lang": "ru",
+    "ready": false,
+    "home": "Главная калмыцкой редакции",
+    "skip": "К содержанию",
+    "navigation": "Навигация",
+    "preview": "Предпросмотр · Калмыцкая редакция: тексты ожидают языковой проверки",
+    "navigation_items": [],
+    "eyebrow": "Хальмг · Калмыцкая редакция",
+    "hero_first": "Церен",
+    "hero_emphasis": "Церенов",
+    "intro": "Отдельная редакция для калмыкоязычных читателей: свои тексты, выступления и ссылки.",
+    "review_notice": "Калмыцкие тексты ещё не утверждены. Служебное описание этой страницы пока дано по-русски.",
+    "hero_note": "Системное мышление · Развитие · Созидание",
+    "portrait_caption": "Церен Церенов",
+    "portrait_detail": "Хальмг",
+    "socials": [],
+    "footer": "Калмыцкая редакция готовится к публикации.",
+    "library_eyebrow": "Хальмг",
+    "library_title": "Материалы калмыцкой редакции",
+    "library_intro": "Подборка появится после языковой проверки.",
+    "all_writing": "Материалы",
+    "author_label": "Автор",
+    "original": "Первоисточник",
+    "contents": "Содержание",
+    "no_results": "Материалы готовятся.",
+    "home_short": "главная"
+  }
+}
