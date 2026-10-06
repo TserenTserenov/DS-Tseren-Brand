@@ -14,6 +14,22 @@
   </figure>
 </section>
 {% if edition.ready %}
+<section id="ask" class="ask shell" lang="{{ edition.ui_lang }}" aria-labelledby="ask-title">
+  <div class="ask-heading"><p class="eyebrow">{{ edition.ask.label }}</p><h2 id="ask-title">{{ edition.ask.title }}</h2><p>{{ edition.ask.intro }}</p></div>
+  <div class="ask-panel">
+    <p class="editor-note" id="ask-preview">{{ edition.ask.preview }}</p>
+    <form class="ask-form" data-empty="{{ edition.ask.empty }}" data-unavailable="{{ edition.ask.unavailable }}">
+      <label for="ask-question">{{ edition.ask.field_label }}</label>
+      <textarea id="ask-question" rows="2" maxlength="2000" required autocomplete="off" placeholder="{{ edition.ask.placeholder }}" aria-describedby="ask-preview ask-limit"></textarea>
+      <div class="ask-examples" role="group" aria-label="{{ edition.ask.examples_label }}">{% for example in edition.ask.examples %}<button type="button" data-question disabled>{{ example }}</button>{% endfor %}</div>
+      <div class="ask-actions"><button class="button" type="submit" disabled>{{ edition.ask.submit }} <span aria-hidden="true">↗</span></button><p id="ask-limit">{{ edition.ask.limit }}</p></div>
+      <p class="ask-status" role="status" aria-live="polite" hidden></p>
+    </form>
+    <noscript><p>{{ edition.ask.nojs }}</p></noscript>
+    <div class="ask-reading"><span>{{ edition.ask.next }}</span>{% for item in edition.ask.links %}<a class="text-link" href="{{ get_url(path=item.path, lang=lang) }}">{{ item.label }}</a>{% endfor %}</div>
+  </div>
+  <details class="ask-onboarding"><summary>{{ edition.ask.onboarding_title }}</summary><ol>{% for step in edition.ask.onboarding_steps %}<li><h3>{{ step.title }}</h3><p>{{ step.description }}</p></li>{% endfor %}</ol><div class="ask-connect"><h3>{{ edition.ask.mcp_label }}</h3><p>{{ edition.ask.mcp_description }}</p></div></details>
+</section>
 <section id="work" class="work shell" lang="{{ edition.ui_lang }}" aria-labelledby="work-title">
   <div class="section-heading"><p class="eyebrow">01 / {{ edition.work_label }}</p></div>
   <h2 id="work-title">{{ edition.work_title }}</h2>

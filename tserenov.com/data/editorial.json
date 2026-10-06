@@ -129,7 +129,54 @@
         "description": "Более 13 000 человек в более чем 30 странах. Развиваю сообщество и экосистему, которые связывают людей, совместную практику и среду для созидания.",
         "path": "about/#ecosystem"
       }
-    ]
+    ],
+    "ask": {
+      "label": "Вопрос к моим материалам",
+      "title": "С какой задачей вы пришли?",
+      "intro": "Задайте вопрос о созидании систем, инженерии, менеджменте или работе человека вместе с ИИ.",
+      "preview": "Предпросмотр: ИИ-ответы ещё не подключены. Введённый вопрос никуда не отправляется.",
+      "field_label": "Ваш вопрос",
+      "placeholder": "Например: как связать мою работу и ИИ-среду в одну систему?",
+      "examples_label": "Можно начать с примера",
+      "examples": [
+        "С чего начать знакомство с вашими идеями?",
+        "Как построить связку человека и ИИ-среды?",
+        "Как перейти от замысла к работающей системе?"
+      ],
+      "submit": "Задать вопрос",
+      "limit": "Бесплатно после запуска. Предлагаемый лимит — 5 вопросов в сутки.",
+      "unavailable": "Ответы пока не подключены. Вы можете начать с манифеста или посмотреть, какие системы я создаю.",
+      "empty": "Напишите вопрос или выберите один из примеров.",
+      "next": "Начните с материалов",
+      "links": [
+        {
+          "label": "Манифест созидателя",
+          "path": "library/manifesto/"
+        },
+        {
+          "label": "Мои системы",
+          "path": "about/"
+        }
+      ],
+      "onboarding_title": "Как начать",
+      "onboarding_steps": [
+        {
+          "title": "Приходите со своей задачей",
+          "description": "Выберите пример или опишите, что хотите создать и где возникла трудность."
+        },
+        {
+          "title": "Разберите её по материалам",
+          "description": "После запуска помощник предложит следующий шаг и покажет источники, на которые опирается."
+        },
+        {
+          "title": "Продолжите в своём ИИ",
+          "description": "Публичную подборку можно будет подключить через MCP. Подключение и инструкция готовятся в рамках запуска."
+        }
+      ],
+      "mcp_label": "Подключение материалов к своему ИИ",
+      "mcp_description": "Будут доступны онбординг, примеры запросов и поиск по выбранным авторским материалам. Адрес подключения появится после проверки сервиса.",
+      "nojs": "Для предпросмотра формы включите JavaScript. Материалы доступны по ссылкам ниже."
+    }
   },
   "en": {
     "name": "Tseren Tserenov",
@@ -233,7 +280,54 @@
         "description": "More than 13,000 people across more than 30 countries. I develop a community and ecosystem that connect people, shared practice, and an environment for building.",
         "path": "about/#ecosystem"
       }
-    ]
+    ],
+    "ask": {
+      "label": "Ask about my work",
+      "title": "What are you working on?",
+      "intro": "Ask about building systems, engineering, management, or a person working together with their AI environment.",
+      "preview": "Preview: AI answers are not connected yet. Your question is not sent anywhere.",
+      "field_label": "Your question",
+      "placeholder": "For example: how can I build my work and AI environment into one system?",
+      "examples_label": "Start with an example",
+      "examples": [
+        "Where should I start with your ideas?",
+        "How can a person and an AI environment work as one system?",
+        "How do I turn an intention into a working system?"
+      ],
+      "submit": "Ask a question",
+      "limit": "Free after launch. Proposed allowance: 5 questions per day.",
+      "unavailable": "Answers are not connected yet. You can start with the manifesto or explore the systems I build.",
+      "empty": "Write a question or choose an example.",
+      "next": "Start with the materials",
+      "links": [
+        {
+          "label": "Creator manifesto",
+          "path": "library/manifesto/"
+        },
+        {
+          "label": "Systems I build",
+          "path": "about/"
+        }
+      ],
+      "onboarding_title": "Getting started",
+      "onboarding_steps": [
+        {
+          "title": "Bring a real task",
+          "description": "Choose an example or describe what you want to build and where you are stuck."
+        },
+        {
+          "title": "Explore it through the materials",
+          "description": "After launch, the assistant will suggest a next step and link to the sources it uses."
+        },
+        {
+          "title": "Continue in your own AI",
+          "description": "You will be able to connect the public collection through MCP. The connection and instructions are being prepared."
+        }
+      ],
+      "mcp_label": "Connect the materials to your AI",
+      "mcp_description": "The service will include onboarding, example questions, and search across selected author materials. A connection address will be provided once the service has been tested.",
+      "nojs": "Enable JavaScript to preview the form. You can read the materials using the links below."
+    }
   },
   "xal": {
     "name": "Церен Церенов",

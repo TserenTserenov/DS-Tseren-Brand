@@ -31,3 +31,27 @@ for (const player of document.querySelectorAll("[data-video]")) {
     player.replaceChildren(frame);
   });
 }
+
+// Local design preview only: no provider, network request, or quota simulation.
+const askForm = document.querySelector(".ask-form");
+if (askForm) {
+  const question = askForm.querySelector("textarea");
+  const status = askForm.querySelector(".ask-status");
+  const submit = askForm.querySelector('[type="submit"]');
+  for (const example of askForm.querySelectorAll("[data-question]")) {
+    example.disabled = false;
+    example.addEventListener("click", () => {
+      question.value = example.textContent.trim();
+      status.hidden = true;
+      question.focus();
+    });
+  }
+  askForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    status.textContent = question.value.trim()
+      ? askForm.dataset.unavailable
+      : askForm.dataset.empty;
+    status.hidden = false;
+  });
+  submit.disabled = false;
+}
