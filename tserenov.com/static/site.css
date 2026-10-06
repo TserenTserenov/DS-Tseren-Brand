@@ -1043,10 +1043,6 @@ button {
   color: var(--muted);
   font-size: 0.9375rem;
 }
-.ask-connect {
-  padding-block: 1rem;
-  max-width: 48rem;
-}
 @media (max-width: 760px) {
   .ask-onboarding ol {
     grid-template-columns: 1fr;
@@ -1054,5 +1050,144 @@ button {
   }
   .ask {
     padding-block: 1rem 3rem;
+  }
+}
+
+/* Materials and assistant follow the author's work, with separate entry points. */
+.ask {
+  border-top: 1px solid var(--ink);
+  padding-top: 2rem;
+}
+.ask-layout,
+.connect-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 3rem;
+}
+.ask-layout > *,
+.connect-layout > * {
+  min-width: 0;
+}
+.ask-panel {
+  margin-top: 0;
+}
+.corpus-label {
+  margin-top: 2rem;
+  font-size: 0.8125rem;
+}
+.corpus-tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.corpus-tags li {
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8125rem;
+}
+.ask-alternative {
+  text-align: right;
+  margin: 1.25rem 0 0;
+}
+.connect {
+  border-top: 1px solid var(--line);
+  padding-block: 3rem 4rem;
+}
+.connect-layout {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+}
+.connect h2 {
+  font: 400 clamp(2rem, 4vw, 3rem) / 1.15 var(--serif);
+  letter-spacing: -0.035em;
+  margin: 0 0 1rem;
+}
+.connect p:not(.eyebrow) {
+  color: var(--muted);
+  max-width: 42rem;
+}
+.connect-state {
+  padding: 1.5rem;
+  background: var(--soft);
+  align-self: start;
+}
+.availability,
+.collection-status {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.availability {
+  display: inline-block;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.35rem;
+}
+.library-routes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2.5rem;
+  margin-top: 3rem;
+}
+.library-route {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-width: 0;
+}
+.library-route h2,
+.library-available {
+  font: 400 1.8rem/1.2 var(--serif);
+  margin: 0 0 0.5rem;
+}
+.library-route p {
+  color: var(--muted);
+  margin: 0.5rem 0 1.25rem;
+}
+.library-route a,
+.library-route .collection-status {
+  margin-top: auto;
+}
+.library-scope {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-block: 2rem;
+}
+.library-assistant {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  border-block: 1px solid var(--line);
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+}
+.library-assistant > span {
+  flex: 1 1 100%;
+  font-weight: 600;
+}
+@media (max-width: 1000px) {
+  .ask-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .corpus-label {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 760px) {
+  .connect-layout,
+  .library-routes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .ask-alternative {
+    text-align: left;
+  }
+  .connect {
+    padding-block: 2rem 3rem;
   }
 }

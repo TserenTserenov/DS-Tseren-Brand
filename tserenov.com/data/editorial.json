@@ -15,7 +15,7 @@
         "path": "about/"
       },
       {
-        "label": "Тексты",
+        "label": "Библиотека",
         "path": "library/"
       },
       {
@@ -25,6 +25,10 @@
       {
         "label": "Видео",
         "path": "video/"
+      },
+      {
+        "label": "Задать вопрос",
+        "path": "#ask"
       }
     ],
     "eyebrow": "Созидание · Инженерия · Менеджмент",
@@ -37,7 +41,7 @@
     "portrait_caption": "Замысел. Система. Результат.",
     "portrait_detail": "Инженер · Менеджер · Предприниматель",
     "start": "Опыт и идеи",
-    "all_writing": "Все тексты",
+    "all_writing": "Открыть библиотеку",
     "read_article": "Читать",
     "feature": {
       "path": "library/manifesto/",
@@ -97,7 +101,7 @@
     "footer": "Созидание систем. Инженерия. Менеджмент. Философия.",
     "library_eyebrow": "Библиотека",
     "library_title": "О созидании систем",
-    "library_intro": "Практика инженерии и менеджмента, предпринимательство и философия развития. Начните с манифеста; разборы проектов будут добавляться по мере подготовки.",
+    "library_intro": "Статьи, руководства, паки знаний и выступления о созидании систем. В этой редакции уже доступны материалы ниже; полный открытый корпус постепенно добавляется.",
     "search_label": "Найти материал в этой редакции",
     "search_placeholder": "Название или тема",
     "no_results": "Ничего не найдено. Попробуйте другое слово.",
@@ -131,9 +135,9 @@
       }
     ],
     "ask": {
-      "label": "Вопрос к моим материалам",
+      "label": "03 / Вопрос по материалам",
       "title": "С какой задачей вы пришли?",
-      "intro": "Задайте вопрос о созидании систем, инженерии, менеджменте или работе человека вместе с ИИ.",
+      "intro": "Опишите, что хотите создать или изменить. Помощник будет искать ответ в моих открытых материалах и показывать, что прочитать дальше.",
       "preview": "Предпросмотр: ИИ-ответы ещё не подключены. Введённый вопрос никуда не отправляется.",
       "field_label": "Ваш вопрос",
       "placeholder": "Например: как связать мою работу и ИИ-среду в одну систему?",
@@ -144,10 +148,10 @@
         "Как перейти от замысла к работающей системе?"
       ],
       "submit": "Задать вопрос",
-      "limit": "Бесплатно после запуска. Предлагаемый лимит — 5 вопросов в сутки.",
+      "limit": "После запуска — бесплатно, в пределах доступной квоты.",
       "unavailable": "Ответы пока не подключены. Вы можете начать с манифеста или посмотреть, какие системы я создаю.",
       "empty": "Напишите вопрос или выберите один из примеров.",
-      "next": "Начните с материалов",
+      "next": "Пока можно почитать",
       "links": [
         {
           "label": "Манифест созидателя",
@@ -158,25 +162,61 @@
           "path": "about/"
         }
       ],
-      "onboarding_title": "Как начать",
+      "onboarding_title": "Как будет устроено подключение",
       "onboarding_steps": [
         {
-          "title": "Приходите со своей задачей",
-          "description": "Выберите пример или опишите, что хотите создать и где возникла трудность."
+          "title": "Выберите свой ИИ",
+          "description": "Появится инструкция для проверенных приложений с поддержкой MCP."
         },
         {
-          "title": "Разберите её по материалам",
-          "description": "После запуска помощник предложит следующий шаг и покажет источники, на которые опирается."
+          "title": "Добавьте источник",
+          "description": "Скопируйте адрес подключения из инструкции. Доступ откроется только к публичным материалам."
         },
         {
-          "title": "Продолжите в своём ИИ",
-          "description": "Публичную подборку можно будет подключить через MCP. Подключение и инструкция готовятся в рамках запуска."
+          "title": "Задайте первый вопрос",
+          "description": "Проверьте ответ по ссылкам на оригиналы, затем переходите к своей задаче."
         }
       ],
-      "mcp_label": "Подключение материалов к своему ИИ",
-      "mcp_description": "Будут доступны онбординг, примеры запросов и поиск по выбранным авторским материалам. Адрес подключения появится после проверки сервиса.",
-      "nojs": "Для предпросмотра формы включите JavaScript. Материалы доступны по ссылкам ниже."
-    }
+      "mcp_label": "Материалы — в вашем ИИ.",
+      "mcp_description": "Работайте с моими открытыми статьями, руководствами и паками в привычном ИИ-помощнике. MCP позволит подключить их как источник знаний и получать ссылки на оригиналы.",
+      "nojs": "Для предпросмотра формы включите JavaScript. Материалы доступны по ссылкам ниже.",
+      "corpus_label": "Основа ответов",
+      "corpus": ["Статьи", "Руководства", "Паки", "Lifework"],
+      "browse": "Посмотреть материалы",
+      "connect_link": "Подключить к своему ИИ",
+      "mcp_eyebrow": "Для работы со своим ИИ · MCP",
+      "mcp_status": "Подключение готовится",
+      "mcp_note": "Адрес и инструкция появятся после запуска. Для вопроса на этом сайте подключать MCP не потребуется."
+    },
+    "hero_ask": "Вопрос по материалам",
+    "library_available": "Читать сейчас",
+    "library_scope": "Библиотека собирает мои открытые авторские и совместные работы. У каждого материала сохраняются источник и язык. Закрытые рабочие документы сюда не входят.",
+    "library_routes": [
+      {
+        "title": "Манифесты и статьи",
+        "description": "Идеи, принципы и опыт созидания.",
+        "path": "library/manifesto/",
+        "action": "Начать с манифеста"
+      },
+      {
+        "title": "Руководства и паки",
+        "description": "Методы инженерии, менеджмента и развития.",
+        "path": null,
+        "action": "Подборка готовится"
+      },
+      {
+        "title": "Lifework",
+        "description": "Миссия, долгий горизонт и системы, которые я создаю.",
+        "path": "lifework/",
+        "action": "Моё дело жизни"
+      },
+      {
+        "title": "Видео и выступления",
+        "description": "Разговоры и практикумы с материалами к встречам.",
+        "path": "video/",
+        "action": "Смотреть выступление"
+      }
+    ]
   },
   "en": {
     "name": "Tseren Tserenov",
@@ -194,12 +234,16 @@
         "path": "about/"
       },
       {
-        "label": "Writing",
+        "label": "Library",
         "path": "library/"
       },
       {
         "label": "Lifework",
         "path": "lifework/"
+      },
+      {
+        "label": "Ask a question",
+        "path": "#ask"
       }
     ],
     "eyebrow": "Building · Engineering · Management",
@@ -212,7 +256,7 @@
     "portrait_caption": "Purpose. Systems. Results.",
     "portrait_detail": "Engineer · Manager · Entrepreneur",
     "start": "Practice and ideas",
-    "all_writing": "All writing",
+    "all_writing": "Explore the library",
     "read_article": "Read the essay",
     "feature": {
       "path": "lifework/",
@@ -246,9 +290,9 @@
       }
     ],
     "footer": "Building systems. Engineering. Management. Philosophy.",
-    "library_eyebrow": "Writing",
+    "library_eyebrow": "Library",
     "library_title": "On building systems",
-    "library_intro": "Selected English adaptations. This edition has its own reading list and publication schedule.",
+    "library_intro": "Essays, guides, knowledge packs, and talks on building systems. Explore the English adaptations below; this edition will grow with its own selection of materials.",
     "search_label": "Find writing in this edition",
     "search_placeholder": "Title or topic",
     "no_results": "No matches. Try a different word.",
@@ -282,9 +326,9 @@
       }
     ],
     "ask": {
-      "label": "Ask about my work",
+      "label": "03 / Explore a question",
       "title": "What are you working on?",
-      "intro": "Ask about building systems, engineering, management, or a person working together with their AI environment.",
+      "intro": "Describe what you want to build or change. The assistant will draw on my public work and point you to the next useful reading.",
       "preview": "Preview: AI answers are not connected yet. Your question is not sent anywhere.",
       "field_label": "Your question",
       "placeholder": "For example: how can I build my work and AI environment into one system?",
@@ -295,10 +339,10 @@
         "How do I turn an intention into a working system?"
       ],
       "submit": "Ask a question",
-      "limit": "Free after launch. Proposed allowance: 5 questions per day.",
+      "limit": "Free within the available allowance after launch.",
       "unavailable": "Answers are not connected yet. You can start with the manifesto or explore the systems I build.",
       "empty": "Write a question or choose an example.",
-      "next": "Start with the materials",
+      "next": "In the meantime, explore",
       "links": [
         {
           "label": "Creator manifesto",
@@ -309,25 +353,61 @@
           "path": "about/"
         }
       ],
-      "onboarding_title": "Getting started",
+      "onboarding_title": "How the connection will work",
       "onboarding_steps": [
         {
-          "title": "Bring a real task",
-          "description": "Choose an example or describe what you want to build and where you are stuck."
+          "title": "Choose your AI assistant",
+          "description": "Instructions will cover tested applications that support MCP."
         },
         {
-          "title": "Explore it through the materials",
-          "description": "After launch, the assistant will suggest a next step and link to the sources it uses."
+          "title": "Add the source",
+          "description": "Copy the connection address from the instructions to access the public collection."
         },
         {
-          "title": "Continue in your own AI",
-          "description": "You will be able to connect the public collection through MCP. The connection and instructions are being prepared."
+          "title": "Ask your first question",
+          "description": "Check the answer against the linked sources, then explore your own task."
         }
       ],
-      "mcp_label": "Connect the materials to your AI",
-      "mcp_description": "The service will include onboarding, example questions, and search across selected author materials. A connection address will be provided once the service has been tested.",
-      "nojs": "Enable JavaScript to preview the form. You can read the materials using the links below."
-    }
+      "mcp_label": "Bring the materials to your AI.",
+      "mcp_description": "Use my public essays, guides, and knowledge packs in your own AI assistant. MCP will connect them as a source of knowledge, with links back to the originals.",
+      "nojs": "Enable JavaScript to preview the form. You can read the materials using the links below.",
+      "corpus_label": "Built on my public work",
+      "corpus": ["Essays", "Guides", "Knowledge packs", "Lifework"],
+      "browse": "Browse the materials",
+      "connect_link": "Connect to your AI",
+      "mcp_eyebrow": "For your own AI assistant · MCP",
+      "mcp_status": "Connection in preparation",
+      "mcp_note": "The address and instructions will appear after launch. You will not need an MCP connection to ask a question on this website."
+    },
+    "hero_ask": "Ask about my work",
+    "library_available": "Read now",
+    "library_scope": "This library brings together my public work, including collaborations. Each material keeps its source and language. Private working documents are not included.",
+    "library_routes": [
+      {
+        "title": "Manifestos and essays",
+        "description": "Ideas, principles, and the practice of building.",
+        "path": "library/manifesto/",
+        "action": "Start with the manifesto"
+      },
+      {
+        "title": "Guides and knowledge packs",
+        "description": "Methods for engineering, management, and development.",
+        "path": null,
+        "action": "Collection in preparation"
+      },
+      {
+        "title": "Lifework",
+        "description": "Purpose, a long-term horizon, and the systems I build.",
+        "path": "lifework/",
+        "action": "Explore my lifework"
+      },
+      {
+        "title": "Talks and video",
+        "description": "Conversations and workshops, with supporting materials.",
+        "path": null,
+        "action": "English selection in preparation"
+      }
+    ]
   },
   "xal": {
     "name": "Церен Церенов",

@@ -2,6 +2,12 @@
 {% block content %}
 <section class="library shell" lang="{{ edition.ui_lang }}">
 <p class="eyebrow">{{ edition.library_eyebrow }}</p><h1>{{ edition.library_title }}</h1><p class="library-intro">{{ edition.library_intro }}</p>
+{% if edition.ready %}
+<div class="library-routes">{% for item in edition.library_routes %}<article class="library-route"><h2>{{ item.title }}</h2><p>{{ item.description }}</p>{% if item.path %}<a class="text-link" href="{{ get_url(path=item.path, lang=lang) }}">{{ item.action }}</a>{% else %}<span class="collection-status">{{ item.action }}</span>{% endif %}</article>{% endfor %}</div>
+<p class="library-scope">{{ edition.library_scope }}</p>
+<div class="library-assistant"><span>{{ edition.ask.title }}</span><a class="text-link" href="{{ get_url(path='#ask', lang=lang) }}">{{ edition.ask.submit }}</a><a class="text-link" href="{{ get_url(path='#connect', lang=lang) }}">{{ edition.ask.connect_link }}</a></div>
+<h2 class="library-available">{{ edition.library_available }}</h2>
+{% endif %}
 {% if section.pages %}
 <div class="library-controls"><label for="library-search">{{ edition.search_label }}</label><input type="search" id="library-search" placeholder="{{ edition.search_placeholder }}" autocomplete="off"><p id="search-count" role="status" aria-live="polite"></p></div>
 <div class="library-items">{% for item in section.pages %}<article class="library-item" data-search="{{ item.title }} {{ item.description }} {{ item.extra.category }}"><span class="eyebrow">{{ item.extra.category }} · {{ item.extra.date_label }}</span><h2><a href="{{ item.permalink }}">{{ item.title }}</a></h2><p>{{ item.description }}</p><a class="text-link" href="{{ item.permalink }}">{{ edition.read_article }}</a></article>{% endfor %}</div>
