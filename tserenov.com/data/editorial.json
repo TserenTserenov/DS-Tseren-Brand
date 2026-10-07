@@ -459,7 +459,30 @@
         "path": null,
         "action": "English selection in preparation"
       }
-    ]
+    ],
+    "directions_hub": {
+      "label": "Directions",
+      "title": "Where to go next",
+      "intro": "A few resources connected to my work. Each link leads somewhere separate.",
+      "visit": "Open",
+      "items": [
+        {
+          "title": "Aisystant",
+          "description": "The international platform for IWE and the practice of systems mastery.",
+          "url": "https://aisystant.com"
+        },
+        {
+          "title": "Open IWE template",
+          "description": "The template and documentation for the IWE environment. Open — you can deploy your own.",
+          "url": "https://github.com/TserenTserenov/FMT-exocortex-template"
+        },
+        {
+          "title": "My path in the Workshop",
+          "description": "In 2015, Anatoly Levenchuk and I started the School of Systems Management — I wrote its concept and, on my 43rd birthday, decided to pursue this work for real. In 2025 the school became the Workshop for Engineers and Managers: not just a new name but a different approach — a workshop where mastery is cultivated, and a community where people keep growing for life. This is my work, and I grow in it myself.",
+          "url": "https://aisystant.com"
+        }
+      ]
+    }
   },
   "xal": {
     "name": "Церен Церенов",
