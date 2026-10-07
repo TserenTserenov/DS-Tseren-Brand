@@ -53,5 +53,13 @@
   <div class="connect-layout"><div><p class="eyebrow">{{ edition.ask.mcp_eyebrow }}</p><h2 id="connect-title">{{ edition.ask.mcp_label }}</h2><p>{{ edition.ask.mcp_description }}</p></div><aside class="connect-state"><span class="availability">{{ edition.ask.mcp_status }}</span><p>{{ edition.ask.mcp_note }}</p><a class="text-link" href="{{ get_url(path='library/', lang=lang) }}">{{ edition.ask.browse }}</a></aside></div>
   <details class="ask-onboarding"><summary>{{ edition.ask.onboarding_title }}</summary><ol>{% for step in edition.ask.onboarding_steps %}<li><h3>{{ step.title }}</h3><p>{{ step.description }}</p></li>{% endfor %}</ol></details>
 </section>
+{% if edition.directions_hub %}
+<section id="directions" class="directions shell" lang="{{ edition.ui_lang }}" aria-labelledby="directions-title">
+  <div class="section-heading"><p class="eyebrow">06 / {{ edition.directions_hub.label }}</p></div>
+  <h2 id="directions-title">{{ edition.directions_hub.title }}</h2>
+  <p class="library-intro">{{ edition.directions_hub.intro }}</p>
+  <div class="library-routes">{% for item in edition.directions_hub.items %}{% if item.url %}<article class="library-route"><h3>{{ item.title }}</h3><p>{{ item.description }}</p><a class="text-link" href="{{ item.url }}">{{ edition.directions_hub.visit }} <span aria-hidden="true">↗</span></a></article>{% elif item.draft %}{% if config.extra.preview %}<article class="library-route"><h3>{{ item.title }}</h3><p class="editor-note">{{ item.note }}</p></article>{% endif %}{% else %}<article class="library-route"><h3>{{ item.title }}</h3><p>{{ item.description }}</p><span class="collection-status">{{ item.status }}</span></article>{% endif %}{% endfor %}</div>
+</section>
+{% endif %}
 {% else %}<section class="shell language-preparation" lang="ru"><p class="eyebrow">Хальмг · Калмыцкая редакция</p><h2>Своя аудитория.<br>Свои материалы.</h2><p>Биография, основные идеи и избранные тексты появятся здесь после проверки калмыцким редактором. Эта редакция будет развиваться самостоятельно.</p><div class="preparation-links"><a class="button" href="{{ get_url(path='') }}">Читать по-русски</a><a class="text-link" href="{{ get_url(path='', lang='en') }}">Read in English</a></div></section>{% endif %}
 {% endblock content %}

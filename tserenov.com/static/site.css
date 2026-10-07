@@ -584,6 +584,72 @@ button {
   max-width: 100%;
   height: auto;
 }
+.prose h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 2.2rem 0 0.8rem;
+  font-weight: 400;
+}
+.prose h4 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 1.8rem 0 0.6rem;
+  font-weight: 700;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 1.6rem;
+  padding-left: 1.5rem;
+}
+.prose li {
+  margin-bottom: 0.6rem;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1.6rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  background: var(--soft);
+  font-weight: 700;
+}
+.prose pre {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 0 0 1.6rem;
+}
+.prose pre code {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: none;
+  padding: 0;
+}
+.prose code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--soft);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
 .article-end {
   margin-top: 3rem;
   border-top: 1px solid var(--line);
@@ -879,13 +945,18 @@ button {
   padding-bottom: 4.5rem;
   scroll-margin-top: 2rem;
 }
-.work h2 {
+.work h2,
+.directions h2 {
   font-family: var(--serif);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.035em;
   margin: 0 0 1rem;
+}
+.directions {
+  padding-bottom: 4.5rem;
+  scroll-margin-top: 2rem;
 }
 .work-intro {
   max-width: 46rem;
@@ -1136,6 +1207,7 @@ button {
   min-width: 0;
 }
 .library-route h2,
+.library-route h3,
 .library-available {
   font: 400 1.8rem/1.2 var(--serif);
   margin: 0 0 0.5rem;

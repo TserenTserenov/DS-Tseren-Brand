@@ -133,7 +133,10 @@
         "title": "Aisystant и Мастерская инженеров-менеджеров",
         "description": "Развиваю организацию: Aisystant — для международной аудитории, Мастерская инженеров-менеджеров — для русскоязычной. Моя работа — стратегия, оперативный менеджмент и создание продуктов.",
         "path": "about/#workshop",
-        "title_lines": ["Aisystant и Мастерская", "инженеров-менеджеров"]
+        "title_lines": [
+          "Aisystant и Мастерская",
+          "инженеров-менеджеров"
+        ]
       },
       {
         "level": "Сообщество и экосистема",
@@ -189,7 +192,12 @@
       "mcp_description": "Работайте с моими открытыми статьями, руководствами и паками в привычном ИИ-помощнике. MCP позволит подключить их как источник знаний и получать ссылки на оригиналы.",
       "nojs": "Для предпросмотра формы включите JavaScript. Материалы доступны по ссылкам ниже.",
       "corpus_label": "Основа ответов",
-      "corpus": ["Статьи", "Руководства", "Паки", "Lifework"],
+      "corpus": [
+        "Статьи",
+        "Руководства",
+        "Паки",
+        "Lifework"
+      ],
       "browse": "Посмотреть материалы",
       "connect_link": "Подключить к своему ИИ",
       "mcp_eyebrow": "Для работы со своим ИИ · MCP",
@@ -208,9 +216,9 @@
       },
       {
         "title": "Руководства и паки",
-        "description": "Методы инженерии, менеджмента и развития.",
+        "description": "Методы инженерии, менеджмента и развития. Раздел наполняется по мере редакторской подготовки, без фиксированной даты.",
         "path": null,
-        "action": "Подборка готовится"
+        "action": "Готовится"
       },
       {
         "title": "Lifework",
@@ -224,7 +232,40 @@
         "path": "video/",
         "action": "Смотреть выступление"
       }
-    ]
+    ],
+    "directions_hub": {
+      "label": "Направления",
+      "title": "Куда идти дальше",
+      "intro": "Несколько ресурсов, связанных с моей работой. Каждая ссылка ведёт на отдельное направление.",
+      "visit": "Перейти",
+      "items": [
+        {
+          "title": "IWE на сайте Мастерской",
+          "description": "Экосистема личного развития с ИИ, как её представляет Мастерская инженеров-менеджеров.",
+          "url": "https://system-school.ru/iwe"
+        },
+        {
+          "title": "Открытый шаблон IWE",
+          "description": "Шаблон и документация личной ИИ-среды IWE. Открыто, можно развернуть у себя.",
+          "url": "https://github.com/TserenTserenov/FMT-exocortex-template"
+        },
+        {
+          "title": "Мастерская инженеров-менеджеров",
+          "description": "Сообщество и программы для тех, кто строит сложные системы и развивает людей.",
+          "url": "https://system-school.ru"
+        },
+        {
+          "title": "Практикумы личного развития",
+          "description": "Практики личного развития.",
+          "status": "Адрес уточняется"
+        },
+        {
+          "title": "Мой путь в Мастерской",
+          "draft": true,
+          "note": "Черновик: здесь появится личное свидетельство Церена о Мастерской, его словами. Пункт не публикуется, пока нет его текста."
+        }
+      ]
+    }
   },
   "en": {
     "name": "Tseren Tserenov",
@@ -383,7 +424,12 @@
       "mcp_description": "Use my public essays, guides, and knowledge packs in your own AI assistant. MCP will connect them as a source of knowledge, with links back to the originals.",
       "nojs": "Enable JavaScript to preview the form. You can read the materials using the links below.",
       "corpus_label": "Built on my public work",
-      "corpus": ["Essays", "Guides", "Knowledge packs", "Lifework"],
+      "corpus": [
+        "Essays",
+        "Guides",
+        "Knowledge packs",
+        "Lifework"
+      ],
       "browse": "Browse the materials",
       "connect_link": "Connect to your AI",
       "mcp_eyebrow": "For your own AI assistant · MCP",
@@ -402,9 +448,9 @@
       },
       {
         "title": "Guides and knowledge packs",
-        "description": "Methods for engineering, management, and development.",
+        "description": "Methods for engineering, management, and development. This section fills as editorial review proceeds, with no fixed date.",
         "path": null,
-        "action": "Collection in preparation"
+        "action": "In preparation"
       },
       {
         "title": "Lifework",

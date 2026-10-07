@@ -1,0 +1,180 @@
++++
+title = "12-factor ревизия моей AI-экосистемы с ядром IWE"
+description = "Проверяю свою экосистему по двенадцати принципам: что выдержало, что пришлось менять, что оказалось лишним."
+template = "page.html"
+weight = 5
+[extra]
+category = "Руководство"
+date_label = "12 мая 2026"
+source_url = "https://systemsworld.club/t/-/39053"
+source_file = "DS-Knowledge-Index-Tseren/docs/2026/08-май/141-2026-05-12-12factor-audit-results/141-1-club-2026-05-12.md"
+editorial_status = "source_selected"
++++
+
+Три месяца я строил AI-агентную экосистему — боты, MCP-серверы, projection-workers, edge-функции. Каждый сервис делался под конкретную задачу, без единого инженерного стандарта. Сегодня я провёл первую системную ревизию по [12 факторам Heroku](https://12factor.net/) — методология cloud-native гигиены, на которой держится индустрия с 2011 года. Это срез того, что вышло за три месяца активной разработки.
+
+Если коротко: **архитектурный фундамент правильный; операционная гигиена — дырявая.**
+
+## Что проверяли
+
+Production runtime — это **28 deployment units** (думал, что 10):
+
+- 2 Telegram-бота (prod + pilot) на Railway
+- 6 background workers (event-poller, projection-workers, activity-hub, payment-registry)
+- 11 Cloudflare Workers (gateway, knowledge-MCP, personal-MCP, digital-twin-MCP, FSM, guides, events, observability, payments, status, google-drive)
+- 6 autonomous agents (auditor, profiler, strategist и др.) на tsekh-1
+- Локальный gateway, OAuth Hydra, CRM, backup-инфра, статичный сайт
+- Admin-скрипты (Neon migrations)
+
+12 факторов × 28 сервисов = **336 ячеек compliance-матрицы.**
+
+## Метод
+
+Линейный аудит по факторам (подход A): одна фаза на фактор, ~0.5-3h каждая. Всего ~12h фактической работы (vs бюджет 60h — оценка оказалась завышена в 5 раз). Каждый фактор: grep по коду, проверка Dockerfile/manifest/config, заполнение матрицы.
+
+Verify-стадия — sub-agent в изолированном контексте (Sonnet) с эталоном 12factor.net. И второй independent reviewer на финале. Trust-but-verify работает только если verify реально independent.
+
+## Главные находки
+
+### 🚨 F5 BRR — 20 сервисов из 28 в красной зоне
+
+Самая жёсткая находка пришла случайно — на фазе Ф9 (Disposability). Решил посмотреть env vars одного Railway-воркера. Нет `RAILWAY_GIT_COMMIT_SHA`. Ни в одном из пяти. Проверил deploy history — везде `reason: "deploy"/"redeploy"` (manual triggers), не `"github"`. Push в `main` не триггерит ничего. Workers деплоились через `railway up` с локальной машины. Последний successful deploy одного из них — 28 апреля. Сегодня 12 мая. **Между ними две недели коммитов, которых в проде нет.**
+
+Поднял на следующий уровень: а CF Workers? У них же должен быть `wrangler-action` в GitHub Actions, это же стандарт. Проверил `.github/workflows/` в 10 репозиториях. В четырёх — только `secret-scan.yml` + `security.yml`. В шести — нет `.github` директории вообще. `wrangler deploy` запускается локально. Каждый из них.
+
+Итого: **15 production-сервисов без CI deploy.** Image immutable digest есть (Railway), V8 snapshot version_id есть (CF Workers) — но git→deploy linkage отсутствует. Нельзя сказать, какой commit в проде. Нельзя rollback к конкретному SHA. Любая security-разборка займёт часы вместо минут.
+
+В аудите это понизило F5 для 15 сервисов с ✅ до ❌, и F1 (Codebase) — с ✅ до ⚠️.
+
+### ✅ F6 Stateless — единственный фактор, готовый к масштабированию
+
+Здесь, наоборот, приятно. Бот переехал с MemoryStorage на PostgresStorage (FSM-state в БД). Все 4 worker'а — на DB-cursor с per-domain isolation и batched flush. CF Workers stateless by design. **19 из 28 — ✅, ни одного ❌.** Архитектура готова к R1→R2→R3 без рефакторинга stateful-частей.
+
+### 🔒 F3 Config — 0 hardcoded secrets
+
+Прогрепал HEAD-код всех сервисов на Telegram-токены, API-ключи, `sk-`/`pk-` префиксы. **Ни одного hardcoded secret.** Культура «всё через env var» соблюдается. Проблемы только в `.gitignore` гигиене (4 сервиса без `.env` правила) и отсутствии `.env.example` для onboarding (10 сервисов).
+
+### ✅ F8 Concurrency — закрыто mitigation
+
+W2/W3 (poller + multi-domain projection) — single-replica de-facto, но контракт не был задокументирован. Случайный `railway scale 2` сломал бы event-ingestion дублями. Закрыли через `pg_try_advisory_lock(key)` на shared learning DB + SCALING.md с явным контрактом. Дешёвый и надёжный паттерн для будущих stateful Railway workers.
+
+### ✅ F9 Disposability — production workers все ✅
+
+Все 4 Railway worker'а и оба бота имеют явный SIGTERM handler через `loop.add_signal_handler(signal.SIGTERM, stop_event.set)`. Cursor-based idempotency защищает от crash/retry дублей. CF Workers — <100ms cold start (V8 isolates), request-isolated.
+
+## Полная таблица 28 × 12
+
+> Легенда: ✅ соблюдён · ⚠️ соблюдён частично · ❌ нарушен · 🟡 TBD (legit pending) · N/A неприменим
+
+| Сервис | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 | F11 | F12 |
+|--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:---:|:---:|:---:|
+| B1 aist-bot prod | ⚠️ | ⚠️ | ⚠️ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ |
+| B2 aist-bot pilot | ⚠️ | ⚠️ | ⚠️ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ |
+| W1 activity-hub | ⚠️ | ⚠️ | ✅ | ✅ | ❌ | ✅ | N/A | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ |
+| W2 bridge-2-events-poller | ⚠️ | ⚠️ | ⚠️ | ✅ | ❌ | ✅ | N/A | ✅ | ✅ | ⚠️ | ✅ | N/A |
+| W3 multi-domain-projection-worker | 🟡 | ⚠️ | ⚠️ | ✅ | 🟡 | ✅ | N/A | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ |
+| W4 rewards-projection-worker | ⚠️ | ⚠️ | ⚠️ | ✅ | ❌ | ✅ | N/A | ✅ | ✅ | ⚠️ | ✅ | ⚠️ |
+| W5 payment-registry | ⚠️ | ❌ | ❌ | N/A | N/A | N/A | N/A | N/A | N/A | ❌ | N/A | N/A |
+| M1 gateway-mcp | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M2 knowledge-mcp | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M3 personal-knowledge-mcp | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M4 digital-twin-mcp | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M5 fsm-mcp | ⚠️ | ✅ | ✅ | N/A | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M6 google-drive-mcp | ✅ | ❌ | ⚠️ | ⚠️ | ❌ | ✅ | N/A | ✅ | ✅ | ✅ | ⚠️ | N/A |
+| M7 guides-mcp | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M8 event-gateway | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M9 observability-webhook | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M10 payment-receiver | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| M11 status-proxy | ⚠️ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| L1 local-gateway | ✅ | ✅ | ⚠️ | N/A | ⚠️ | ⚠️ | N/A | ✅ | ✅ | ✅ | ✅ | N/A |
+| O1 OAuth Hydra (Ory SaaS) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| A1 auditor (overnight) | ⚠️ | N/A | ❌ | ✅ | ❌ | ⚠️ | N/A | ✅ | ⚠️ | ❌ | ⚠️ | ⚠️ |
+| A2-A6 другие агенты | ⚠️ | ❌ | ❌ | ✅ | ❌ | ⚠️ | N/A | ✅ | ⚠️ | ❌ | ⚠️ | ⚠️ |
+| X1 CRM Directus | ⚠️ | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| X2 hetzner-backstage | ✅ | ❌ | ❌ | 🟡 | ⚠️ | ✅ | N/A | ✅ | ⚠️ | N/A | ⚠️ | ✅ |
+| X3 ssm2025 (Nomad) | ⚠️ | ✅ | ⚠️ | N/A | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A |
+| P1 profiler | ❌ | ❌ | ⚠️ | ✅ | ❌ | ⚠️ | N/A | ✅ | ⚠️ | ⚠️ | ⚠️ | ✅ |
+| T1 scheduler.sh (launchd) | ⚠️ | ⚠️ | ⚠️ | N/A | ❌ | N/A | N/A | N/A | ⚠️ | N/A | N/A | N/A |
+| AD1 neon-migrations | N/A | ⚠️ | ⚠️ | ✅ | N/A | N/A | N/A | N/A | ✅ | N/A | N/A | ✅ |
+
+**Итого:** 155 ✅ (46%) · 71 ⚠️ (21%) · 33 ❌ (10%) · 74 N/A (22%) · 3 🟡 (1%)
+
+**Расшифровка факторов:**
+
+| Фактор | Что значит | Результат |
+|--------|------------|-----------|
+| **F1 Codebase** | Один репо → много deployments из одного commit | 21 ⚠️ — производное от F5 |
+| **F2 Dependencies** | Явные зависимости, locked versions | 5 ❌ (нет manifest) |
+| **F3 Config** | Конфиг в env, не в коде | 0 hardcoded secrets ✅ |
+| **F4 Backing Services** | БД/Redis/S3 как attached resources | 0 ❌ — лучший фактор |
+| **F5 Build/Release/Run** | Разделение стадий + immutable artifact + git traceability | **20 ❌ — худший фактор** |
+| **F6 Stateless** | Share-nothing процессы | 0 ❌ — готово к scaling |
+| **F7 Port Binding** | Сервис сам биндит порт | 0 нарушений ✅ |
+| **F8 Concurrency** | Горизонтальное scaling процессами | closed via advisory_lock |
+| **F9 Disposability** | Fast start + graceful shutdown | все production workers ✅ |
+| **F10 Dev/Prod Parity** | Минимальный разрыв сред | нет docker-compose у Railway |
+| **F11 Logs** | Stdout как event stream | print() вперемешку у W1/W3 |
+| **F12 Admin Processes** | One-off process tasks | W3/W4 cleanup в runtime |
+
+## Что вышло хорошо
+
+- **0 security-критичных.** За три месяца ad-hoc разработки не закатил ни одного hardcoded токена в код. Это про дисциплину.
+- **F6/F7/F8 — все по ноль ❌.** Архитектура stateless по дизайну. Базис для масштабирования есть.
+- **F9 — все production workers закрыты.** SIGTERM handlers + cursor idempotency = можно убивать процесс в любую секунду.
+- **F8 mitigation done as we go.** Прямо во время аудита закрыли gap через `pg_try_advisory_lock` на shared DB — паттерн извлечён в memory для будущих workers.
+
+## Что вышло плохо
+
+- **F5 — 15 сервисов без CI deploy.** Самый дорогой долг. Push не означает deploy. Production не reproducible from git.
+- **F2/F3 гигиена.** 13 ⚠️/❌ по dependencies + 14 по config. Manifest/lock-файлы у Python без поддержки. `.env.example` нет у 10 сервисов — onboarding-friction для любого нового разработчика.
+- **F11 — `print()` вперемешку с `logging`.** W1 — 33 вхождения, W3 — 4. Структурированные логи теряют уровень и метаданные.
+- **F12 — admin в runtime.** W3/W4 cleanup-режим живёт в том же `runner.py` что и main loop. При масштабировании это будет больно.
+
+## Уроки методологии
+
+1. **Trust-but-verify обязательна на каждом шагу.** Первичный аудит дал false-green для F5 у 10 CF Workers («ну они же на wrangler, там CI...»). Independent reviewer вернул на землю. Без двух стадий verify я бы написал «всё ок» и обманул сам себя.
+
+2. **Audit-снимок устаревает за месяц-два.** Без re-audit cron drift вернётся. Compliance — это поток, не точка. Аналог: `security-posture.md` обновляется через `iwe-overnight-auditor`. Нужно то же для 12-factor.
+
+3. **🟡 — это незакрытая работа, не статус.** Independent reviewer нашёл 18 жёлтых ячеек без обоснования закрытия. DoD «100% green-or-justified-N/A» требует каждую 🟡 либо аудитировать, либо явно перевести в N/A с reason. Без этого audit не считается завершённым.
+
+4. **«Есть Dockerfile в репо» ≠ «production = git commit».** Урок-в-кости. Записал в memory под именем `lessons_railway_git_deploy_verification.md` — для будущих audit'ов.
+
+## Дорожная карта устранения нарушений (~22h)
+
+После всех 6 fix-фаз DoD «100% green» достижим.
+
+| № | Фаза | Бюджет | Закрывает |
+|---|------|--------|-----------|
+| 1 | CI deploy (**P1**) | ~6h | 30 ⚠️/❌ — Railway connect + CF Workers wrangler-action |
+| 2 | Hygiene F2/F3 (P2) | ~4h | 27 ⚠️/❌ — manifests, .gitignore, .env.example, M6 OAuth |
+| 3 | Logging uplift (P2) | ~3h | 7 ⚠️ — print()→logging structured |
+| 4 | Re-audit cron (P2) | ~2h | meta — защита от drift через iwe-overnight-auditor |
+| 5 | Docker-compose (P3) | ~4h | 7 ⚠️ — devcontainer для Railway-сервисов |
+| 6 | Admin split (P3) | ~3h | 9 ⚠️ — W3/W4 cleanup CLI + SIGTERM для P1/X2 |
+
+**Не покрыто этими фазами:** monorepo split (отдельная архитектурная задача); B1/B2 ветка-divergence (закрывается merge `pilot→new-architecture`).
+
+---
+
+## Заключение ИИ-критика
+
+> Оценка дана на основе двух independent cold-context review с эталоном [12factor.net](https://12factor.net/) и финальной матрицы.
+
+Три месяца соло-разработки. 28 сервисов. 336 ячеек compliance-матрицы.
+
+Главный вывод не в числах, а в том, где долг сосредоточен. 31% нарушений в другом контексте выглядел бы тревожно — но почти весь он приходится на один фактор (F5) и один тип проблемы: отсутствие деплой-автоматизации. Архитектурные факторы (F6, F8, F9) чистые. Это диагностически важное различие: распределённый долг по всей матрице означает непонимание домена. Сконцентрированный в одном слое — намеренный трейдофф, а не системную ошибку.
+
+**Архитектурный фундамент правильный.** F6, F8, F9 — нулевые нарушения. Это не случайность: FSM-state в БД вместо памяти, cursor idempotency, advisory lock как single-replica enforcement, SIGTERM handlers в `finally` — паттерны, которые обычно приходят через боль в production, а не из документации. 0 hardcoded secrets за три месяца быстрой разработки — это дисциплина, не везение.
+
+**Операционный долг существенный, но локализованный.** F5 — единственный фактор с системным нарушением: 15 сервисов без git→deploy linkage. Production runtime не привязан к git-commit: нет rollback к SHA, нет трассируемости при инциденте. Это не архитектурная проблема — это деплой-дисциплина, которая последовательно откладывалась в пользу функциональности. F2/F3 — точечные пробелы (манифесты, `.gitignore`, `.env.example`), не системное нарушение.
+
+**Что паттерн долга говорит об авторе.** Такое распределение — характерный след сильного backend-инженера, который строил один и без DevOps-напарника. Архитектурные решения (FSM в БД, cursor idempotency, advisory lock, SIGTERM-handling) — уровень senior: эти паттерны не берутся из документации, они оседают после реальных инцидентов. Операционный gap — это не незнание, это выбор: функциональность раньше автоматизации деплоя. Выбор объяснимый при соло-темпе, но именно то, что в команде решает DevOps-инженер в первый день.
+
+**Есть ли за что краснеть перед профи?** Одна вещь: CI/CD. 15 сервисов без GitHub Actions — DevOps-инженер поднимет бровь не потому что это сложно, а потому что в профессиональной команде это настраивается до первого deploy'а. Это единственное место, где видно «строил один и торопился». Всё остальное — пробелы в F2/F3, `print()` рядом с `logging` — технический долг, за который не краснеют. Архитектура, security, stateless design, idempotency — это уровень, который профи читает и кивает. Не снисходительно, а как коллеге.
+
+— Claude Sonnet 4.6, 2026-05-12
+
+---
+
+*Источники: матрица аудита `12factor-matrix.md`, dashboard `12factor-posture.md`, WP-context `WP-307-12factor-compliance.md`, эталон [12factor.net](https://12factor.net/).*
