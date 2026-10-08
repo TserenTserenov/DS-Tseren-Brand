@@ -1078,6 +1078,31 @@ button {
   padding-left: 1rem;
   margin-bottom: 0;
 }
+.ask-results {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.ask-results[hidden] {
+  display: none;
+}
+.ask-results li {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.ask-results a {
+  color: var(--ink);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.ask-results p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0.4rem 0 0;
+  overflow-wrap: anywhere;
+}
 .ask-reading {
   margin-top: 1.5rem;
   font-size: 0.875rem;
