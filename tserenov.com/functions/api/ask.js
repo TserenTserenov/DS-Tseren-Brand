@@ -173,7 +173,7 @@ async function generateAnswer(question, sources, apiKey) {
   const cost = typeof reportedCost === "number" && Number.isFinite(reportedCost) && reportedCost >= 0
     ? Math.ceil(reportedCost * 1_000_000)
     : RESERVATION_MICRODOLLARS;
-  return { answer: answer.trim(), cost };
+  return { answer: answer.trim().replace(/\*\*|__/g, ""), cost };
 }
 
 export async function onRequestPost({ request, env }) {
