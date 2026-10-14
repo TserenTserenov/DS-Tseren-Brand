@@ -1,4 +1,5 @@
 /public/
 /public-release/
+/.wrangler/
 /.zola*
 /node_modules/
