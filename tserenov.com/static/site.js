@@ -54,12 +54,13 @@ if (askForm) {
   const copy = english
     ? {
         preview: "Local preview: search over the selected public repository, excluding drafts. Most materials are in Russian. No AI model is used. Your question is sent only to the local server.",
-        limit: "Local search only · no model calls or paid quota.",
+        limit: "Local search only · no model calls or answer allowance used.",
         searching: "Searching the selected materials…",
         found: (count) => `${count} search results. These are sources to read, not a generated answer.`,
         answered: (count) => `Answer based on ${count} linked sources.`,
-        remaining: (cents, reset) => `Shared answer budget: $${(cents / 100).toFixed(2)} remaining until ${reset} UTC.`,
-        quota: "The answer allowance is exhausted. Here are sources to read.",
+        remaining: (daily, limit, shared, reset) => `You have ${daily} of ${limit} questions left today. The shared allowance currently covers at least ${shared} more questions until ${reset} UTC.`,
+        dailyLimit: "Your daily question allowance is exhausted. Here are sources to read.",
+        sharedLimit: "The shared question allowance is exhausted. Here are sources to read.",
         modelUnavailable: "AI answers are temporarily unavailable. Here are sources to read.",
         none: "No matching materials found. Try another question or browse the library.",
         unavailable: "Search is temporarily unavailable. Try again or browse the library.",
@@ -67,12 +68,13 @@ if (askForm) {
       }
     : {
         preview: "Локальный предпросмотр: поиск по выбранному открытому репозиторию без черновиков и без ИИ-модели. Вопрос уходит только на локальный сервер.",
-        limit: "Только локальный поиск · без вызовов модели и платной квоты.",
+        limit: "Только локальный поиск · без вызовов модели и расхода квоты ответов.",
         searching: "Ищу материалы в выбранной подборке…",
         found: (count) => `Найдено материалов: ${count}. Это источники для чтения, а не сгенерированный ответ.`,
         answered: (count) => `Ответ основан на ${count} источниках ниже.`,
-        remaining: (cents, reset) => `Остаток общей квоты ответов: $${(cents / 100).toFixed(2)} до ${reset} UTC.`,
-        quota: "Лимит ответов исчерпан. Вот материалы для чтения.",
+        remaining: (daily, limit, shared, reset) => `Сегодня вам доступно ещё ${daily} из ${limit} запросов. Общая квота сейчас позволяет сделать не менее ${shared} запросов до ${reset} UTC.`,
+        dailyLimit: "Ваш дневной лимит запросов исчерпан. Вот материалы для чтения.",
+        sharedLimit: "Общая квота запросов исчерпана. Вот материалы для чтения.",
         modelUnavailable: "ИИ-ответы временно недоступны. Вот материалы для чтения.",
         none: "Подходящих материалов нет. Попробуйте другой вопрос или откройте библиотеку.",
         unavailable: "Поиск временно недоступен. Попробуйте ещё раз или откройте библиотеку.",
@@ -128,13 +130,18 @@ if (askForm) {
         answer.textContent = data.answer;
         answer.hidden = false;
         status.textContent = copy.answered(data.results.length);
-        if (Number.isInteger(data.remaining_cents) && data.remaining_cents >= 0 && /^\d{4}-\d{2}-\d{2}T00:00:00\.000Z$/.test(data.resets_at)) {
-          status.textContent += ` ${copy.remaining(data.remaining_cents, data.resets_at.slice(0, 10))}`;
+        if (Number.isInteger(data.daily_requests_remaining) && data.daily_requests_remaining >= 0
+          && Number.isInteger(data.daily_request_limit) && data.daily_request_limit > 0
+          && Number.isInteger(data.shared_requests_guaranteed) && data.shared_requests_guaranteed >= 0
+          && /^\d{4}-\d{2}-\d{2}T00:00:00\.000Z$/.test(data.resets_at)) {
+          status.textContent += ` ${copy.remaining(data.daily_requests_remaining, data.daily_request_limit, data.shared_requests_guaranteed, data.resets_at.slice(0, 10))}`;
         }
       } else if (!data.results.length) {
         status.textContent = copy.none;
-      } else if (["budget_limit", "visitor_limit"].includes(data.reason)) {
-        status.textContent = copy.quota;
+      } else if (data.reason === "visitor_limit") {
+        status.textContent = copy.dailyLimit;
+      } else if (data.reason === "budget_limit") {
+        status.textContent = copy.sharedLimit;
       } else if (["model_unavailable", "quota_unavailable"].includes(data.reason)) {
         status.textContent = copy.modelUnavailable;
       } else {

@@ -2,6 +2,7 @@ const MCP_URL = "https://open.tserenov.com/mcp";
 const MODEL_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODEL_ID = "openai/gpt-6-luna";
 const RESERVATION_MICRODOLLARS = 50_000;
+const DAILY_REQUEST_LIMIT = 10;
 const MAX_QUESTION_LENGTH = 500;
 const SOURCE_REVISIONS = {
   "ds-knowledge-index-tseren": {
@@ -147,13 +148,13 @@ async function reserveBudget(db, month, limitCents, visitor) {
   await db.exec("CREATE TABLE IF NOT EXISTS ask_budget (month TEXT PRIMARY KEY, limit_microdollars INTEGER NOT NULL, spent_microdollars INTEGER NOT NULL DEFAULT 0, reserved_microdollars INTEGER NOT NULL DEFAULT 0); CREATE TABLE IF NOT EXISTS ask_daily (day TEXT NOT NULL, visitor TEXT NOT NULL, count INTEGER NOT NULL, PRIMARY KEY (day, visitor));");
   const day = new Date().toISOString().slice(0, 10);
   await db.prepare("DELETE FROM ask_daily WHERE day < date('now', '-30 days')").run();
-  const daily = await db.prepare("INSERT INTO ask_daily (day, visitor, count) VALUES (?, ?, 1) ON CONFLICT(day, visitor) DO UPDATE SET count = count + 1 WHERE count < 10 RETURNING count").bind(day, visitor).first();
+  const daily = await db.prepare("INSERT INTO ask_daily (day, visitor, count) VALUES (?, ?, 1) ON CONFLICT(day, visitor) DO UPDATE SET count = count + 1 WHERE count < ? RETURNING count").bind(day, visitor, DAILY_REQUEST_LIMIT).first();
   if (!daily) return { error: "visitor_limit" };
   const limit = limitCents * 10_000;
   await db.prepare("INSERT OR IGNORE INTO ask_budget (month, limit_microdollars) VALUES (?, ?)").bind(month, limit).run();
   await db.prepare("UPDATE ask_budget SET limit_microdollars = ? WHERE month = ?").bind(limit, month).run();
   const reserved = await db.prepare("UPDATE ask_budget SET reserved_microdollars = reserved_microdollars + ? WHERE month = ? AND spent_microdollars + reserved_microdollars + ? <= limit_microdollars RETURNING spent_microdollars, reserved_microdollars, limit_microdollars").bind(RESERVATION_MICRODOLLARS, month, RESERVATION_MICRODOLLARS).first();
-  return reserved ? { reserved: true } : { error: "budget_limit" };
+  return reserved ? { reserved: true, dailyRemaining: DAILY_REQUEST_LIMIT - daily.count } : { error: "budget_limit" };
 }
 
 async function settleBudget(db, month, actualMicrodollars) {
@@ -244,7 +245,15 @@ export async function onRequestPost({ request, env }) {
   try {
     await settleBudget(env.DB, month, generated.cost);
     const balance = await env.DB.prepare("SELECT limit_microdollars - spent_microdollars - reserved_microdollars AS remaining FROM ask_budget WHERE month = ?").bind(month).first();
-    return json(200, { mode: "answer", answer: generated.answer, results, remaining_cents: Math.max(0, Math.floor((balance?.remaining ?? 0) / 10_000)), resets_at: new Date(Date.UTC(Number(month.slice(0, 4)), Number(month.slice(5, 7)), 1)).toISOString() });
+    return json(200, {
+      mode: "answer",
+      answer: generated.answer,
+      results,
+      daily_requests_remaining: reservation.dailyRemaining,
+      daily_request_limit: DAILY_REQUEST_LIMIT,
+      shared_requests_guaranteed: Math.max(0, Math.floor((balance?.remaining ?? 0) / RESERVATION_MICRODOLLARS)),
+      resets_at: new Date(Date.UTC(Number(month.slice(0, 4)), Number(month.slice(5, 7)), 1)).toISOString(),
+    });
   } catch {
     return json(200, { mode: "sources", results, reason: "quota_unavailable" });
   }
