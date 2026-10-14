@@ -1,0 +1,13 @@
+name = "tserenov-com"
+compatibility_date = "2026-10-14"
+pages_build_output_dir = "./public-release"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "open-tserenov-com"
+database_id = "9f3577b5-1878-43fa-b80c-7870034aee27"
+
+[vars]
+AI_MONTHLY_LIMIT_CENTS = "0"
+
+[env.production]

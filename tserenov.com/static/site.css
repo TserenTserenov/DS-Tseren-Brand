@@ -1078,6 +1078,14 @@ button {
   padding-left: 1rem;
   margin-bottom: 0;
 }
+.ask-answer {
+  line-height: 1.65;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.ask-answer[hidden] {
+  display: none;
+}
 .ask-results {
   display: grid;
   gap: 1rem;

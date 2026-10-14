@@ -45,6 +45,9 @@ if (askForm) {
         limit: "Local search only · no model calls or paid quota.",
         searching: "Searching the selected materials…",
         found: (count) => `${count} search results. These are sources to read, not a generated answer.`,
+        answered: (count) => `Answer based on ${count} linked sources.`,
+        quota: "The answer allowance is exhausted. Here are sources to read.",
+        modelUnavailable: "AI answers are temporarily unavailable. Here are sources to read.",
         none: "No matching materials found. Try another question or browse the library.",
         unavailable: "Local search is unavailable. Start the site gateway or browse the library.",
       }
@@ -53,6 +56,9 @@ if (askForm) {
         limit: "Только локальный поиск · без вызовов модели и платной квоты.",
         searching: "Ищу материалы в выбранной подборке…",
         found: (count) => `Найдено материалов: ${count}. Это источники для чтения, а не сгенерированный ответ.`,
+        answered: (count) => `Ответ основан на ${count} источниках ниже.`,
+        quota: "Лимит ответов исчерпан. Вот материалы для чтения.",
+        modelUnavailable: "ИИ-ответы временно недоступны. Вот материалы для чтения.",
         none: "Подходящих материалов нет. Попробуйте другой вопрос или откройте библиотеку.",
         unavailable: "Локальный поиск недоступен. Запустите сервер сайта или откройте библиотеку.",
       };
@@ -60,6 +66,10 @@ if (askForm) {
   results.className = "ask-results";
   results.hidden = true;
   status.after(results);
+  const answer = document.createElement("p");
+  answer.className = "ask-answer";
+  answer.hidden = true;
+  status.after(answer);
   if (localPreview) {
     document.querySelector("#ask-preview").textContent = copy.preview;
     document.querySelector("#ask-limit").textContent = copy.limit;
@@ -69,6 +79,7 @@ if (askForm) {
     example.addEventListener("click", () => {
       question.value = example.textContent.trim();
       status.hidden = true;
+      answer.hidden = true;
       results.hidden = true;
       results.replaceChildren();
       question.focus();
@@ -79,13 +90,11 @@ if (askForm) {
     const value = question.value.trim();
     results.hidden = true;
     results.replaceChildren();
+    answer.hidden = true;
+    answer.textContent = "";
     status.hidden = false;
     if (!value) {
       status.textContent = askForm.dataset.empty;
-      return;
-    }
-    if (!localPreview) {
-      status.textContent = askForm.dataset.unavailable;
       return;
     }
     submit.disabled = true;
@@ -99,7 +108,19 @@ if (askForm) {
       if (!response.ok) throw new Error(`Search returned ${response.status}`);
       const data = await response.json();
       if (!Array.isArray(data.results)) throw new Error("Invalid search response");
-      status.textContent = data.results.length ? copy.found(data.results.length) : copy.none;
+      if (data.mode === "answer" && typeof data.answer === "string") {
+        answer.textContent = data.answer;
+        answer.hidden = false;
+        status.textContent = copy.answered(data.results.length);
+      } else if (!data.results.length) {
+        status.textContent = copy.none;
+      } else if (["budget_limit", "visitor_limit"].includes(data.reason)) {
+        status.textContent = copy.quota;
+      } else if (["model_unavailable", "quota_unavailable"].includes(data.reason)) {
+        status.textContent = copy.modelUnavailable;
+      } else {
+        status.textContent = copy.found(data.results.length);
+      }
       for (const item of data.results) {
         if (typeof item.title !== "string" || typeof item.text !== "string" || typeof item.url !== "string") continue;
         if (!item.url.startsWith("https://github.com/")) continue;

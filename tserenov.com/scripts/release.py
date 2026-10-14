@@ -119,8 +119,8 @@ def verify_output(public):
             errors.append(f"Нет публичного canonical: {relative}")
         if "/xal/" in source or "edition-xal" in source:
             errors.append(f"Калмыцкая редакция попала в страницу: {relative}")
-        if 'class="ask-form"' in source or 'id="ask-preview"' in source:
-            errors.append(f"Форма без сервиса попала в публичную страницу: {relative}")
+        if relative in {"index.html", "en/index.html"} and 'class="ask-form"' not in source:
+            errors.append(f"Нет формы вопросов в публичной странице: {relative}")
         documents[path] = document
 
     if not documents or not (public / "index.html").is_file() or not (public / "en/index.html").is_file():

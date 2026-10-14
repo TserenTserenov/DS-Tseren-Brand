@@ -150,7 +150,7 @@
       "label": "03 / Вопрос по материалам",
       "title": "С какой задачей вы пришли?",
       "intro": "Опишите, что хотите создать или изменить. Помощник будет искать ответ в моих открытых материалах и показывать, что прочитать дальше.",
-      "preview": "Предпросмотр: ИИ-ответы ещё не подключены. Введённый вопрос никуда не отправляется.",
+      "preview": "Вопрос отправляется на сервер для поиска по открытым материалам. Если ИИ-ответ доступен, он показывается вместе с источниками.",
       "field_label": "Ваш вопрос",
       "placeholder": "Например: как связать мою работу и ИИ-среду в одну систему?",
       "examples_label": "Можно начать с примера",
@@ -160,7 +160,7 @@
         "Как перейти от замысла к работающей системе?"
       ],
       "submit": "Задать вопрос",
-      "limit": "После запуска — бесплатно, в пределах доступной квоты.",
+      "limit": "Поиск открыт. ИИ-ответы доступны в пределах общей квоты.",
       "unavailable": "Ответы пока не подключены. Вы можете начать с манифеста или посмотреть, какие системы я создаю.",
       "empty": "Напишите вопрос или выберите один из примеров.",
       "next": "Пока можно почитать",
@@ -191,7 +191,7 @@
       ],
       "mcp_label": "Материалы — в вашем ИИ.",
       "mcp_description": "Работайте с моими открытыми статьями, руководствами и паками в привычном ИИ-помощнике. MCP позволит подключить их как источник знаний и получать ссылки на оригиналы.",
-      "nojs": "Для предпросмотра формы включите JavaScript. Материалы доступны по ссылкам ниже.",
+      "nojs": "Чтобы задать вопрос, включите JavaScript. Материалы доступны по ссылкам ниже.",
       "corpus_label": "Основа ответов",
       "corpus": [
         "Статьи",
@@ -378,7 +378,7 @@
       "label": "03 / Explore a question",
       "title": "What are you working on?",
       "intro": "Describe what you want to build or change. The assistant will draw on my public work and point you to the next useful reading.",
-      "preview": "Preview: AI answers are not connected yet. Your question is not sent anywhere.",
+      "preview": "Your question is sent to our server to search public materials. When an AI answer is available, it appears with its sources.",
       "field_label": "Your question",
       "placeholder": "For example: how can I build my work and AI environment into one system?",
       "examples_label": "Start with an example",
@@ -388,7 +388,7 @@
         "How do I turn an intention into a working system?"
       ],
       "submit": "Ask a question",
-      "limit": "Free within the available allowance after launch.",
+      "limit": "Search is available. AI answers depend on the shared allowance.",
       "unavailable": "Answers are not connected yet. You can start with the manifesto or explore the systems I build.",
       "empty": "Write a question or choose an example.",
       "next": "In the meantime, explore",
@@ -419,7 +419,7 @@
       ],
       "mcp_label": "Bring the materials to your AI.",
       "mcp_description": "Use my public essays, guides, and knowledge packs in your own AI assistant. MCP will connect them as a source of knowledge, with links back to the originals.",
-      "nojs": "Enable JavaScript to preview the form. You can read the materials using the links below.",
+      "nojs": "Enable JavaScript to ask a question. You can read the materials using the links below.",
       "corpus_label": "Built on my public work",
       "corpus": [
         "Essays",
