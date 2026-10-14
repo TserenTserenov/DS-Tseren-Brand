@@ -24,7 +24,7 @@
       {% for item in edition.navigation_items %}<a href="{{ get_url(path=item.path, lang=lang) }}">{{ item.label }}</a>{% endfor %}
     </nav>
     <nav class="languages" aria-label="Language / Язык">
-      {% for code in ["ru", "en", "xal"] %}
+      {% for code in config.extra.active_languages | default(value=["ru", "en", "xal"]) %}
         {% set_global target = get_url(path="", lang=code) %}
         {% set_global equivalent = false %}
         {% if page %}{% for translation in page.translations %}{% if translation.lang == code %}{% set_global target = translation.permalink %}{% set_global equivalent = true %}{% endif %}{% endfor %}{% elif section and section.extra.is_library | default(value=false) %}{% set_global target = get_url(path="library/", lang=code) %}{% else %}{% set_global equivalent = true %}{% endif %}

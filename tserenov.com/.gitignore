@@ -1,3 +1,4 @@
 /public/
+/public-release/
 /.zola*
 /node_modules/
