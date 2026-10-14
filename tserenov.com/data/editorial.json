@@ -161,7 +161,7 @@
       ],
       "submit": "Задать вопрос",
       "limit": "Поиск открыт. ИИ-ответы доступны в пределах общей квоты.",
-      "unavailable": "Ответы пока не подключены. Вы можете начать с манифеста или посмотреть, какие системы я создаю.",
+      "unavailable": "Поиск временно недоступен. Вы можете начать с манифеста или посмотреть, какие системы я создаю.",
       "empty": "Напишите вопрос или выберите один из примеров.",
       "next": "Пока можно почитать",
       "links": [
@@ -174,15 +174,15 @@
           "path": "about/"
         }
       ],
-      "onboarding_title": "Как будет устроено подключение",
+      "onboarding_title": "Как подключить открытый MCP",
       "onboarding_steps": [
         {
           "title": "Выберите свой ИИ",
-          "description": "Появится инструкция для проверенных приложений с поддержкой MCP."
+          "description": "Откройте настройки приложения с поддержкой удалённых MCP-серверов."
         },
         {
           "title": "Добавьте источник",
-          "description": "Скопируйте адрес подключения из инструкции. Доступ откроется только к публичным материалам."
+          "description": "Добавьте адрес сервера ниже. Он открывает поиск и чтение только публичных материалов."
         },
         {
           "title": "Задайте первый вопрос",
@@ -190,7 +190,7 @@
         }
       ],
       "mcp_label": "Материалы — в вашем ИИ.",
-      "mcp_description": "Работайте с моими открытыми статьями, руководствами и паками в привычном ИИ-помощнике. MCP позволит подключить их как источник знаний и получать ссылки на оригиналы.",
+      "mcp_description": "Подключите мои открытые статьи, руководства и паки к ИИ-помощнику с поддержкой удалённых MCP-серверов. Доступны поиск, чтение и ссылки на оригиналы.",
       "nojs": "Чтобы задать вопрос, включите JavaScript. Материалы доступны по ссылкам ниже.",
       "corpus_label": "Основа ответов",
       "corpus": [
@@ -202,8 +202,13 @@
       "browse": "Посмотреть материалы",
       "connect_link": "Подключить к своему ИИ",
       "mcp_eyebrow": "Для работы со своим ИИ · MCP",
-      "mcp_status": "Подключение готовится",
-      "mcp_note": "Адрес и инструкция появятся после запуска. Для вопроса на этом сайте подключать MCP не потребуется."
+      "mcp_status": "Открытый MCP работает",
+      "mcp_note": "Для вопроса прямо на этом сайте отдельное подключение не требуется.",
+      "mcp_endpoint_label": "Адрес сервера",
+      "mcp_url": "https://open.tserenov.com/mcp",
+      "mcp_copy": "Копировать адрес",
+      "mcp_copied": "Адрес скопирован",
+      "mcp_copy_error": "Скопируйте адрес вручную"
     },
     "hero_ask": "Вопрос по материалам",
     "library_available": "Читать сейчас",
@@ -389,7 +394,7 @@
       ],
       "submit": "Ask a question",
       "limit": "Search is available. AI answers depend on the shared allowance.",
-      "unavailable": "Answers are not connected yet. You can start with the manifesto or explore the systems I build.",
+      "unavailable": "Search is temporarily unavailable. You can start with the manifesto or explore the systems I build.",
       "empty": "Write a question or choose an example.",
       "next": "In the meantime, explore",
       "links": [
@@ -402,15 +407,15 @@
           "path": "about/"
         }
       ],
-      "onboarding_title": "How the connection will work",
+      "onboarding_title": "How to connect the public MCP",
       "onboarding_steps": [
         {
           "title": "Choose your AI assistant",
-          "description": "Instructions will cover tested applications that support MCP."
+          "description": "Open the settings of an AI app that supports remote MCP servers."
         },
         {
           "title": "Add the source",
-          "description": "Copy the connection address from the instructions to access the public collection."
+          "description": "Add the server address below. It provides search and reading for public materials only."
         },
         {
           "title": "Ask your first question",
@@ -418,7 +423,7 @@
         }
       ],
       "mcp_label": "Bring the materials to your AI.",
-      "mcp_description": "Use my public essays, guides, and knowledge packs in your own AI assistant. MCP will connect them as a source of knowledge, with links back to the originals.",
+      "mcp_description": "Connect my public essays, guides, and knowledge packs to an AI assistant that supports remote MCP servers. Search, reading, and original source links are available.",
       "nojs": "Enable JavaScript to ask a question. You can read the materials using the links below.",
       "corpus_label": "Built on my public work",
       "corpus": [
@@ -430,8 +435,13 @@
       "browse": "Browse the materials",
       "connect_link": "Connect to your AI",
       "mcp_eyebrow": "For your own AI assistant · MCP",
-      "mcp_status": "Connection in preparation",
-      "mcp_note": "The address and instructions will appear after launch. You will not need an MCP connection to ask a question on this website."
+      "mcp_status": "Public MCP is live",
+      "mcp_note": "You do not need a separate connection to ask a question on this website.",
+      "mcp_endpoint_label": "Server address",
+      "mcp_url": "https://open.tserenov.com/mcp",
+      "mcp_copy": "Copy address",
+      "mcp_copied": "Address copied",
+      "mcp_copy_error": "Copy the address manually"
     },
     "hero_ask": "Ask about my work",
     "library_available": "Read now",

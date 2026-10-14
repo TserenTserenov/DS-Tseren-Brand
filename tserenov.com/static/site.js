@@ -32,6 +32,18 @@ for (const player of document.querySelectorAll("[data-video]")) {
   });
 }
 
+const mcpCopy = document.querySelector(".mcp-copy");
+if (mcpCopy) {
+  mcpCopy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(document.querySelector("#mcp-url").textContent.trim());
+      mcpCopy.textContent = mcpCopy.dataset.copied;
+    } catch {
+      mcpCopy.textContent = mcpCopy.dataset.error;
+    }
+  });
+}
+
 const askForm = document.querySelector(".ask-form");
 if (askForm) {
   const question = askForm.querySelector("textarea");

@@ -1225,6 +1225,28 @@ button {
   border-bottom: 1px solid var(--accent);
   padding-bottom: 0.35rem;
 }
+.mcp-endpoint {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+.mcp-endpoint code {
+  overflow-wrap: anywhere;
+}
+.mcp-copy {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+.mcp-copy:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .library-routes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
