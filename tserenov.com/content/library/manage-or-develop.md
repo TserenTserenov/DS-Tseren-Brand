@@ -7,7 +7,7 @@ weight = 7
 category = "Эссе"
 date_label = "1 июля 2026"
 source_file = "DS-Knowledge-Index-Tseren/docs/2026/06-июль/01-07-2026-07-01-manage-or-develop-self-or-tool/01-07-1-club-2026-07-01.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 Слово «саморазвитие» прячет от нас важную вещь: это не одно занятие, а четыре разных. И большая часть буксующих усилий это попытка делать все четыре сразу, не различая, где ты находишься прямо сейчас.

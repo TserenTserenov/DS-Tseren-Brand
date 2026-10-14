@@ -8,7 +8,7 @@ category = "Манифест"
 date_label = "27 мая 2025"
 source_url = "https://systemsworld.club/t/manifest-sozidatelej-intellekt-protiv-hrupkosti-versiya-0-2/25686"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-05-27-manifest-sozidateley-intellekt-protiv-hrupkosti-ve.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 ![Иллюстрация](/media/creators-manifesto-0-2-1.jpeg)

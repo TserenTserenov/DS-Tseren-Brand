@@ -5,8 +5,7 @@ template = "page.html"
 [extra]
 category = "Обо мне"
 source_file = "DS-Tseren-Brand/profile/01-who-i-am.md"
-editorial_status = "draft"
-review_note = "Текст для просмотра автором перед публикацией."
+editorial_status = "approved"
 +++
 
 Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на разных системных уровнях: человек вместе с ИИ-средой, организация, сообщество и экосистема развития интеллекта.

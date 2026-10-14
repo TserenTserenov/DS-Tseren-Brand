@@ -7,7 +7,7 @@ weight = 4
 category = "Исследование"
 date_label = "13 февраля 2026"
 source_file = "DS-Knowledge-Index-Tseren/docs/2026/11-февраль/2026-02-13-sota-methods-ecosystem.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 > Пост о том, как FPF, SPF, Pack и Downstream образуют конвейер: от принципов мышления до бота, который отвечает пользователю. И что делает каждый метод на этом пути.

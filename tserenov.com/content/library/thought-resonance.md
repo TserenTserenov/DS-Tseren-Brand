@@ -8,7 +8,7 @@ category = "Эссе"
 date_label = "22 декабря 2025"
 source_url = "https://systemsworld.club/t/myslitelnyj-rezonans/34295"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-12-22-myslitelnyy-rezonans.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 ![Иллюстрация](/media/thought-resonance-1.jpeg)

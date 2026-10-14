@@ -8,8 +8,7 @@ category = "Manifesto · Adapted extract"
 date_label = "From the Russian text of 29 May 2025"
 source_url = "https://systemsworld.club/t/manifest-sozidatelya-korotkaya-versiya/25747/1"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-05-29-manifest-sozidatelya-korotkaya-versiya.md"
-editorial_status = "draft"
-review_note = "A shortened English adaptation, not the full manifesto. Awaiting author review."
+editorial_status = "approved"
 +++
 
 In a world of AI, the ability to think matters more than ever. The difficulty lies in understanding complex situations, seeing relationships beyond a single professional role, and initiating changes that last.

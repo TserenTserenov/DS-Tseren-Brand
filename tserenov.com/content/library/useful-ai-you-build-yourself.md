@@ -7,7 +7,7 @@ weight = 3
 category = "Эссе"
 date_label = "8 июля 2026"
 source_file = "DS-Knowledge-Index-Tseren/docs/2026/06-июль/19-07-2026-07-08-vseznayuschiy-ii-est-u-vseh/19-07-1-club-2026-07-08.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 **Проблема: универсальный ИИ не знает вас**

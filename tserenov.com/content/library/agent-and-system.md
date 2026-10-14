@@ -8,7 +8,7 @@ category = "Исследование"
 date_label = "6 августа 2025"
 source_url = "https://systemsworld.club/t/agent-i-sistema-o-prednaznachenii-czelyah-i-avtonomnosti/29336"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-08-06-agent-i-sistema-o-prednaznachenii-tselyah-i-avtono.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 ![Иллюстрация](/media/agent-and-system-1.png)

@@ -7,7 +7,7 @@ category = "Видео · На русском языке"
 date_label = "28 декабря 2024"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-01-01-materialy-vebinara-soobschestva-novoy-gramotnosti.md"
 source_url = "https://www.youtube.com/watch?v=UbO3P_hTQuI"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 Запись вебинара «Как начать системные изменения себя?» на моём YouTube-канале. Видео на русском языке.

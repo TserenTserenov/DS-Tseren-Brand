@@ -5,8 +5,7 @@ template = "page.html"
 [extra]
 category = "Lifework"
 source_file = "DS-Tseren-Brand/positioning.md"
-editorial_status = "draft"
-review_note = "English adaptation awaiting author review."
+editorial_status = "approved"
 +++
 
 My lifework is to help people become creators: people who can take an intention through to a working system that makes a difference in other people’s lives.

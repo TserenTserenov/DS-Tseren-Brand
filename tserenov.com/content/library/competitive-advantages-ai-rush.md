@@ -8,7 +8,7 @@ category = "Эссе"
 date_label = "2 июля 2025"
 source_url = "https://systemsworld.club/t/nashi-konkurentnye-preimushhestva-v-epohu-vseobshhej-ii-lihoradki/27433"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-07-02-nashi-konkurentnye-preimuschestva-v-epohu-vseobsch.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 ![Иллюстрация](/media/competitive-advantages-ai-rush-1.jpeg)

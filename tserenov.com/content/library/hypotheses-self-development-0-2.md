@@ -8,8 +8,7 @@ category = "Исследование"
 date_label = "27 августа 2025"
 source_url = "https://systemsworld.club/t/gipotezy-dlya-issledovaniya-inzheneriya-samorazvitiya-i-obshhestvennyh-sistem-v-epohu-ii-versiya-0-2/30023"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-08-27-gipotezy-dlya-issledovaniya-inzheneriya-samorazvit.md"
-editorial_status = "source_selected"
-review_note = "Исследовательская версия 0.2. Текст не завершён и сохранён как гипотеза, без авторской доработки."
+editorial_status = "approved"
 +++
 
 Текст находится в разработке и до версии MVP еще не дотягивает: проблемы, вопросы и методы решения требуют систематизации и детальной проработки. Тем не менее, его можно использовать для понимания тренда развития МИМ, сообщества и ИИ-платформы.

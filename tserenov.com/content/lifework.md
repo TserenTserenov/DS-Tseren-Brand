@@ -5,8 +5,7 @@ template = "page.html"
 [extra]
 category = "Lifework · Дело жизни"
 source_file = "DS-Tseren-Brand/positioning.md"
-editorial_status = "draft"
-review_note = "Публичное представление Lifework для просмотра автором. Личные документы сюда не перенесены."
+editorial_status = "approved"
 +++
 
 > Мы делаем каждого человека созидателем. Чтобы каждому досталась своя часть Вселенной.

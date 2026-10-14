@@ -5,8 +5,7 @@ template = "page.html"
 [extra]
 category = "About"
 source_file = "DS-Tseren-Brand/profile/01-who-i-am.md"
-editorial_status = "draft"
-review_note = "English adaptation awaiting author review."
+editorial_status = "approved"
 +++
 
 I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different system levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development.

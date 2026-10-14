@@ -7,7 +7,7 @@ weight = 6
 category = "Опыт"
 date_label = "24 марта 2026"
 source_file = "DS-Knowledge-Index-Tseren/docs/2026/10-март/2026-03-24-081-operating-system-for-thinking/081-1-club-2026-03-24.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 У меня сейчас 36 активных рабочих продуктов. Архитектура платформы, бот, публикации, исследования, встречи. И параллельно — несколько окон с ИИ, каждое на своей задаче.

@@ -5,10 +5,11 @@
     "language_short": "RU",
     "ui_lang": "ru",
     "ready": true,
+    "publication_approved": true,
     "home": "Главная",
     "skip": "К содержанию",
     "navigation": "Навигация",
-    "preview": "Предпросмотр · Тексты и состав редакций готовятся к публикации",
+    "preview": "Локальный предпросмотр · Русская редакция утверждена к публикации",
     "navigation_items": [
       {
         "label": "Обо мне",
@@ -268,10 +269,11 @@
     "language_short": "EN",
     "ui_lang": "en",
     "ready": true,
+    "publication_approved": true,
     "home": "Home",
     "skip": "Skip to content",
     "navigation": "Navigation",
-    "preview": "Preview · English adaptations are awaiting editorial review",
+    "preview": "Local preview · English edition approved for publication",
     "navigation_items": [
       {
         "label": "About",

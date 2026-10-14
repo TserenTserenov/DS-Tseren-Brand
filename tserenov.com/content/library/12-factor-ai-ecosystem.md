@@ -8,7 +8,7 @@ category = "Руководство"
 date_label = "12 мая 2026"
 source_url = "https://systemsworld.club/t/-/39053"
 source_file = "DS-Knowledge-Index-Tseren/docs/2026/08-май/141-2026-05-12-12factor-audit-results/141-1-club-2026-05-12.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 Три месяца я строил AI-агентную экосистему — боты, MCP-серверы, projection-workers, edge-функции. Каждый сервис делался под конкретную задачу, без единого инженерного стандарта. Сегодня я провёл первую системную ревизию по [12 факторам Heroku](https://12factor.net/) — методология cloud-native гигиены, на которой держится индустрия с 2011 года. Это срез того, что вышло за три месяца активной разработки.

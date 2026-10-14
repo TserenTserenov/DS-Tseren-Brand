@@ -8,7 +8,7 @@ category = "Исследование"
 date_label = "17 сентября 2025"
 source_url = "https://systemsworld.club/t/harakter-cheloveka-ot-psihologii-k-inzhenernomu-vzglyadu-na-kibercheloveka/30712"
 source_file = "DS-Knowledge-Index-Tseren/docs/2025/2025-09-17-harakter-cheloveka-ot-psihologii-k-inzhenernomu-vz.md"
-editorial_status = "source_selected"
+editorial_status = "approved"
 +++
 
 ![Иллюстрация](/media/cyberhuman-character-1.jpeg)
