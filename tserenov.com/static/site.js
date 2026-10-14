@@ -106,7 +106,8 @@ if (askForm) {
     if (!answer.hidden) parts.push(answer.textContent.trim());
     for (const [index, row] of [...results.children].entries()) {
       const link = row.querySelector("a");
-      if (link) parts.push(`[${index + 1}] ${link.textContent.trim()}\n${link.href}`);
+      const snippet = row.querySelector("p")?.textContent.trim();
+      if (link) parts.push(`[${index + 1}] ${link.textContent.trim()}\n${link.href}${snippet ? `\n${snippet}` : ""}`);
     }
     try {
       await navigator.clipboard.writeText(parts.join("\n\n"));
