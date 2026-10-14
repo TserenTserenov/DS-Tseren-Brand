@@ -62,7 +62,8 @@ if (askForm) {
         quota: "The answer allowance is exhausted. Here are sources to read.",
         modelUnavailable: "AI answers are temporarily unavailable. Here are sources to read.",
         none: "No matching materials found. Try another question or browse the library.",
-        unavailable: "Local search is unavailable. Start the site gateway or browse the library.",
+        unavailable: "Search is temporarily unavailable. Try again or browse the library.",
+        localUnavailable: "Local search is unavailable. Start the site gateway or browse the library.",
       }
     : {
         preview: "Локальный предпросмотр: поиск по выбранному открытому репозиторию без черновиков и без ИИ-модели. Вопрос уходит только на локальный сервер.",
@@ -74,7 +75,8 @@ if (askForm) {
         quota: "Лимит ответов исчерпан. Вот материалы для чтения.",
         modelUnavailable: "ИИ-ответы временно недоступны. Вот материалы для чтения.",
         none: "Подходящих материалов нет. Попробуйте другой вопрос или откройте библиотеку.",
-        unavailable: "Локальный поиск недоступен. Запустите сервер сайта или откройте библиотеку.",
+        unavailable: "Поиск временно недоступен. Попробуйте ещё раз или откройте библиотеку.",
+        localUnavailable: "Локальный поиск недоступен. Запустите сервер сайта или откройте библиотеку.",
       };
   const results = document.createElement("ul");
   results.className = "ask-results";
@@ -154,7 +156,7 @@ if (askForm) {
       }
       results.hidden = results.childElementCount === 0;
     } catch {
-      status.textContent = copy.unavailable;
+      status.textContent = localPreview ? copy.localUnavailable : copy.unavailable;
     } finally {
       submit.disabled = false;
     }
