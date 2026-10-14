@@ -65,13 +65,16 @@ if (askForm) {
         none: "No matching materials found. Try another question or browse the library.",
         unavailable: "Search is temporarily unavailable. Try again or browse the library.",
         localUnavailable: "Local search is unavailable. Start the site gateway or browse the library.",
+        copyResult: "Copy answer and sources",
+        copied: "Copied",
+        copyError: "Could not copy",
       }
     : {
         preview: "Локальный предпросмотр: поиск по выбранному открытому репозиторию без черновиков и без ИИ-модели. Вопрос уходит только на локальный сервер.",
         limit: "Только локальный поиск · без вызовов модели и расхода квоты ответов.",
         searching: "Ищу материалы в выбранной подборке…",
         found: (count) => `Найдено материалов: ${count}. Это источники для чтения, а не сгенерированный ответ.`,
-        answered: (count) => `Ответ основан на ${count} источниках ниже.`,
+        answered: (count) => `Ответ основан на ${count} ${count === 1 ? "источнике" : "источниках"} ниже.`,
         remaining: (daily, limit, shared, reset) => `Сегодня вам доступно ещё ${daily} из ${limit} запросов. Общая квота сейчас позволяет сделать не менее ${shared} запросов до ${reset} UTC.`,
         dailyLimit: "Ваш дневной лимит запросов исчерпан. Вот материалы для чтения.",
         sharedLimit: "Общая квота запросов исчерпана. Вот материалы для чтения.",
@@ -79,6 +82,9 @@ if (askForm) {
         none: "Подходящих материалов нет. Попробуйте другой вопрос или откройте библиотеку.",
         unavailable: "Поиск временно недоступен. Попробуйте ещё раз или откройте библиотеку.",
         localUnavailable: "Локальный поиск недоступен. Запустите сервер сайта или откройте библиотеку.",
+        copyResult: "Копировать ответ и источники",
+        copied: "Скопировано",
+        copyError: "Не удалось скопировать",
       };
   const results = document.createElement("ul");
   results.className = "ask-results";
@@ -88,6 +94,27 @@ if (askForm) {
   answer.className = "ask-answer";
   answer.hidden = true;
   status.after(answer);
+  const copyResult = document.createElement("button");
+  copyResult.type = "button";
+  copyResult.className = "ask-copy";
+  copyResult.textContent = copy.copyResult;
+  copyResult.hidden = true;
+  copyResult.setAttribute("aria-live", "polite");
+  results.after(copyResult);
+  copyResult.addEventListener("click", async () => {
+    const parts = [];
+    if (!answer.hidden) parts.push(answer.textContent.trim());
+    for (const [index, row] of [...results.children].entries()) {
+      const link = row.querySelector("a");
+      if (link) parts.push(`[${index + 1}] ${link.textContent.trim()}\n${link.href}`);
+    }
+    try {
+      await navigator.clipboard.writeText(parts.join("\n\n"));
+      copyResult.textContent = copy.copied;
+    } catch {
+      copyResult.textContent = copy.copyError;
+    }
+  });
   if (localPreview) {
     document.querySelector("#ask-preview").textContent = copy.preview;
     document.querySelector("#ask-limit").textContent = copy.limit;
@@ -100,6 +127,8 @@ if (askForm) {
       answer.hidden = true;
       results.hidden = true;
       results.replaceChildren();
+      copyResult.hidden = true;
+      copyResult.textContent = copy.copyResult;
       question.focus();
     });
   }
@@ -110,6 +139,8 @@ if (askForm) {
     results.replaceChildren();
     answer.hidden = true;
     answer.textContent = "";
+    copyResult.hidden = true;
+    copyResult.textContent = copy.copyResult;
     status.hidden = false;
     if (!value) {
       status.textContent = askForm.dataset.empty;
@@ -162,6 +193,7 @@ if (askForm) {
         results.append(row);
       }
       results.hidden = results.childElementCount === 0;
+      copyResult.hidden = answer.hidden && results.hidden;
     } catch {
       status.textContent = localPreview ? copy.localUnavailable : copy.unavailable;
     } finally {

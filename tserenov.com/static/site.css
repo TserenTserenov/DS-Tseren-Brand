@@ -1111,6 +1111,23 @@ button {
   margin: 0.4rem 0 0;
   overflow-wrap: anywhere;
 }
+.ask-copy {
+  margin-top: 1.5rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.ask-copy:hover,
+.ask-copy:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.ask-copy[hidden] {
+  display: none;
+}
 .ask-reading {
   margin-top: 1.5rem;
   font-size: 0.875rem;
