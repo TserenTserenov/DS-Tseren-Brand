@@ -58,6 +58,7 @@ if (askForm) {
         searching: "Searching the selected materials…",
         found: (count) => `${count} search results. These are sources to read, not a generated answer.`,
         answered: (count) => `Answer based on ${count} linked sources.`,
+        remaining: (cents, reset) => `Shared answer budget: $${(cents / 100).toFixed(2)} remaining until ${reset} UTC.`,
         quota: "The answer allowance is exhausted. Here are sources to read.",
         modelUnavailable: "AI answers are temporarily unavailable. Here are sources to read.",
         none: "No matching materials found. Try another question or browse the library.",
@@ -69,6 +70,7 @@ if (askForm) {
         searching: "Ищу материалы в выбранной подборке…",
         found: (count) => `Найдено материалов: ${count}. Это источники для чтения, а не сгенерированный ответ.`,
         answered: (count) => `Ответ основан на ${count} источниках ниже.`,
+        remaining: (cents, reset) => `Остаток общей квоты ответов: $${(cents / 100).toFixed(2)} до ${reset} UTC.`,
         quota: "Лимит ответов исчерпан. Вот материалы для чтения.",
         modelUnavailable: "ИИ-ответы временно недоступны. Вот материалы для чтения.",
         none: "Подходящих материалов нет. Попробуйте другой вопрос или откройте библиотеку.",
@@ -124,6 +126,9 @@ if (askForm) {
         answer.textContent = data.answer;
         answer.hidden = false;
         status.textContent = copy.answered(data.results.length);
+        if (Number.isInteger(data.remaining_cents) && data.remaining_cents >= 0 && /^\d{4}-\d{2}-\d{2}T00:00:00\.000Z$/.test(data.resets_at)) {
+          status.textContent += ` ${copy.remaining(data.remaining_cents, data.resets_at.slice(0, 10))}`;
+        }
       } else if (!data.results.length) {
         status.textContent = copy.none;
       } else if (["budget_limit", "visitor_limit"].includes(data.reason)) {

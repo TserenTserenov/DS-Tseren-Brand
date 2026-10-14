@@ -151,6 +151,7 @@ async function generateAnswer(question, sources, apiKey) {
     body: JSON.stringify({
       model: MODEL_ID,
       stream: false,
+      usage: { include: true },
       reasoning: { effort: "none" },
       max_completion_tokens: 600,
       provider: { max_price: { prompt: 0.11, completion: 0.55 } },

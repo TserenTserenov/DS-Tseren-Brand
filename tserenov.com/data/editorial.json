@@ -190,7 +190,7 @@
         }
       ],
       "mcp_label": "Материалы — в вашем ИИ.",
-      "mcp_description": "Подключите мои открытые статьи, руководства и паки к ИИ-помощнику с поддержкой удалённых MCP-серверов. Доступны поиск, чтение и ссылки на оригиналы.",
+      "mcp_description": "Подключите подборку моих опубликованных материалов к ИИ-помощнику с поддержкой удалённых MCP-серверов. Доступны поиск, чтение и ссылки на оригиналы.",
       "nojs": "Чтобы задать вопрос, включите JavaScript. Материалы доступны по ссылкам ниже.",
       "corpus_label": "Основа ответов",
       "corpus": [
@@ -423,7 +423,7 @@
         }
       ],
       "mcp_label": "Bring the materials to your AI.",
-      "mcp_description": "Connect my public essays, guides, and knowledge packs to an AI assistant that supports remote MCP servers. Search, reading, and original source links are available.",
+      "mcp_description": "Connect a selection of my published work to an AI assistant that supports remote MCP servers. Search, reading, and original source links are available.",
       "nojs": "Enable JavaScript to ask a question. You can read the materials using the links below.",
       "corpus_label": "Built on my public work",
       "corpus": [
