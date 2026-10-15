@@ -1,14 +1,15 @@
 +++
 title = "What I build"
-description = "Engineer, manager, entrepreneur, and philosopher. Building systems at different scales."
+description = "Creator of the Intelligent Working Environment (IWE), co-founder of Aisystant Corp."
 template = "page.html"
 [extra]
 category = "About"
 source_file = "DS-Tseren-Brand/profile/01-who-i-am.md"
 editorial_status = "approved"
+review_note = "Text approved by the author 2026-10-15 (peer session, positioning review, WP-442 Ф19)."
 +++
 
-I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different system levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development.
+Creator of the Intelligent Working Environment (IWE). Co-founder of Aisystant Corp, building an ecosystem for intelligence development around it. In all three, a person works, grows on their own, and grows the environment right alongside themselves.
 
 I have lived in Paphos, Cyprus, since 2022.
 

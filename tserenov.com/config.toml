@@ -1,6 +1,6 @@
 base_url = "http://127.0.0.1:4420"
 title = "Tseren Tserenov"
-description = "Tseren Tserenov — engineer, manager, entrepreneur, and philosopher. Building systems: a person with their AI environment, an organisation, and a community and ecosystem for intellectual development."
+description = "Tseren Tserenov — creator of the Intelligent Working Environment (IWE), co-founder of Aisystant Corp."
 default_language = "en"
 compile_sass = false
 build_search_index = false
@@ -8,7 +8,7 @@ generate_sitemap = true
 
 [languages.ru]
 title = "Церен Церенов"
-description = "Церен Церенов — создатель интеллектуальной рабочей среды (IWE), сооснователь Aisystant и Мастерской инженеров-менеджеров."
+description = "Церен Церенов — создатель интеллектуальной рабочей среды (IWE), сооснователь Мастерской инженеров-менеджеров."
 build_search_index = false
 
 [languages.xal]
