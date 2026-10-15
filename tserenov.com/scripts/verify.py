@@ -44,7 +44,7 @@ def main():
         parser.feed(path.read_text())
         documents[path] = parser
         relative = path.relative_to(public).as_posix()
-        expected = "en" if relative.startswith("en/") else "xal" if relative.startswith("xal/") else "ru"
+        expected = "ru" if relative.startswith("ru/") else "xal" if relative.startswith("xal/") else "en"
         if parser.language != expected:
             errors.append(f"Wrong language: {relative}")
         if parser.h1_count != 1 or not parser.noindex:
@@ -70,7 +70,7 @@ def main():
         errors.append("Russian and English channels are not independently configured")
     if editorial["xal"]["ready"]:
         errors.append("Kalmyk review has not been completed")
-    for route in ["index.html", "en/index.html", "xal/index.html", "video/index.html", "library/manifesto/index.html"]:
+    for route in ["index.html", "ru/index.html", "xal/index.html", "ru/video/index.html", "library/manifesto/index.html"]:
         if not (public / route).is_file():
             errors.append(f"Missing required route: {route}")
     if not documents:

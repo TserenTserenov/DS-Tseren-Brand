@@ -1,0 +1,17 @@
+# The English root now occupies /; the old Russian root and shared slugs cannot redirect.
+/en / 301
+/en/ / 301
+/en/* /:splat 301
+/video/ /ru/video/ 301
+/library/12-factor-ai-ecosystem/ /ru/library/12-factor-ai-ecosystem/ 301
+/library/agent-and-system/ /ru/library/agent-and-system/ 301
+/library/ai-adoption-four-levels/ /ru/library/ai-adoption-four-levels/ 301
+/library/competitive-advantages-ai-rush/ /ru/library/competitive-advantages-ai-rush/ 301
+/library/creators-manifesto-0-2/ /ru/library/creators-manifesto-0-2/ 301
+/library/cyberhuman-character/ /ru/library/cyberhuman-character/ 301
+/library/hypotheses-self-development-0-2/ /ru/library/hypotheses-self-development-0-2/ 301
+/library/manage-or-develop/ /ru/library/manage-or-develop/ 301
+/library/sota-methods-working-systems/ /ru/library/sota-methods-working-systems/ 301
+/library/thought-resonance/ /ru/library/thought-resonance/ 301
+/library/useful-ai-you-build-yourself/ /ru/library/useful-ai-you-build-yourself/ 301
+/library/work-culture-productivity/ /ru/library/work-culture-productivity/ 301

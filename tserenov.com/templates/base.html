@@ -1,16 +1,33 @@
 {% set editorial = load_data(path="data/editorial.json") %}
 {% set edition = editorial[lang] %}
 {% set home = get_url(path="", lang=lang) %}
+{% if page %}{% set content = page %}{% else %}{% set content = section %}{% endif %}
+{% set description = content.description | default(value=edition.intro) %}
+{% set_global english_url = "" %}
+{% for translation in content.translations %}{% if translation.lang == "en" %}{% set_global english_url = translation.permalink %}{% endif %}{% endfor %}
 <!doctype html>
 <html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page %}{{ page.title }} · {% elif section and section.extra.is_library | default(value=false) %}{{ section.title }} · {% endif %}{{ edition.name }}</title>
-  <meta name="description" content="{% if page %}{{ page.description | default(value=edition.intro) }}{% else %}{{ edition.intro }}{% endif %}">
+  <meta name="description" content="{{ description }}">
   {% if config.extra.preview %}<meta name="robots" content="noindex, nofollow">{% endif %}
-  {% if page %}<link rel="canonical" href="{{ page.permalink }}">{% elif section %}<link rel="canonical" href="{{ section.permalink }}">{% endif %}
-  {% if page %}{% for translation in page.translations %}<link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">{% endfor %}{% endif %}
+  <link rel="canonical" href="{{ content.permalink }}">
+  {% for translation in content.translations %}<link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">{% endfor %}
+  {% if english_url %}<link rel="alternate" hreflang="x-default" href="{{ english_url }}">{% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page %}{{ page.title }} · {% elif section and section.extra.is_library | default(value=false) %}{{ section.title }} · {% endif %}{{ edition.name }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ content.permalink }}">
+  <meta property="og:image" content="{{ get_url(path='portrait.jpg') }}">
+  <meta property="og:locale" content="{% if lang == 'ru' %}ru_RU{% else %}en_US{% endif %}">
+  {% for translation in content.translations %}{% if translation.lang != lang and translation.lang == 'ru' %}<meta property="og:locale:alternate" content="ru_RU">{% elif translation.lang != lang and translation.lang == 'en' %}<meta property="og:locale:alternate" content="en_US">{% endif %}{% endfor %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% if page %}{{ page.title }} · {% elif section and section.extra.is_library | default(value=false) %}{{ section.title }} · {% endif %}{{ edition.name }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ get_url(path='portrait.jpg') }}">
+  {% if section and not section.extra.is_library | default(value=false) %}<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"{{ config.base_url }}/#person","name":"Tseren Tserenov","url":"{{ config.base_url }}/","image":"{{ get_url(path='portrait.jpg') }}"},{"@type":"WebSite","@id":"{{ config.base_url }}/#website","name":"Tseren Tserenov","url":"{{ config.base_url }}/","inLanguage":["en","ru"]}]}</script>{% endif %}
   <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
   <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
   <script src="{{ get_url(path='site.js') }}" defer></script>

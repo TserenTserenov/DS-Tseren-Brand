@@ -1,4 +1,4 @@
-"""Build the approved Russian and English public edition of tserenov.com."""
+"""Build the approved English and Russian public edition of tserenov.com."""
 
 from html.parser import HTMLParser
 from pathlib import Path
@@ -27,6 +27,8 @@ class PageLinks(HTMLParser):
         self.ids = set()
         self.links = []
         self.canonical = None
+        self.alternates = {}
+        self.metadata = {}
         self.noindex = False
 
     def handle_starttag(self, tag, attrs):
@@ -43,6 +45,10 @@ class PageLinks(HTMLParser):
             self.links.append(attributes["src"])
         if tag == "link" and attributes.get("rel") == "canonical":
             self.canonical = attributes.get("href")
+        if tag == "link" and attributes.get("rel") == "alternate" and attributes.get("hreflang"):
+            self.alternates[attributes["hreflang"]] = attributes.get("href")
+        if tag == "meta" and (attributes.get("name") or attributes.get("property")):
+            self.metadata[attributes.get("property") or attributes.get("name")] = attributes.get("content")
         if tag == "meta" and attributes.get("name") == "robots":
             self.noindex = "noindex" in attributes.get("content", "")
 
@@ -92,7 +98,7 @@ def prepare_source(stage):
     config = replace_once(config, r"^preview = true$", 'preview = false\nactive_languages = ["ru", "en"]')
     config = replace_once(config, r"(?s)^\[languages\.xal\]\n.*?(?=^\[|\Z)", "")
     parsed = tomllib.loads(config)
-    if set(parsed["languages"]) != {"en"} or parsed["extra"]["preview"]:
+    if set(parsed["languages"]) != {"ru"} or parsed["default_language"] != "en" or parsed["extra"]["preview"]:
         raise ValueError("Публичная конфигурация языков некорректна")
     (stage / "config.toml").write_text(config)
     (stage / "static/robots.txt").write_text(
@@ -108,7 +114,7 @@ def verify_output(public):
         source = path.read_text()
         document.feed(source)
         relative = path.relative_to(public).as_posix()
-        expected = "en" if relative.startswith("en/") else "ru"
+        expected = "ru" if relative.startswith("ru/") else "en"
         if relative != "404.html" and document.language != expected:
             errors.append(f"Неверный язык: {relative}")
         if relative != "404.html" and document.heading_count != 1:
@@ -117,20 +123,59 @@ def verify_output(public):
             errors.append(f"Предпросмотр попал в публичную страницу: {relative}")
         if relative != "404.html" and not (document.canonical or "").startswith(PUBLIC_URL + "/"):
             errors.append(f"Нет публичного canonical: {relative}")
+        if relative != "404.html":
+            canonical = PUBLIC_URL + "/" + relative.removesuffix("index.html")
+            if document.canonical != canonical:
+                errors.append(f"Canonical не совпадает с адресом страницы: {relative}")
+            if document.alternates.get(expected) != canonical:
+                errors.append(f"Нет собственной языковой ссылки: {relative}")
+            if document.alternates.get("en") and document.alternates.get("x-default") != document.alternates["en"]:
+                errors.append(f"x-default должен вести на английский эквивалент: {relative}")
+            if not document.metadata.get("description") or document.metadata.get("og:description") != document.metadata["description"]:
+                errors.append(f"Описание страницы или Open Graph отсутствует: {relative}")
+            if document.metadata.get("og:url") != canonical or document.metadata.get("twitter:card") != "summary":
+                errors.append(f"Неверный адрес Open Graph или Twitter Card: {relative}")
         if "/xal/" in source or "edition-xal" in source:
             errors.append(f"Калмыцкая редакция попала в страницу: {relative}")
-        if relative in {"index.html", "en/index.html"} and 'class="ask-form"' not in source:
+        if relative in {"index.html", "ru/index.html"} and 'class="ask-form"' not in source:
             errors.append(f"Нет формы вопросов в публичной странице: {relative}")
         documents[path] = document
 
-    if not documents or not (public / "index.html").is_file() or not (public / "en/index.html").is_file():
+    if not documents or not (public / "index.html").is_file() or not (public / "ru/index.html").is_file():
         errors.append("Нет обеих главных страниц")
+    if (public / "en").exists():
+        errors.append("Старая английская папка попала в сборку")
     if (public / "xal").exists():
         errors.append("Калмыцкая редакция попала в сборку")
     if "Disallow" in (public / "robots.txt").read_text():
         errors.append("Публичный robots.txt запрещает обход")
     if "/xal/" in (public / "sitemap.xml").read_text():
         errors.append("Калмыцкая редакция попала в sitemap")
+    if "/en/" in (public / "sitemap.xml").read_text():
+        errors.append("Старые английские адреса попали в sitemap")
+
+    for path, document in documents.items():
+        if path.name == "404.html":
+            continue
+        for language, alternate in document.alternates.items():
+            if language == "x-default":
+                continue
+            target = public / unquote(urlsplit(alternate).path).lstrip("/") / "index.html"
+            if target not in documents or documents[target].alternates.get(document.language) != document.canonical:
+                errors.append(f"Невзаимная языковая ссылка: {path.relative_to(public)} → {alternate}")
+
+    for line in (public / "_redirects").read_text().splitlines():
+        if not line or line.startswith("#"):
+            continue
+        source, destination, code = line.split()
+        if code != "301":
+            errors.append(f"Редирект не постоянный: {source}")
+        if "*" in source:
+            continue
+        old_page = public / source.lstrip("/") / "index.html"
+        new_page = public / destination.lstrip("/") / "index.html"
+        if old_page.is_file() or not new_page.is_file():
+            errors.append(f"Редирект конфликтует со страницей или ведёт в пустоту: {source} → {destination}")
 
     for path, document in documents.items():
         for href in document.links:

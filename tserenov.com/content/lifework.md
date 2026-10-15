@@ -1,45 +1,43 @@
 +++
-title = "Каждый человек — созидатель"
-description = "Создавать системы, развивать людей и расширять возможности созидания."
+title = "Building the capacity to create"
+description = "A person with their AI environment, an organisation, and a community: three levels of my lifework."
 template = "page.html"
 [extra]
-category = "Lifework · Дело жизни"
+category = "Lifework"
 source_file = "DS-Tseren-Brand/positioning.md"
 editorial_status = "approved"
 +++
 
-> Мы делаем каждого человека созидателем. Чтобы каждому досталась своя часть Вселенной.
+My lifework is to help people become creators: people who can take an intention through to a working system that makes a difference in other people’s lives.
 
-Это формулировка моей миссии. Под созиданием я понимаю работу от замысла до действующей системы: определить, что стоит создать, разобраться в устройстве, организовать работу и получить результат, который меняет жизнь людей.
+## Building across system levels
 
-## Созидание на разных уровнях
+The systems I build connect at three levels:
 
-Мои системы связаны на трёх уровнях:
+1. **Person + AI environment.** A person and their environment, including IWE, working and developing as one system while preserving human authorship.
+2. **Organisation.** Aisystant for international audiences and the Workshop for Engineers and Managers for Russian-speaking audiences: strategy, management, products, and collaborative work.
+3. **Community and ecosystem for intellectual development.** More than 13,000 people across more than 30 countries: people, shared practice, and an environment in which new systems can emerge.
 
-1. **Человек + ИИ-среда.** Единая связка человека и его среды, включая IWE: совместная работа, развитие и созидание с сохранением человеческого авторства.
-2. **Организация.** Aisystant для международной аудитории и Мастерская инженеров-менеджеров для русскоязычной: стратегия, менеджмент, продукты и организация совместной работы.
-3. **Сообщество и экосистема развития интеллекта.** Более 13 000 человек в более чем 30 странах: люди, совместная практика и среда, в которой возникают новые системы.
+Each level brings its own engineering, management, and entrepreneurial questions. I am interested in how these systems support one another’s development.
 
-На каждом уровне возникают свои инженерные, управленческие и предпринимательские задачи. Меня интересует, как эти системы поддерживают развитие друг друга.
+[Read about my projects and responsibilities](@/about.md).
 
-[Подробнее о моих проектах и ролях](@/about.md).
+## A time to create
 
-## Лучшее время для созидания
+I believe there has never been a better time in history to build and create. In science, technology, and AI, I see opportunities for individuals and small teams to tackle problems that were previously beyond their reach.
 
-Я убеждён: в истории ещё не было лучшего времени для созидания. В развитии науки, технологий и ИИ я вижу возможность браться за задачи, которые прежде были за пределами доступного отдельному человеку или небольшой команде.
+My response is to build systems, develop new capabilities, and help others do the same.
 
-Мой ответ на эти возможности — создавать системы, осваивать новое мастерство и помогать другим делать то же самое.
+## Society, civilisation, and the cosmos
 
-## Общество, цивилизация, космос
+I am interested in how today’s decisions connect to the development of society and civilisation. Where are the frontiers of science? How can we extend what we know? What possibilities will the exploration of the cosmos open?
 
-Меня интересует, как сегодняшние решения связаны с развитием общества и цивилизации. Где проходит фронтир науки? Как расширяются границы познания? Какие возможности открывает исследование космоса?
+These philosophical questions give my work a longer horizon. They prompt me to consider the systems we may need and the part of building them that we can take on today.
 
-Эти философские вопросы задают горизонт моего дела. Они побуждают исследовать, какие системы нам понадобятся и какую часть работы по их созданию можно взять на себя уже сейчас.
+## Thinking and craft
 
-## Мышление и мастерство
+Building requires systems thinking, engineering and management skills, and the ability to learn and work with others. I develop these capabilities in my own work and build environments that help others do so.
 
-Для созидания нужны системное мышление, инженерное и управленческое мастерство, способность учиться и работать с другими. Я развиваю эти способности в своей работе и создаю среду, которая помогает развивать их другим.
+I treat a person together with their AI environment as a whole system. Its development should expand the person’s ability to act while preserving their judgement, purpose, and responsibility.
 
-Связку человека и ИИ-среды я рассматриваю как целую систему. Её развитие должно расширять возможности человека, сохраняя его замысел, суждение и ответственность.
-
-[Манифест созидателя](@/library/manifesto.md) раскрывает роль интеллекта в работе со сложными проблемами.
+The [adapted manifesto extract](@/library/manifesto.md) explores the role of intelligence in working on complex problems.

@@ -1,53 +1,49 @@
 +++
-title = "Чем я занимаюсь"
-description = "Инженер, менеджер, предприниматель и философ. Создаю системы на разных системных уровнях."
+title = "What I build"
+description = "Engineer, manager, entrepreneur, and philosopher. Building systems at different scales."
 template = "page.html"
 [extra]
-category = "Обо мне"
+category = "About"
 source_file = "DS-Tseren-Brand/profile/01-who-i-am.md"
 editorial_status = "approved"
 +++
 
-Я Церен Церенов — инженер, менеджер, предприниматель и философ. Создаю системы на разных системных уровнях: человек вместе с ИИ-средой, организация, сообщество и экосистема развития интеллекта.
+I’m Tseren Tserenov — an engineer, manager, entrepreneur, and philosopher. I build systems at different system levels: a person together with their AI environment, an organisation, and a community and ecosystem for intellectual development.
 
-С 2022 года живу в Пафосе, на Кипре.
+I have lived in Paphos, Cyprus, since 2022.
 
-В моей работе инженерия отвечает за устройство и работоспособность систем, менеджмент — за организацию совместной работы, предпринимательство — за поиск возможностей и создание ценности. Философия помогает исследовать основания этой работы и её последствия для человека и общества.
+Engineering concerns how these systems are designed and how they work. Management concerns how people organise their work together. Entrepreneurship concerns opportunities and the creation of value. Philosophy helps me examine the foundations of this work and its consequences for people and society.
 
-## Мои системы
+## Systems I build
 
-### Человек + ИИ-среда: IWE {#person-ai}
+### Person + AI environment: IWE {#person-ai}
 
-Первый уровень — связка человека и ИИ-среды как единая система. Я создаю её так, чтобы человек мог мыслить, учиться и действовать вместе со своей средой, сохраняя замысел, суждение и авторство работы. Интеллектуальная рабочая среда (IWE) относится к этому уровню.
+The first level is a person together with their AI environment as one system. I build this relationship so that people can think, learn, and act with their environment while retaining purpose, judgement, and authorship of their work. The Intelligent Working Environment (IWE) belongs at this level.
 
-Программа «Личное развитие» и практикумы по системному саморазвитию помогают человеку осваивать мастерство, с которым он действует в этой связке.
+The Personal Development programme and workshops on systematic self-development help people build the capabilities they bring to this system.
 
-### Организация: Aisystant и Мастерская инженеров-менеджеров {#workshop}
+### Organisation: Aisystant {#workshop}
 
-На уровне организации я развиваю Aisystant для международной аудитории и Мастерскую инженеров-менеджеров для русскоязычной. Я сооснователь Aisystant, сооснователь и руководитель Мастерской. Моя работа — стратегический и оперативный менеджмент, создание продуктов, преподавание и организация совместной работы.
+At the organisational level, I develop Aisystant for an international audience and the Workshop for Engineers and Managers for Russian-speaking audiences. I am a co-founder of Aisystant and a co-founder and leader of the Workshop. My work includes strategy, operations, product creation, teaching, and organising collaborative work.
 
-### Сообщество и экосистема развития интеллекта {#ecosystem}
+### Community and ecosystem for intellectual development {#ecosystem}
 
-Наше сообщество объединяет более 13 000 человек в более чем 30 странах. Я развиваю сообщество и экосистему развития интеллекта: связи между людьми, совместную практику и среду, в которой участники развивают мастерство и создают собственные системы.
+Our community brings together more than 13,000 people across more than 30 countries. I develop the community and ecosystem for intellectual development: connections between people, shared practice, and an environment in which participants develop their craft and build systems of their own.
 
-## Философский горизонт
+## A philosophical horizon
 
-Меня интересуют развитие общества и цивилизации, фронтир науки и границы познания, исследование и освоение космоса. Это горизонт вопросов, с которыми я соотношу сегодняшние проекты: какие системы мы создаём, какие возможности они открывают и какое будущее делают возможным.
+My interests include the development of society and civilisation, the frontiers of science and knowledge, and the understanding and exploration of the cosmos. These questions give my current projects a longer horizon: what systems are we building, what possibilities do they open, and what futures do they make possible?
 
-Я убеждён: в истории ещё не было лучшего времени для созидания. Для меня это основание действовать, исследовать новое и браться за задачи большего масштаба.
+I believe there has never been a better time in history to build and create. For me, that conviction is a reason to act, explore, and take on more ambitious problems.
 
-## Мышление как основа созидания
+## Thinking in service of building
 
-Системное мышление, саморазвитие и работа с идеями помогают создавать работающие системы. Я пишу о том, как создаю их: о замыслах, инженерных и управленческих решениях, опыте и вопросах, на которые ещё ищу ответы.
+Systems thinking and personal development underpin this work. I write about building systems: the intentions, engineering and management decisions, experience, and questions that arise along the way.
 
-В числе моих авторских и совместных работ: «Введение в системное мышление», «Системное саморазвитие», «Практики саморазвития» и «Мысли системно».
+My books and guides, written individually or with co-authors, cover systems thinking and systematic personal development. Most are currently available in Russian. This English edition will develop its own collection of adaptations and essays.
 
-## Где меня читать
-
-В [Telegram](https://t.me/systemsthinkinglife) я делюсь наблюдениями и новыми текстами. Записи выступлений доступны на [YouTube](https://www.youtube.com/@tserentserenov77), обсуждения — в [клубе сообщества](https://systemsworld.club/u/tseren-tserenov/).
-
-## Связаться со мной
+## Contact
 
 Email: [tserenov72@gmail.com](mailto:tserenov72@gmail.com).
 
-Личный Telegram: [@tserentserenov](https://t.me/tserentserenov).
+Telegram: [@tserentserenov](https://t.me/tserentserenov).
