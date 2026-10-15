@@ -3,6 +3,7 @@ title = "Becoming a creator"
 description = "An adapted extract from the Creator’s Manifesto: intelligence, uncertainty, and the capacity to act."
 template = "page.html"
 weight = 1
+updated = 2026-10-15
 [extra]
 category = "Manifesto · Adapted extract"
 date_label = "From the Russian text of 29 May 2025"

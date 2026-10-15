@@ -1,6 +1,6 @@
 {% set editorial = load_data(path="data/editorial.json") %}
 {% set edition = editorial[lang] %}
-{% set home = get_url(path="", lang=lang) %}
+{% set home = get_url(path="", lang=lang, trailing_slash=true) %}
 {% if page %}{% set content = page %}{% else %}{% set content = section %}{% endif %}
 {% set description = content.description | default(value=edition.intro) %}
 {% set_global english_url = "" %}
@@ -16,7 +16,7 @@
   <link rel="canonical" href="{{ content.permalink }}">
   {% for translation in content.translations %}<link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">{% endfor %}
   {% if english_url %}<link rel="alternate" hreflang="x-default" href="{{ english_url }}">{% endif %}
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{% if page and page.path is containing(pat='/library/') %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{% if page %}{{ page.title }} · {% elif section and section.extra.is_library | default(value=false) %}{{ section.title }} · {% endif %}{{ edition.name }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:url" content="{{ content.permalink }}">
@@ -28,6 +28,7 @@
   <meta name="twitter:description" content="{{ description }}">
   <meta name="twitter:image" content="{{ get_url(path='portrait.jpg') }}">
   {% if section and not section.extra.is_library | default(value=false) %}<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"{{ config.base_url }}/#person","name":"Tseren Tserenov","url":"{{ config.base_url }}/","image":"{{ get_url(path='portrait.jpg') }}"},{"@type":"WebSite","@id":"{{ config.base_url }}/#website","name":"Tseren Tserenov","url":"{{ config.base_url }}/","inLanguage":["en","ru"]}]}</script>{% endif %}
+  {% if page and page.path is containing(pat='/library/') %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | json_encode | safe }},"description":{{ page.description | json_encode | safe }},"mainEntityOfPage":"{{ page.permalink }}","inLanguage":"{{ lang }}"{% if page.date %},"datePublished":"{{ page.date }}"{% endif %}{% if page.updated %},"dateModified":"{{ page.updated }}"{% endif %},"author":{"@id":"{{ config.base_url }}/#person","@type":"Person","name":"Tseren Tserenov","url":"{{ config.base_url }}/"}}</script>{% endif %}
   <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
   <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
   <script src="{{ get_url(path='site.js') }}" defer></script>
@@ -38,13 +39,13 @@
   <header class="site-header shell">
     <a href="{{ home }}" class="wordmark" aria-label="{{ edition.name }} — {{ edition.home }}">{{ edition.name }}</a>
     <nav class="main-nav" aria-label="{{ edition.navigation }}" lang="{{ edition.ui_lang }}">
-      {% for item in edition.navigation_items %}<a href="{{ get_url(path=item.path, lang=lang) }}">{{ item.label }}</a>{% endfor %}
+      {% for item in edition.navigation_items %}<a href="{{ get_url(path=item.path, lang=lang, trailing_slash=true) }}">{{ item.label }}</a>{% endfor %}
     </nav>
     <nav class="languages" aria-label="Language / Язык">
       {% for code in config.extra.active_languages | default(value=["ru", "en", "xal"]) %}
-        {% set_global target = get_url(path="", lang=code) %}
+        {% set_global target = get_url(path="", lang=code, trailing_slash=true) %}
         {% set_global equivalent = false %}
-        {% if page %}{% for translation in page.translations %}{% if translation.lang == code %}{% set_global target = translation.permalink %}{% set_global equivalent = true %}{% endif %}{% endfor %}{% elif section and section.extra.is_library | default(value=false) %}{% set_global target = get_url(path="library/", lang=code) %}{% else %}{% set_global equivalent = true %}{% endif %}
+        {% if page %}{% for translation in page.translations %}{% if translation.lang == code %}{% set_global target = translation.permalink %}{% set_global equivalent = true %}{% endif %}{% endfor %}{% elif section and section.extra.is_library | default(value=false) %}{% set_global target = get_url(path="library/", lang=code, trailing_slash=true) %}{% else %}{% set_global equivalent = true %}{% endif %}
         <a href="{{ target }}" lang="{{ code }}" {% if code == lang %}aria-current="true"{% endif %} title="{% if not equivalent %}{{ editorial[code].home }}: {% endif %}{{ editorial[code].language }}">{{ editorial[code].language_short }}{% if not equivalent %}<span class="language-fallback" lang="{{ edition.ui_lang }}">{{ edition.home_short }}</span>{% endif %}</a>
       {% endfor %}
     </nav>

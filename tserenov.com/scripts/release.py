@@ -26,10 +26,13 @@ class PageLinks(HTMLParser):
         self.heading_count = 0
         self.ids = set()
         self.links = []
+        self.anchor_links = set()
         self.canonical = None
         self.alternates = {}
         self.metadata = {}
         self.noindex = False
+        self.json_ld = []
+        self._json_ld_content = None
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
@@ -41,8 +44,12 @@ class PageLinks(HTMLParser):
             self.ids.add(attributes["id"])
         if tag in {"a", "link"} and attributes.get("href"):
             self.links.append(attributes["href"])
+        if tag == "a" and attributes.get("href"):
+            self.anchor_links.add(attributes["href"])
         if tag in {"img", "script"} and attributes.get("src"):
             self.links.append(attributes["src"])
+        if tag == "script" and attributes.get("type") == "application/ld+json":
+            self._json_ld_content = ""
         if tag == "link" and attributes.get("rel") == "canonical":
             self.canonical = attributes.get("href")
         if tag == "link" and attributes.get("rel") == "alternate" and attributes.get("hreflang"):
@@ -51,6 +58,15 @@ class PageLinks(HTMLParser):
             self.metadata[attributes.get("property") or attributes.get("name")] = attributes.get("content")
         if tag == "meta" and attributes.get("name") == "robots":
             self.noindex = "noindex" in attributes.get("content", "")
+
+    def handle_data(self, data):
+        if self._json_ld_content is not None:
+            self._json_ld_content += data
+
+    def handle_endtag(self, tag):
+        if tag == "script" and self._json_ld_content is not None:
+            self.json_ld.append(self._json_ld_content)
+            self._json_ld_content = None
 
 
 def editorial_errors():
@@ -125,6 +141,9 @@ def verify_output(public):
             errors.append(f"Нет публичного canonical: {relative}")
         if relative != "404.html":
             canonical = PUBLIC_URL + "/" + relative.removesuffix("index.html")
+            is_article = relative.startswith(("library/", "ru/library/")) and relative not in {
+                "library/index.html", "ru/library/index.html"
+            }
             if document.canonical != canonical:
                 errors.append(f"Canonical не совпадает с адресом страницы: {relative}")
             if document.alternates.get(expected) != canonical:
@@ -135,6 +154,15 @@ def verify_output(public):
                 errors.append(f"Описание страницы или Open Graph отсутствует: {relative}")
             if document.metadata.get("og:url") != canonical or document.metadata.get("twitter:card") != "summary":
                 errors.append(f"Неверный адрес Open Graph или Twitter Card: {relative}")
+            if document.metadata.get("og:type") != ("article" if is_article else "website"):
+                errors.append(f"Неверный тип Open Graph: {relative}")
+            try:
+                structured_data = [json.loads(value) for value in document.json_ld]
+            except json.JSONDecodeError:
+                errors.append(f"Некорректный JSON-LD: {relative}")
+                structured_data = []
+            if is_article and not any(data.get("@type") == "Article" for data in structured_data):
+                errors.append(f"Нет структурированных данных Article: {relative}")
         if "/xal/" in source or "edition-xal" in source:
             errors.append(f"Калмыцкая редакция попала в страницу: {relative}")
         if relative in {"index.html", "ru/index.html"} and 'class="ask-form"' not in source:
@@ -189,6 +217,8 @@ def verify_output(public):
                 target /= "index.html"
             if not target.is_file():
                 errors.append(f"Неработающая ссылка: {path.relative_to(public)} → {href}")
+            elif href in document.anchor_links and target.name == "index.html" and url.path and not url.path.endswith("/"):
+                errors.append(f"Внутренняя ссылка идёт через редирект: {path.relative_to(public)} → {href}")
             elif url.fragment and target in documents and unquote(url.fragment) not in documents[target].ids:
                 errors.append(f"Нет якоря: {href}")
     return errors
