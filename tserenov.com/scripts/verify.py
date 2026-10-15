@@ -55,6 +55,10 @@ def main():
             url = urlsplit(href)
             if url.scheme in {"mailto", "data"}:
                 continue
+            if url.scheme in {"vscode", "vscode-insiders"} and not url.netloc:
+                # Opaque deeplink URI (vscode:mcp/install?...) — has no
+                # netloc, but is not a site-relative path either.
+                continue
             if url.netloc and url.hostname not in {"127.0.0.1", "localhost"}:
                 continue
             target = public / unquote(url.path).lstrip("/") if url.path else path

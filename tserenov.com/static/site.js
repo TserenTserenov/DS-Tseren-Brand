@@ -32,11 +32,11 @@ for (const player of document.querySelectorAll("[data-video]")) {
   });
 }
 
-const mcpCopy = document.querySelector(".mcp-copy");
-if (mcpCopy) {
+for (const mcpCopy of document.querySelectorAll(".mcp-copy")) {
   mcpCopy.addEventListener("click", async () => {
     try {
-      await navigator.clipboard.writeText(document.querySelector("#mcp-url").textContent.trim());
+      const target = document.querySelector(`#${mcpCopy.dataset.copyTarget}`);
+      await navigator.clipboard.writeText(target.textContent.trim());
       mcpCopy.textContent = mcpCopy.dataset.copied;
     } catch {
       mcpCopy.textContent = mcpCopy.dataset.error;
