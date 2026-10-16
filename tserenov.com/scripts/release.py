@@ -210,6 +210,8 @@ def verify_output(public):
             url = urlsplit(href)
             if url.scheme in {"mailto", "data"} or (url.netloc and url.hostname != "tserenov.com"):
                 continue
+            if url.scheme in {"vscode", "vscode-insiders"} and not url.netloc:
+                continue
             if url.netloc and url.scheme != "https":
                 errors.append(f"Небезопасная внутренняя ссылка: {href}")
             target = public / unquote(url.path).lstrip("/") if url.path else path
