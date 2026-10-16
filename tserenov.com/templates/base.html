@@ -30,8 +30,8 @@
   {% if section and not section.extra.is_library | default(value=false) %}<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"{{ config.base_url }}/#person","name":"Tseren Tserenov","url":"{{ config.base_url }}/","image":"{{ get_url(path='portrait.jpg') }}"},{"@type":"WebSite","@id":"{{ config.base_url }}/#website","name":"Tseren Tserenov","url":"{{ config.base_url }}/","inLanguage":["en","ru"]}]}</script>{% endif %}
   {% if page and page.path is containing(pat='/library/') %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | json_encode | safe }},"description":{{ page.description | json_encode | safe }},"mainEntityOfPage":"{{ page.permalink }}","inLanguage":"{{ lang }}"{% if page.date %},"datePublished":"{{ page.date }}"{% endif %}{% if page.updated %},"dateModified":"{{ page.updated }}"{% endif %},"author":{"@id":"{{ config.base_url }}/#person","@type":"Person","name":"Tseren Tserenov","url":"{{ config.base_url }}/"}}</script>{% endif %}
   <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
-  <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
-  <script src="{{ get_url(path='site.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ get_url(path='site.css', cachebust=true) }}">
+  <script src="{{ get_url(path='site.js', cachebust=true) }}" defer></script>
 </head>
 <body class="edition-{{ lang }}">
   <a class="skip" href="#main">{{ edition.skip }}</a>
