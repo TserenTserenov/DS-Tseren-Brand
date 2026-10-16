@@ -97,10 +97,27 @@ if (askForm) {
   const copyResult = document.createElement("button");
   copyResult.type = "button";
   copyResult.className = "ask-copy";
-  copyResult.textContent = copy.copyResult;
+  copyResult.setAttribute("aria-label", copy.copyResult);
+  copyResult.title = copy.copyResult;
+  copyResult.innerHTML = `
+    <svg class="ask-copy-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+      <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+    </svg>
+    <svg class="ask-copied-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="m5 12 4 4L19 6"></path>
+    </svg>`;
   copyResult.hidden = true;
-  copyResult.setAttribute("aria-live", "polite");
   results.after(copyResult);
+  const copyFeedback = document.createElement("span");
+  copyFeedback.className = "ask-copy-feedback";
+  copyFeedback.setAttribute("role", "status");
+  copyResult.after(copyFeedback);
+  const resetCopy = () => {
+    copyResult.hidden = true;
+    copyResult.dataset.state = "ready";
+    copyFeedback.textContent = "";
+  };
   copyResult.addEventListener("click", async () => {
     const parts = [];
     if (!answer.hidden) parts.push(answer.textContent.trim());
@@ -111,9 +128,11 @@ if (askForm) {
     }
     try {
       await navigator.clipboard.writeText(parts.join("\n\n"));
-      copyResult.textContent = copy.copied;
+      copyResult.dataset.state = "copied";
+      copyFeedback.textContent = copy.copied;
     } catch {
-      copyResult.textContent = copy.copyError;
+      copyResult.dataset.state = "error";
+      copyFeedback.textContent = copy.copyError;
     }
   });
   if (localPreview) {
@@ -128,8 +147,7 @@ if (askForm) {
       answer.hidden = true;
       results.hidden = true;
       results.replaceChildren();
-      copyResult.hidden = true;
-      copyResult.textContent = copy.copyResult;
+      resetCopy();
       question.focus();
     });
   }
@@ -140,8 +158,7 @@ if (askForm) {
     results.replaceChildren();
     answer.hidden = true;
     answer.textContent = "";
-    copyResult.hidden = true;
-    copyResult.textContent = copy.copyResult;
+    resetCopy();
     status.hidden = false;
     if (!value) {
       status.textContent = askForm.dataset.empty;
