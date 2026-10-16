@@ -1111,8 +1111,7 @@ button {
   margin: 0.4rem 0 0;
   overflow-wrap: anywhere;
 }
-.ask-copy {
-  margin-top: 1.5rem;
+.copy-control {
   width: 2.75rem;
   height: 2.75rem;
   display: inline-flex;
@@ -1124,12 +1123,12 @@ button {
   color: var(--ink);
   cursor: pointer;
 }
-.ask-copy:hover,
-.ask-copy:focus-visible {
+.copy-control:hover,
+.copy-control:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
 }
-.ask-copy svg {
+.copy-control svg {
   width: 1.25rem;
   height: 1.25rem;
   fill: none;
@@ -1138,20 +1137,26 @@ button {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.ask-copy .ask-copied-icon,
-.ask-copy[data-state="copied"] .ask-copy-icon {
+.copy-control .copied-icon,
+.copy-control[data-state="copied"] .copy-icon {
   display: none;
 }
-.ask-copy[data-state="copied"] .ask-copied-icon {
+.copy-control[data-state="copied"] .copied-icon {
   display: block;
 }
-.ask-copy[hidden] {
+.copy-control[hidden] {
   display: none;
 }
-.ask-copy-feedback {
+.ask-copy {
+  margin-top: 1.5rem;
+}
+.copy-feedback {
   margin-left: 0.75rem;
   color: var(--accent);
   font-size: 0.875rem;
+}
+.copy-feedback[hidden] {
+  display: none;
 }
 .ask-reading {
   margin-top: 1.5rem;
@@ -1275,19 +1280,9 @@ button {
 .mcp-endpoint code {
   overflow-wrap: anywhere;
 }
-.mcp-copy {
-  width: fit-content;
-  padding: 0;
-  border: 0;
-  border-bottom: 1px solid currentColor;
-  background: transparent;
-  color: var(--accent);
-  font: inherit;
-  cursor: pointer;
-}
-.mcp-copy:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+.mcp-endpoint .copy-feedback,
+.installer-card .copy-feedback {
+  margin-left: 0;
 }
 .connect-installers {
   margin-top: 2.5rem;

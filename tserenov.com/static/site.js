@@ -32,14 +32,21 @@ for (const player of document.querySelectorAll("[data-video]")) {
   });
 }
 
+function showCopyFeedback(button, feedback, state, message) {
+  button.dataset.state = state;
+  feedback.hidden = false;
+  feedback.textContent = message;
+}
+
 for (const mcpCopy of document.querySelectorAll(".mcp-copy")) {
   mcpCopy.addEventListener("click", async () => {
+    const feedback = mcpCopy.nextElementSibling;
     try {
       const target = document.querySelector(`#${mcpCopy.dataset.copyTarget}`);
       await navigator.clipboard.writeText(target.textContent.trim());
-      mcpCopy.textContent = mcpCopy.dataset.copied;
+      showCopyFeedback(mcpCopy, feedback, "copied", mcpCopy.dataset.copied);
     } catch {
-      mcpCopy.textContent = mcpCopy.dataset.error;
+      showCopyFeedback(mcpCopy, feedback, "error", mcpCopy.dataset.error);
     }
   });
 }
@@ -96,27 +103,29 @@ if (askForm) {
   status.after(answer);
   const copyResult = document.createElement("button");
   copyResult.type = "button";
-  copyResult.className = "ask-copy";
+  copyResult.className = "copy-control ask-copy";
   copyResult.setAttribute("aria-label", copy.copyResult);
   copyResult.title = copy.copyResult;
   copyResult.innerHTML = `
-    <svg class="ask-copy-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <rect x="8" y="8" width="12" height="12" rx="2"></rect>
       <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
     </svg>
-    <svg class="ask-copied-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <svg class="copied-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="m5 12 4 4L19 6"></path>
     </svg>`;
   copyResult.hidden = true;
   results.after(copyResult);
   const copyFeedback = document.createElement("span");
-  copyFeedback.className = "ask-copy-feedback";
+  copyFeedback.className = "copy-feedback";
   copyFeedback.setAttribute("role", "status");
+  copyFeedback.hidden = true;
   copyResult.after(copyFeedback);
   const resetCopy = () => {
     copyResult.hidden = true;
     copyResult.dataset.state = "ready";
     copyFeedback.textContent = "";
+    copyFeedback.hidden = true;
   };
   copyResult.addEventListener("click", async () => {
     const parts = [];
@@ -128,11 +137,9 @@ if (askForm) {
     }
     try {
       await navigator.clipboard.writeText(parts.join("\n\n"));
-      copyResult.dataset.state = "copied";
-      copyFeedback.textContent = copy.copied;
+      showCopyFeedback(copyResult, copyFeedback, "copied", copy.copied);
     } catch {
-      copyResult.dataset.state = "error";
-      copyFeedback.textContent = copy.copyError;
+      showCopyFeedback(copyResult, copyFeedback, "error", copy.copyError);
     }
   });
   if (localPreview) {
