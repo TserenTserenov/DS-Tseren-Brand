@@ -62,6 +62,7 @@
       <svg class="copied-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"></path></svg>
     </button><span class="copy-feedback" role="status" hidden></span>
   </div><div class="installer-card"><p class="installer-name">Claude.ai</p><a class="button installer-install" href="{{ edition.ask.connect_claude_link }}">{{ edition.ask.connect_claude_button }}</a><p class="installer-note">{{ edition.ask.connect_claude_note }}</p><p class="installer-fallback">{{ edition.ask.connect_claude_fallback }}</p></div></div></div>
+  <div class="connect-related"><div><h3>{{ edition.ask.connect_fpf_title }}</h3><p>{{ edition.ask.connect_fpf_description }}</p></div><a class="button" href="{{ edition.ask.connect_fpf_link }}" rel="noopener noreferrer">{{ edition.ask.connect_fpf_button }}</a></div>
   <details class="ask-onboarding"><summary>{{ edition.ask.onboarding_title }}</summary><ol>{% for step in edition.ask.onboarding_steps %}<li><h3>{{ step.title }}</h3><p>{{ step.description }}</p></li>{% endfor %}</ol></details>
 </section>
 {% if edition.directions_hub %}
