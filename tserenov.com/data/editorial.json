@@ -221,7 +221,11 @@
       "connect_claude_link": "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=IWE&connectorUrl=https%3A%2F%2Fopen.tserenov.com%2Fmcp",
       "connect_claude_button": "Подключить",
       "connect_claude_note": "Способ не задокументирован официально Anthropic — в будущем может перестать работать.",
-      "connect_claude_fallback": "Не открылось? Скопируйте адрес выше и добавьте вручную: Настройки → Коннекторы → Добавить сторонний коннектор."
+      "connect_claude_fallback": "Не открылось? Скопируйте адрес выше и добавьте вручную: Настройки → Коннекторы → Добавить сторонний коннектор.",
+      "connect_fpf_title": "Библиотека FPF в ChatGPT",
+      "connect_fpf_description": "Aisystant Open — отдельное приложение для поиска и чтения публикаций Анатолия Левенчука. Оно не подключает материалы этого сайта или личный IWE.",
+      "connect_fpf_button": "Открыть в ChatGPT",
+      "connect_fpf_link": "https://chatgpt.com/plugins/plugin_asdk_app_6ad354687bc081918dad790dc338742b"
     },
     "hero_ask": "Вопрос по материалам",
     "library_available": "Читать сейчас",
@@ -467,7 +471,11 @@
       "connect_claude_link": "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=IWE&connectorUrl=https%3A%2F%2Fopen.tserenov.com%2Fmcp",
       "connect_claude_button": "Connect",
       "connect_claude_note": "This method isn't officially documented by Anthropic — it may stop working.",
-      "connect_claude_fallback": "Didn't open? Copy the address above and add it manually: Settings → Connectors → Add custom connector."
+      "connect_claude_fallback": "Didn't open? Copy the address above and add it manually: Settings → Connectors → Add custom connector.",
+      "connect_fpf_title": "FPF Library in ChatGPT",
+      "connect_fpf_description": "Aisystant Open is a separate app for searching and reading Anatoly Levenchuk's publications. It does not connect this site's materials or a personal IWE workspace.",
+      "connect_fpf_button": "Open in ChatGPT",
+      "connect_fpf_link": "https://chatgpt.com/plugins/plugin_asdk_app_6ad354687bc081918dad790dc338742b"
     },
     "hero_ask": "Ask about my work",
     "library_available": "Read now",
