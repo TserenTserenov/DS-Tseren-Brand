@@ -3019,3 +3019,45 @@ topics:
     channels:
       video: {url: null, published_at: null}
     notes: "C-076 показывает, как общая цель помогает договориться между направлениями. Здесь общий результат применяется к согласованию ожиданий и приоритетов сотрудника с руководителем. Сценка вымышленная."
+
+  - id: "C-145"
+    proposed: 2026-11-08
+    accepted: 2026-11-08
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Я чуть не нажал «согласен», не читая"
+    why_now: "История со встречи 8 практикума S1 (8 ноября): желание согласиться не читая как поведенческий сигнал падения продуктивного состояния."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-11-08-knopka-soglasen-datchik-ustalosti.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Существующие ролики о состоянии про сон и режим; здесь сигнал в моменте. Пилот выбрал тему 8 ноября из разбора транскрипта встречи 8."
+
+  - id: "C-146"
+    proposed: 2026-11-08
+    accepted: 2026-11-08
+    area: O4
+    hypostasis: I4
+    type: T3
+    hook: "Беспокойство не лечится как простуда"
+    why_now: "Ответ участнице на встрече 8 практикума S1 (8 ноября): работа с беспокойством через изменение вовне, а не только внутри себя."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-11-08-trevogu-ne-lechat-vnutri.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Упоминание врача оставлено намеренно, чтобы не противопоставляться медицине. Пилот выбрал тему 8 ноября."
+
+  - id: "C-147"
+    proposed: 2026-11-08
+    accepted: 2026-11-08
+    area: O4
+    hypostasis: I2
+    type: T3
+    hook: "Опытному человеку труднее всех остановиться перед работой"
+    why_now: "Разбор на встрече 8 практикума S1 (8 ноября): стоп-момент с вопросом про рабочий продукт перед началом работы."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-11-08-stop-moment-rabochiy-produkt.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Записанный ролик done/2026-06-23-stop-moment про роль, метод и результат при переключении контекста; здесь один вопрос про рабочий продукт и тезис про опытных людей. Пилот выбрал тему 8 ноября."
