@@ -1,0 +1,59 @@
+# Machine-readable thresholds for style 2.1 «Пост» (WP-619 F5).
+# Human-readable norms live in ../2.1-post.md; this file is what scripts/style-metrics.py check reads.
+# source: corpus-p95 (5th/95th percentile of published posts 2020-2024) | corpus-p90 | corpus-iqr |
+#         pilot-decision | genre-best-practice
+# level: hard (breach -> exit 1, rewrite) | soft (warning, the author decides)
+#
+# Calibration 11.11.2026 (465 published author posts 2020-2024 vs 240 agent posts 2026):
+#   hard = IQR corridor of every metric      -> author 81% fail, agent 94% fail (does not discriminate)
+#   hard = P95 bands + colons <= P90          -> author 24% fail, agent 88% fail (chosen)
+#   ... plus the author's dash limit <= 3     -> author 56% fail, agent 91% fail
+# The dash limit is a pilot decision about future posts (07.11.2026), so it stays hard.
+schema_version: 1
+style_id: "2.1"
+style_file: ../2.1-post.md
+thresholds:
+  - metric: words
+    min: 371
+    max: 741
+    unit: words per post
+    source: corpus-iqr
+    level: soft  # length depends on the topic; 2.1 says «около 500 слов»
+  - metric: sent_len_median
+    min: 9
+    max: 17
+    unit: words per sentence (median of the post)
+    source: corpus-p95
+    level: hard
+  - metric: em_dash_per_k
+    max: 3
+    unit: long dashes per 1000 words
+    source: pilot-decision  # 07.11.2026
+    level: hard
+  - metric: bold_per_k
+    max: 17.7
+    unit: bold spans per 1000 words
+    source: corpus-p95
+    level: hard
+  - metric: headings
+    max: 0
+    unit: headings per post
+    source: corpus-p95
+    level: hard
+  - metric: lists_per_k
+    max: 20.5
+    unit: list items per 1000 words
+    source: corpus-p95
+    level: hard
+  - metric: colon_per_k
+    max: 13.7
+    unit: colons per 1000 words
+    source: corpus-p90  # agent 2026: median 19.2, 10th percentile 10.2 — the sharpest single marker
+    level: hard
+# Stop-list markers from ../0-voice.md. Soft until the author has reviewed each line (WP-619 F3).
+stop_list:
+  - metric: not_x_but_y_per_k
+    max: 3.6
+    unit: «не X, а Y» per 1000 words
+    source: corpus-p90
+    level: soft

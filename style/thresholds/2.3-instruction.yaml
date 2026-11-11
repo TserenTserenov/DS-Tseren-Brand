@@ -1,0 +1,49 @@
+# Machine-readable thresholds for style 2.3 «Пошаговая инструкция» (WP-619 F6).
+# Human-readable rules live in ../2.3-instruction.md; sources in
+# PACK-rhetoric/pack/language-style/06-sota/LS.SOTA.003-instruction-methods.ru.md.
+# source: corpus-norm | pilot-decision | session-decision (peer session 2026-11-11-11) | genre-best-practice
+# level: hard (breach -> exit 1, rewrite) | soft (warning)
+schema_version: 1
+style_id: "2.3"
+style_file: ../2.3-instruction.md
+required_sections:
+  # A section counts when a heading or a bold lead line equals one of the titles (case and final dot ignored).
+  - id: before_start
+    titles: ["Перед началом", "Что понадобится"]
+    source: session-decision  # DITA prereq is optional; making it required is our decision
+    level: hard
+  - id: done_check
+    titles: ["Как понять, что всё получилось", "Как понять, что получилось"]
+    source: session-decision  # DITA result is optional; making it required is our decision
+    level: hard
+thresholds:
+  - metric: numbered_steps
+    min: 1
+    unit: numbered steps in the text
+    source: session-decision
+    level: hard
+  - metric: commands_per_code_block
+    max: 1
+    unit: commands in one shell or untagged code block (yaml/json/text blocks are not commands)
+    source: pilot-decision  # DP.SC.050, 11.11.2026
+    level: hard
+  - metric: steps_per_list
+    max: 7
+    unit: numbered steps in one list
+    source: genre-best-practice  # Microsoft Manual of Style (older edition): seven, preferably fewer; current Microsoft guide: fit on one screen
+    level: soft
+  - metric: words_per_step
+    max: 20
+    unit: words in one step, first sentence
+    source: genre-best-practice  # ASD-STE100 procedural sentences; written for English, calibrate on Russian
+    level: soft
+  - metric: actions_per_step
+    max: 1
+    unit: imperative verbs in one step (heuristic)
+    source: genre-best-practice  # Google and ASD-STE100: one action per step; Google and Microsoft allow short actions in the same place in one step
+    level: soft
+  - metric: em_dash_per_k
+    max: 3
+    unit: long dashes per 1000 words
+    source: pilot-decision  # post limit 07.11.2026, carried over by voice 0
+    level: soft

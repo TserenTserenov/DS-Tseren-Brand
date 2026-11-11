@@ -8,6 +8,8 @@ Subcommands:
   norms     per-group norms (median and 25-75% band) for the author corpus 2020-2024
   samples   sample candidates per stratum: centre of the stratum and dialogic peak
   contrast  marker frequencies: author corpus 2020-2024 vs agent-era corpus 2026
+  check     pre-publication check of one text against style/thresholds/<style>-*.yaml;
+            exit 1 when a hard threshold is breached (styles 2.1 post, 2.3 instruction)
 
 Only the author's own texts are kept: blogs of other people are excluded by category,
 bodies shorter than MIN_WORDS are dropped (announcements, link posts).
@@ -28,6 +30,7 @@ import yaml
 
 IWE_ROOT = Path(__file__).resolve().parents[2]
 CORPUS_DIR = IWE_ROOT / "DS-Knowledge-Index-Tseren" / "docs"
+THRESHOLDS_DIR = Path(__file__).resolve().parents[1] / "style" / "thresholds"
 AUTHOR_YEARS = ("2020", "2021", "2022", "2023", "2024")
 AGENT_YEARS = ("2026",)
 MIN_WORDS = 150
@@ -312,7 +315,7 @@ def sentence_is_dialogic(sentence: str) -> bool:
     )
 
 
-def measure(post: Post) -> bool:
+def measure(post: Post, min_words: int = MIN_WORDS) -> bool:
     """Fill post metrics; False when the body is too short to measure (announcements, link posts)."""
     post.raw_body = MD_ESCAPE_RE.sub(r"\1", post.raw_body)
     post.text = plain_text(post.raw_body)
@@ -322,7 +325,7 @@ def measure(post: Post) -> bool:
     post.sentences = split_sentences(post.paragraphs)
     post.words = words_of(post.text)
     n_words = len(post.words)
-    if n_words < MIN_WORDS or not post.sentences:
+    if n_words < min_words or not post.sentences:
         return False
     sent_lens = [len(words_of(s)) for s in post.sentences]
     n_sent = len(sent_lens)
@@ -354,6 +357,7 @@ def measure(post: Post) -> bool:
         "italic_per_k": per_k(len(ITALIC_RE.findall(raw.replace("**", ""))), n_words),
         "headings": len(HEADING_RE.findall(raw)),
         "lists_per_k": per_k(len(LIST_RE.findall(raw)), n_words),
+        "not_x_but_y_per_k": per_k(len(NOT_X_BUT_Y_RE.findall(post.text)), n_words),
         "question_share": sum(
             s.rstrip(SENT_CLOSERS).endswith("?") for s in post.sentences
         )
@@ -588,6 +592,148 @@ def cmd_contrast(args: argparse.Namespace) -> None:
         print(f"| {w} | {ra:.3f} | {rg:.2f} | {ratio:.1f} |")
 
 
+# --- check: pre-publication thresholds (WP-619 F5/F6) ---
+
+# Fenced code blocks, also indented inside a list item and with ~~~ fences.
+FENCE_RE = re.compile(
+    r"^[ \t]*(?P<fence>`{3,}|~{3,})[ \t]*(?P<lang>[\w+-]*)[^\n]*\n(?P<body>.*?)^[ \t]*(?P=fence)[ \t]*$",
+    re.DOTALL | re.MULTILINE,
+)
+# Blocks that hold commands to run; config, data and expected output are pasted or read, not run.
+COMMAND_LANGS = {"", "bash", "sh", "shell", "zsh", "console", "powershell", "ps1", "pwsh", "cmd", "bat"}
+# Only top-level items count as steps: nested numbered sub-items are details of a step.
+STEP_RE = re.compile(r"^\d+[.)]\s+(.*)$")
+# Imperative verbs common in setup instructions (informal and formal forms); a heuristic for
+# the soft "one action per step". A suffix test («-ите») catches nouns («на сайте»), so a list.
+_IMPERATIVE_STEMS = (
+    "нажми", "открой", "вставь", "введи", "выбери", "скопируй", "запусти", "перейди",
+    "проверь", "дождись", "закрой", "установи", "скачай", "найди", "напиши", "кликни",
+    "отметь", "сохрани", "перезапусти", "подтверди", "укажи", "добавь", "удали", "включи",
+    "выключи", "создай", "вернись", "подожди", "убедись", "зайди", "войди", "впиши", "ответь",
+)
+IMPERATIVES = {form for stem in _IMPERATIVE_STEMS for form in (stem, stem + "те")}
+# Confirming keys and the typed text of the same action are not separate actions
+# (DP.SC.050 example: «Нажми Cmd+Пробел, напиши `Терминал` и нажми Enter» opens one program).
+CONFIRM_RE = re.compile(r"нажми(?:те)?\s+(?:enter|return|ввод)|напиши(?:те)?\s+`[^`]+`", re.IGNORECASE)
+
+
+def load_thresholds(style: str) -> dict:
+    files = sorted(THRESHOLDS_DIR.glob(f"{style}-*.yaml"))
+    if len(files) != 1:
+        raise SystemExit(f"порогов для стиля {style} нет или их несколько в {THRESHOLDS_DIR}: {files}")
+    return yaml.safe_load(files[0].read_text("utf-8"))
+
+
+def text_post(path: Path) -> Post:
+    """A text to check: frontmatter and a title heading are dropped, the rest is the body."""
+    raw = path.read_text("utf-8")
+    if raw.startswith("---\n") and raw.count("---\n") >= 2:
+        raw = raw.split("---\n", 2)[2]
+    raw = re.sub(r"\A\s*#\s[^\n]*\n", "", raw)
+    return Post(path, path.stem, "check", "", "", raw.strip())
+
+
+def command_blocks(raw: str) -> list[str]:
+    return [m["body"] for m in FENCE_RE.finditer(raw) if m["lang"].lower() in COMMAND_LANGS and m["body"].strip()]
+
+
+def commands_in_block(block: str) -> int:
+    """Commands in a code block: non-empty, non-comment lines; a trailing backslash joins lines."""
+    count, continued = 0, False
+    for line in block.splitlines():
+        stripped = line.strip()
+        if stripped and not stripped.startswith("#") and not continued:
+            count += 1
+        continued = stripped.endswith("\\")
+    return count
+
+
+def step_lists(raw: str) -> list[list[str]]:
+    """Top-level numbered lists outside code blocks, each as a list of step texts (first line).
+    Blank lines and indented continuation keep a list open; any other unindented line closes it."""
+    lists, current = [], []
+    for line in FENCE_RE.sub("", raw).splitlines():
+        m = STEP_RE.match(line)
+        if m:
+            current.append(m.group(1))
+        elif line.strip() and not line.startswith((" ", "\t")):
+            if current:
+                lists.append(current)
+            current = []
+    if current:
+        lists.append(current)
+    return lists
+
+
+def has_section(raw: str, titles: list[str]) -> bool:
+    """A heading or a bold lead line whose text equals one of the titles (case and final dot ignored)."""
+    wanted = {t.lower() for t in titles}
+    for line in FENCE_RE.sub("", raw).splitlines():
+        m = re.match(r"^\s*(?:#{1,6}\s+(?P<head>.+?)\s*$|\*\*(?P<bold>[^*]+)\*\*)", line)
+        if m and (m["head"] or m["bold"]).strip().rstrip(".:").lower() in wanted:
+            return True
+    return False
+
+
+def count_actions(step: str) -> int:
+    return sum(1 for w in words_of(CONFIRM_RE.sub(" ", step)) if w in IMPERATIVES)
+
+
+def instruction_metrics(raw: str) -> dict[str, float]:
+    lists = step_lists(raw)
+    steps = [s for lst in lists for s in lst]
+    first_sentence = [SENT_SPLIT_RE.split(s)[0] for s in steps]
+    return {
+        "numbered_steps": len(steps),
+        "commands_per_code_block": max((commands_in_block(b) for b in command_blocks(raw)), default=0),
+        "steps_per_list": max((len(lst) for lst in lists), default=0),
+        "words_per_step": max((len(words_of(s)) for s in first_sentence), default=0),
+        "actions_per_step": max((count_actions(s) for s in steps), default=0),
+    }
+
+
+def breaches(metrics: dict, rules: list[dict]) -> list[tuple[dict, float]]:
+    out = []
+    for rule in rules:
+        value = metrics.get(rule["metric"])
+        if value is None:
+            continue
+        if ("max" in rule and value > rule["max"]) or ("min" in rule and value < rule["min"]):
+            out.append((rule, value))
+    return out
+
+
+def bound(rule: dict) -> str:
+    if "min" in rule and "max" in rule:
+        return f"{rule['min']}–{rule['max']}"
+    return f"не больше {rule['max']}" if "max" in rule else f"не меньше {rule['min']}"
+
+
+def cmd_check(args: argparse.Namespace) -> int:
+    spec = load_thresholds(args.style)
+    post = text_post(Path(args.file))
+    if not measure(post, min_words=1):
+        print(f"Нечего проверять: в {args.file} нет текста.", file=sys.stderr)
+        return 2
+    metrics = dict(post.metrics)
+    if args.style == "2.3":
+        metrics.update(instruction_metrics(post.raw_body))
+    rules = spec.get("thresholds", []) + spec.get("stop_list", [])
+    found = [(r, v, f"{v:.1f} ({r['unit']}), норма {bound(r)}") for r, v in breaches(metrics, rules)]
+    for section in spec.get("required_sections", []):
+        if not has_section(post.raw_body, section["titles"]):
+            found.append((section, 0.0, f"нет раздела «{section['titles'][0]}»"))
+    hard = [f for f in found if f[0].get("level") == "hard"]
+    soft = [f for f in found if f[0].get("level") != "hard"]
+    print(f"Стиль {spec['style_id']}, файл {args.file}: слов {len(post.words)}")
+    for title, group in (("Обязательное, переписать", hard), ("Рекомендация, решает автор", soft)):
+        for rule, _value, detail in group:
+            print(f"- {title}: {rule.get('metric', rule.get('id'))} — {detail} [{rule['source']}]")
+    if not found:
+        print("Нарушений нет.")
+    return 1 if hard else 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -600,9 +746,12 @@ def main() -> int:
     contrast.add_argument("--min-per-k", type=float, default=0.2)
     contrast.add_argument("--top", type=int, default=40)
     contrast.set_defaults(func=cmd_contrast)
+    check = sub.add_parser("check", help="pre-publication check of one text")
+    check.add_argument("file")
+    check.add_argument("--style", required=True, choices=["2.1", "2.3"])
+    check.set_defaults(func=cmd_check)
     args = parser.parse_args()
-    args.func(args)
-    return 0
+    return args.func(args) or 0
 
 
 if __name__ == "__main__":
