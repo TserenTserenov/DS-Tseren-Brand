@@ -1100,7 +1100,12 @@ topics:
     why_now: ""
     status: written
     draft_path: "DS-Tseren-Brand/content/posts/D-051-discrete-strategizing.md"
-    channels: {}
+    channels:
+      club: {url: null, published_at: null}
+      telegram: {url: null, published_at: null}
+      video: {url: null, published_at: null}
+    ki_path: "DS-Knowledge-Index-Tseren/docs/2026/02-ноябрь/04-11-2026-11-16-think-and-do-two-modes/ (пост 255, ready)"
+    video_path: "DS-Tseren-Brand/content/video/2026-11-16-dumat-i-delat-dva-rezhima.md"
     notes: "занятие 1 «Методы саморазвития», 22 июня. 16.11.2026: текст переписан по разбору встречи 9 S1 (15.11) и пир-сессии РП-385 (MC-sessions:2026-11/16/2026-11-16-11-wp385-think-vs-do/): вход через вождение, три причины (ощущение продвижения без решения, переоткрытие выбора посреди недели, сон), различение «думать в работе ≠ пересматривать выбор». Дедуп 16.11: тот же урок, что D-051, поэтому обновлён черновик, новая тема не заведена; D-060 про таймбоксинг сессии, не дубль."
 
   - id: "D-052"
