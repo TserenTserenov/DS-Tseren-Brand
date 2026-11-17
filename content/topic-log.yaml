@@ -3136,3 +3136,93 @@ topics:
     channels:
       video: {url: null, published_at: null}
     notes: "Ответ на вопрос о близких отношениях и детях: действие в неопределённости. Личных роликов про семью в реестре нет; автору проверить готовность говорить об этом от первого лица. Тексты на «ты» по запросу пилота 15.11."
+
+  - id: "C-153"
+    proposed: 2026-11-16
+    accepted: 2026-11-16
+    area: O4
+    hypostasis: I6
+    type: T1
+    hook: "Как я понимаю сингулярность"
+    why_now: "Прямое поручение пилота 16.11.2026 по итогам девятой встречи S2: пост о том, как пилот понимает сингулярность, по его речи в транскрипте."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/posts/D-095-singulyarnost-kak-ya-ee-ponimayu.md"
+    channels:
+      club: {url: null, published_at: null}
+    notes: "Источник: транскрипт встречи 9 S2 (разделы о слоте нового и устаревании руководств). Дедуп 16.11 пройден: C-151 (усталость, три системы) и C-152 (уверенность в будущем) другой тезис; здесь определение сингулярности как «каждый день по-новому» и утренний вопрос ИИ (автор называет это гипотезой). Проверка style-metrics check 2.1 пройдена, кроме рекомендации по длине (353 слова)."
+
+  - id: "C-154"
+    proposed: 2026-11-16
+    accepted: 2026-11-16
+    area: O6
+    hypostasis: I4
+    type: T1
+    hook: "Мировоззрение — это очки, которые нельзя снять"
+    why_now: "Утверждено пилотом 16.11.2026: идеи встречи 9 S2 переносятся в посты бренда."
+    status: accepted
+    draft_path: "DS-Tseren-Brand/content/posts/D-096-mirovozzrenie-eto-ochki.md"
+    channels:
+      club: {url: null, published_at: null}
+    notes: "Редакционная заготовка. Дедуп 16.11: близких тем в реестре за последний месяц нет (C-136 про изменения не в человеке, другой тезис)."
+
+  - id: "C-155"
+    proposed: 2026-11-16
+    accepted: 2026-11-16
+    area: O1
+    hypostasis: I1
+    type: T1
+    hook: "ИИ помогает успевать больше, и это ловушка перегруза"
+    why_now: "Утверждено пилотом 16.11.2026: идеи встречи 9 S2 переносятся в посты и видео бренда."
+    status: accepted
+    draft_path: "DS-Tseren-Brand/content/posts/D-097-ii-pomogaet-uspevat-bolshe-i-eto-lovushka.md"
+    channels:
+      club: {url: null, published_at: null}
+      video: {url: null, published_at: null}
+    also:
+      - {type: video, path: "DS-Tseren-Brand/content/video/2026-11-16-ii-pomogaet-uspevat-bolshe-perezagruz.md", status: written}
+    notes: "Пост (заготовка) и видео на одну тему. Дедуп 16.11: C-146 (беспокойство), C-151 (усталость из-за памяти в голове), C-142 (кому достаётся сэкономленное время) — другой тезис: перегруз от добавления дел при ускорении с ИИ и признак «не хочется закрывать продукт». Опыт одного человека, не метод."
+
+  - id: "C-156"
+    proposed: 2026-11-16
+    accepted: 2026-11-16
+    area: O5
+    hypostasis: I3
+    type: T1
+    hook: "Все мы становимся руководителями"
+    why_now: "Утверждено пилотом 16.11.2026: идеи встречи 9 S2 переносятся в посты бренда."
+    status: accepted
+    draft_path: "DS-Tseren-Brand/content/posts/D-098-vse-my-stanovimsya-rukovoditelyami.md"
+    channels:
+      club: {url: null, published_at: null}
+    notes: "Редакционная заготовка. Дедуп 16.11: C-139 (как «железным людям» работать вместе) другой тезис; ведущий в разговоре упоминал, что ранее писал о том, что все становятся руководителями: перед написанием найти этот пост и не дублировать."
+
+  - id: "C-157"
+    proposed: 2026-11-16
+    accepted: 2026-11-16
+    area: O5
+    hypostasis: I4
+    type: T1
+    hook: "Расскажите о результате так, чтобы его можно было потрогать"
+    why_now: "Утверждено пилотом 16.11.2026: идеи встречи 9 S2 переносятся в посты и видео бренда; подготовка участников к защите этапа."
+    status: accepted
+    draft_path: "DS-Tseren-Brand/content/posts/D-099-rasskazhite-o-rezultate-tak-chtoby-ego-mozhno-bylo-potrogat.md"
+    channels:
+      club: {url: null, published_at: null}
+      video: {url: null, published_at: null}
+    also:
+      - {type: video, path: "DS-Tseren-Brand/content/video/2026-11-16-pokazhite-palcem-rezultat.md", status: written}
+    notes: "Пост (заготовка) и видео на одну тему. Дедуп 16.11: рубрика «покажите пальцем» (ролики про заземление, класс/вещь, роль) — там различение, здесь рассказ о собственном результате (защита, отчёт, маркетинг); C-136 близок по духу, но про другое. Без историй участников."
+
+  - id: "C-158"
+    proposed: 2026-11-16
+    accepted: 2026-11-16
+    area: O1
+    hypostasis: I1
+    type: T3
+    hook: "Устали или выгорели? Проверка за одну ночь"
+    why_now: "Утверждено пилотом 16.11.2026: идеи встречи 9 S2 переносятся в видео бренда."
+    status: written
+    draft_path: "DS-Tseren-Brand/content/video/2026-11-16-ustal-ili-vygorel-proverka-snom.md"
+    channels:
+      video: {url: null, published_at: null}
+    notes: "Дедуп 16.11: C-151 (усталость от памяти в голове) и C-155 (перегруз с ИИ) другой урок: здесь различение усталости и выгорания по тому, помогает ли сон. Не медицинский диагноз, в тексте сказано."
